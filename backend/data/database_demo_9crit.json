@@ -1,0 +1,1895 @@
+{
+  "period": {
+    "id": "period-2026-bab3",
+    "name": "Seleksi Bantuan PIP - Dataset Proposal Bab 3 (9 Kriteria)",
+    "academic_year": "2026/2027",
+    "school_name": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+    "target_quota": 6,
+    "lambda": 0.5,
+    "is_locked": false,
+    "updated_at": "2026-10-22T02:53:09.983Z"
+  },
+  "users": [
+    {
+      "id": "user-operator-1",
+      "username": "operator",
+      "password_hash": "$2b$10$i.8R3LKgJ5Sc91YrISNSruhbjJURrAEgrD7IA8CGIz3.qeVbWcZpC",
+      "full_name": "Juan Peron Lumbantoruan",
+      "role": "operator",
+      "title": "Operator PIP Sekolah",
+      "created_at": "2026-10-18T00:00:00.000Z"
+    },
+    {
+      "id": "user-kepsek-1",
+      "username": "kepsek",
+      "password_hash": "$2b$10$O07N7QJMLTARXifIde0stO.1.WmnVB6kdUhIeJxsew28.fwx0L0UC",
+      "full_name": "Sarmawaty Simanjuntak, S.Kom",
+      "role": "pengambil_keputusan",
+      "title": "Kepala Sekolah",
+      "created_at": "2026-10-18T00:00:00.000Z"
+    },
+    {
+      "id": "user-admin-compat",
+      "username": "admin",
+      "password_hash": "$2b$10$TPAjh9XKsakc8bCvuKOEY.WqhHhJSqktHves.8MCDID5kZ1DESkhW",
+      "full_name": "Lastri Sihombing",
+      "role": "pengambil_keputusan",
+      "title": "Bidang Kesiswaan",
+      "created_at": "2026-10-18T00:00:00.000Z"
+    },
+    {
+      "id": "user-1792552367458",
+      "username": "luppy",
+      "password_hash": "$2b$10$l0aum9oAboHdhAkArsV0w.JkU3H1FOdZ7j3aSgKuh3zNHhXAOFWui",
+      "full_name": "Natasya Lubis, S.Kom",
+      "role": "operator",
+      "title": "develop",
+      "created_at": "2026-10-21T03:12:47.524Z"
+    }
+  ],
+  "criteria": [
+    {
+      "id": "crit-c1",
+      "code": "C1",
+      "name": "Penghasilan Orang Tua",
+      "type": "cost",
+      "value_type": "real_numeric",
+      "unit": "Rupiah",
+      "description": "Rata-rata pendapatan kotor bulanan gabungan orang tua.",
+      "final_weight": 0.275
+    },
+    {
+      "id": "crit-c2",
+      "code": "C2",
+      "name": "Status Desil DTKS",
+      "type": "benefit",
+      "value_type": "discrete_scale",
+      "unit": "Skor (1-5)",
+      "description": "Tingkat Kesejahteraan/DTKS Kemensos (Desil 1 s/d Desil 5-10).",
+      "final_weight": 0.158,
+      "options": [
+        {
+          "point": 5,
+          "label": "Desil 1 (Sangat Miskin / Desil 1)"
+        },
+        {
+          "point": 4,
+          "label": "Desil 2 (Miskin / Desil 2)"
+        },
+        {
+          "point": 3,
+          "label": "Desil 3 (Hampir Miskin / Desil 3)"
+        },
+        {
+          "point": 2,
+          "label": "Desil 4 (Rentan Miskin / Desil 4)"
+        },
+        {
+          "point": 1,
+          "label": "Desil 5-10 / Tidak Terdata"
+        }
+      ]
+    },
+    {
+      "id": "crit-c3",
+      "code": "C3",
+      "name": "Pekerjaan Ayah",
+      "type": "cost",
+      "value_type": "discrete_scale",
+      "unit": "Skor (1-5)",
+      "description": "Profesi pekerjaan utama ayah (Cost: semakin kecil semakin diprioritaskan).",
+      "final_weight": 0.058,
+      "options": [
+        {
+          "point": 1,
+          "label": "Tidak Bekerja / Buruh Harian Lepas"
+        },
+        {
+          "point": 2,
+          "label": "Petani / Nelayan / Tukang"
+        },
+        {
+          "point": 3,
+          "label": "Wiraswasta / Pedagang Kecil"
+        },
+        {
+          "point": 4,
+          "label": "Karyawan Swasta / Honorer"
+        },
+        {
+          "point": 5,
+          "label": "PNS / TNI / Polri / BUMN"
+        }
+      ]
+    },
+    {
+      "id": "crit-c4",
+      "code": "C4",
+      "name": "Pekerjaan Ibu",
+      "type": "cost",
+      "value_type": "discrete_scale",
+      "unit": "Skor (1-5)",
+      "description": "Profesi pekerjaan ibu (Cost: semakin kecil semakin diprioritaskan).",
+      "final_weight": 0.055,
+      "options": [
+        {
+          "point": 1,
+          "label": "Tidak Bekerja / IRT / Buruh Lepas"
+        },
+        {
+          "point": 2,
+          "label": "Petani / Nelayan / Tukang"
+        },
+        {
+          "point": 3,
+          "label": "Wiraswasta / Pedagang Kecil"
+        },
+        {
+          "point": 4,
+          "label": "Karyawan Swasta / Honorer"
+        },
+        {
+          "point": 5,
+          "label": "PNS / TNI / Polri / BUMN"
+        }
+      ]
+    },
+    {
+      "id": "crit-c5",
+      "code": "C5",
+      "name": "Status Siswa",
+      "type": "benefit",
+      "value_type": "discrete_scale",
+      "unit": "Skor (1-5)",
+      "description": "Kondisi kelengkapan orang tua dan keadaan khusus siswa.",
+      "final_weight": 0.098,
+      "options": [
+        {
+          "point": 5,
+          "label": "Yatim Piatu (Kedua orang tua meninggal)"
+        },
+        {
+          "point": 4,
+          "label": "Yatim / Piatu / Penyandang Disabilitas"
+        },
+        {
+          "point": 3,
+          "label": "Broken Home (Berpotensi putus sekolah)"
+        },
+        {
+          "point": 1,
+          "label": "Normal (Orang tua lengkap)"
+        }
+      ]
+    },
+    {
+      "id": "crit-c6",
+      "code": "C6",
+      "name": "Jumlah Tanggungan Keluarga",
+      "type": "benefit",
+      "value_type": "real_numeric",
+      "unit": "Orang / Jiwa",
+      "description": "Jumlah anak / jiwa yang menjadi tanggungan nafkah keluarga.",
+      "final_weight": 0.115
+    },
+    {
+      "id": "crit-c7",
+      "code": "C7",
+      "name": "Status Tempat Tinggal",
+      "type": "cost",
+      "value_type": "discrete_scale",
+      "unit": "Skor (1-5)",
+      "description": "Status kepemilikan tempat tinggal (Cost: semakin kecil semakin diprioritaskan).",
+      "final_weight": 0.087,
+      "options": [
+        {
+          "point": 1,
+          "label": "Menumpang / Tidak Memiliki Rumah"
+        },
+        {
+          "point": 3,
+          "label": "Kontrak / Sewa Rumah"
+        },
+        {
+          "point": 5,
+          "label": "Milik Sendiri"
+        }
+      ]
+    },
+    {
+      "id": "crit-c8",
+      "code": "C8",
+      "name": "Kepemilikan KIP/KKS/PKH/SKTM",
+      "type": "benefit",
+      "value_type": "discrete_scale",
+      "unit": "Jumlah (0-4)",
+      "description": "Jumlah dokumen atau kartu bantuan sosial pemerintah yang dimiliki siswa.",
+      "final_weight": 0.122,
+      "options": [
+        {
+          "point": 4,
+          "label": "Pemegang KIP / Lengkap (4 Dokumen)"
+        },
+        {
+          "point": 3,
+          "label": "Peserta PKH / Pemegang KKS (3 Dokumen)"
+        },
+        {
+          "point": 2,
+          "label": "Memiliki SKTM (2 Dokumen)"
+        },
+        {
+          "point": 1,
+          "label": "Memiliki 1 Dokumen Pendukung"
+        },
+        {
+          "point": 0,
+          "label": "Tidak Memiliki Satupun (0)"
+        }
+      ]
+    },
+    {
+      "id": "crit-c9",
+      "code": "C9",
+      "name": "Korban Bencana Alam",
+      "type": "benefit",
+      "value_type": "discrete_scale",
+      "unit": "Ya/Tidak (1/0)",
+      "description": "Status keluarga siswa apakah terdampak bencana alam insidental.",
+      "final_weight": 0.032,
+      "options": [
+        {
+          "point": 1,
+          "label": "Ya (Terdampak Bencana Alam)"
+        },
+        {
+          "point": 0,
+          "label": "Tidak"
+        }
+      ]
+    }
+  ],
+  "decision_makers": [
+    {
+      "id": "dm-1",
+      "name": "Sarmawaty Simanjuntak",
+      "title": "Kepala Sekolah",
+      "role": "expert",
+      "evaluation": {
+        "bestCode": "C1",
+        "worstCode": "C9",
+        "bestToOthers": {
+          "C1": 1,
+          "C2": 2,
+          "C3": 5,
+          "C4": 5,
+          "C5": 4,
+          "C6": 3,
+          "C7": 4,
+          "C8": 3,
+          "C9": 7
+        },
+        "othersToWorst": {
+          "C1": 7,
+          "C2": 5,
+          "C3": 3,
+          "C4": 3,
+          "C5": 4,
+          "C6": 5,
+          "C7": 4,
+          "C8": 5,
+          "C9": 1
+        },
+        "weights": {
+          "C1": 0.275,
+          "C2": 0.158,
+          "C3": 0.058,
+          "C4": 0.055,
+          "C5": 0.098,
+          "C6": 0.115,
+          "C7": 0.087,
+          "C8": 0.122,
+          "C9": 0.032
+        },
+        "consistencyRatio": 0.0118,
+        "isConsistent": true
+      }
+    },
+    {
+      "id": "dm-2",
+      "name": "Juan Peron Lumbantoruan",
+      "title": "Wakil Kepala Sekolah",
+      "role": "expert",
+      "evaluation": {
+        "bestCode": "C1",
+        "worstCode": "C9",
+        "bestToOthers": {
+          "C1": 1,
+          "C2": 2,
+          "C3": 5,
+          "C4": 5,
+          "C5": 3,
+          "C6": 4,
+          "C7": 5,
+          "C8": 3,
+          "C9": 8
+        },
+        "othersToWorst": {
+          "C1": 8,
+          "C2": 5,
+          "C3": 3,
+          "C4": 3,
+          "C5": 5,
+          "C6": 4,
+          "C7": 3,
+          "C8": 5,
+          "C9": 1
+        },
+        "weights": {
+          "C1": 0.275,
+          "C2": 0.158,
+          "C3": 0.058,
+          "C4": 0.055,
+          "C5": 0.098,
+          "C6": 0.115,
+          "C7": 0.087,
+          "C8": 0.122,
+          "C9": 0.032
+        },
+        "consistencyRatio": 0.0118,
+        "isConsistent": true
+      }
+    },
+    {
+      "id": "dm-3",
+      "name": "Lastri Sihombing",
+      "title": "Bidang Kesiswaan",
+      "role": "expert",
+      "evaluation": {
+        "bestCode": "C1",
+        "worstCode": "C9",
+        "bestToOthers": {
+          "C1": 1,
+          "C2": 2,
+          "C3": 6,
+          "C4": 6,
+          "C5": 4,
+          "C6": 2,
+          "C7": 4,
+          "C8": 2,
+          "C9": 7
+        },
+        "othersToWorst": {
+          "C1": 7,
+          "C2": 6,
+          "C3": 3,
+          "C4": 3,
+          "C5": 4,
+          "C6": 6,
+          "C7": 4,
+          "C8": 6,
+          "C9": 1
+        },
+        "weights": {
+          "C1": 0.275,
+          "C2": 0.158,
+          "C3": 0.058,
+          "C4": 0.055,
+          "C5": 0.098,
+          "C6": 0.115,
+          "C7": 0.087,
+          "C8": 0.122,
+          "C9": 0.032
+        },
+        "consistencyRatio": 0.0118,
+        "isConsistent": true
+      }
+    }
+  ],
+  "aggregated_weights": {
+    "C1": 0.275,
+    "C2": 0.158,
+    "C3": 0.058,
+    "C4": 0.055,
+    "C5": 0.098,
+    "C6": 0.115,
+    "C7": 0.087,
+    "C8": 0.122,
+    "C9": 0.032
+  },
+  "students": [
+    {
+      "id": "std-bab3-1",
+      "nisn": "0071230001",
+      "nama_lengkap": "Alternatif A1 (Dimas Pratama)",
+      "kelas": "X-AKL",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Dimas Pratama",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 4500000,
+        "C2": 1,
+        "C3": 1,
+        "C4": 3,
+        "C5": 2,
+        "C6": 2,
+        "C7": 2,
+        "C8": 0,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-2",
+      "nisn": "0071230002",
+      "nama_lengkap": "Alternatif A2 (Budi Santoso)",
+      "kelas": "X-TKJ",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Budi Santoso",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 4200000,
+        "C2": 4,
+        "C3": 1,
+        "C4": 1,
+        "C5": 1,
+        "C6": 2,
+        "C7": 2,
+        "C8": 4,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-3",
+      "nisn": "0071230003",
+      "nama_lengkap": "Alternatif A3 (Siti Dewi Nababan)",
+      "kelas": "XI-AKL",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Siti Dewi Nababan",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 4000000,
+        "C2": 2,
+        "C3": 5,
+        "C4": 4,
+        "C5": 2,
+        "C6": 4,
+        "C7": 5,
+        "C8": 2,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-4",
+      "nisn": "0071230004",
+      "nama_lengkap": "Alternatif A4 (Rizky Sihombing)",
+      "kelas": "X-TKJ",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Rizky Sihombing",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 1500000,
+        "C2": 4,
+        "C3": 3,
+        "C4": 3,
+        "C5": 2,
+        "C6": 2,
+        "C7": 3,
+        "C8": 0,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-5",
+      "nisn": "0071230005",
+      "nama_lengkap": "Alternatif A5 (Ahmad Fauzi Simanjuntak)",
+      "kelas": "XII-AKL",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Ahmad Fauzi Simanjuntak",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 2900000,
+        "C2": 1,
+        "C3": 3,
+        "C4": 3,
+        "C5": 5,
+        "C6": 3,
+        "C7": 1,
+        "C8": 3,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-6",
+      "nisn": "0071230006",
+      "nama_lengkap": "Alternatif A6 (Nur Wulandari Hutasoit)",
+      "kelas": "XI-TKJ",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Nur Wulandari Hutasoit",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 2900000,
+        "C2": 1,
+        "C3": 5,
+        "C4": 3,
+        "C5": 5,
+        "C6": 7,
+        "C7": 3,
+        "C8": 4,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-7",
+      "nisn": "0071230007",
+      "nama_lengkap": "Alternatif A7 (Chandra Lumbantoruan)",
+      "kelas": "X-AKL",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Chandra Lumbantoruan",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 900000,
+        "C2": 1,
+        "C3": 2,
+        "C4": 3,
+        "C5": 1,
+        "C6": 7,
+        "C7": 2,
+        "C8": 0,
+        "C9": 1
+      }
+    },
+    {
+      "id": "std-bab3-8",
+      "nisn": "0071230008",
+      "nama_lengkap": "Alternatif A8 (Eka Putri Silaban)",
+      "kelas": "XI-AKL",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Eka Putri Silaban",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 2200000,
+        "C2": 4,
+        "C3": 3,
+        "C4": 2,
+        "C5": 3,
+        "C6": 3,
+        "C7": 2,
+        "C8": 2,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-9",
+      "nisn": "0071230009",
+      "nama_lengkap": "Alternatif A9 (Fajar Hidayat Tarihoran)",
+      "kelas": "XII-TKJ",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Fajar Hidayat Tarihoran",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 4300000,
+        "C2": 2,
+        "C3": 5,
+        "C4": 2,
+        "C5": 2,
+        "C6": 4,
+        "C7": 4,
+        "C8": 2,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-10",
+      "nisn": "0071230010",
+      "nama_lengkap": "Alternatif A10 (Gita Maharani Manalu)",
+      "kelas": "X-TKJ",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Gita Maharani Manalu",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 2500000,
+        "C2": 1,
+        "C3": 2,
+        "C4": 1,
+        "C5": 3,
+        "C6": 4,
+        "C7": 3,
+        "C8": 0,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-11",
+      "nisn": "0071230011",
+      "nama_lengkap": "Alternatif A11 (Hendra Wijaya Pasaribu)",
+      "kelas": "XI-TKJ",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Hendra Wijaya Pasaribu",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 4100000,
+        "C2": 3,
+        "C3": 2,
+        "C4": 4,
+        "C5": 4,
+        "C6": 6,
+        "C7": 4,
+        "C8": 1,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-12",
+      "nisn": "0071230012",
+      "nama_lengkap": "Alternatif A12 (Intan Permata Aritonang)",
+      "kelas": "X-AKL",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Intan Permata Aritonang",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 1300000,
+        "C2": 2,
+        "C3": 5,
+        "C4": 5,
+        "C5": 3,
+        "C6": 6,
+        "C7": 5,
+        "C8": 3,
+        "C9": 1
+      }
+    },
+    {
+      "id": "std-bab3-13",
+      "nisn": "0071230013",
+      "nama_lengkap": "Alternatif A13 (Joko Susilo Siregar)",
+      "kelas": "XII-AKL",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Joko Susilo Siregar",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 2800000,
+        "C2": 2,
+        "C3": 2,
+        "C4": 5,
+        "C5": 4,
+        "C6": 1,
+        "C7": 1,
+        "C8": 0,
+        "C9": 0
+      }
+    },
+    {
+      "id": "std-bab3-14",
+      "nisn": "0071230014",
+      "nama_lengkap": "Alternatif A14 (Kartika Sari Sinaga)",
+      "kelas": "XI-AKL",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Kartika Sari Sinaga",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 4500000,
+        "C2": 2,
+        "C3": 4,
+        "C4": 5,
+        "C5": 1,
+        "C6": 4,
+        "C7": 4,
+        "C8": 4,
+        "C9": 1
+      }
+    },
+    {
+      "id": "std-bab3-15",
+      "nisn": "0071230015",
+      "nama_lengkap": "Alternatif A15 (Lukman Hakim Marbun)",
+      "kelas": "X-TKJ",
+      "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+      "nama_wali": "Orang Tua / Wali Lukman Hakim Marbun",
+      "alamat": "Siborongborong, Tapanuli Utara",
+      "values": {
+        "C1": 3800000,
+        "C2": 3,
+        "C3": 5,
+        "C4": 1,
+        "C5": 1,
+        "C6": 6,
+        "C7": 5,
+        "C8": 2,
+        "C9": 0
+      }
+    }
+  ],
+  "last_calculation": {
+    "calculatedAt": "2026-10-22T02:53:09.980Z",
+    "totalStudents": 15,
+    "quota": 6,
+    "passedCount": 6,
+    "backupCount": 9,
+    "quotaFulfillmentPercentage": 100,
+    "cutOffScore": 0.382866,
+    "lambda": 0.5,
+    "highestWeightCriterion": {
+      "code": "C1",
+      "name": "Penghasilan Orang Tua",
+      "weight": 0.275
+    },
+    "criteriaStats": {
+      "C1": {
+        "max": 4500000,
+        "min": 900000,
+        "type": "cost",
+        "weight": 0.275
+      },
+      "C2": {
+        "max": 4,
+        "min": 1,
+        "type": "benefit",
+        "weight": 0.158
+      },
+      "C3": {
+        "max": 5,
+        "min": 1,
+        "type": "cost",
+        "weight": 0.058
+      },
+      "C4": {
+        "max": 5,
+        "min": 1,
+        "type": "cost",
+        "weight": 0.055
+      },
+      "C5": {
+        "max": 5,
+        "min": 1,
+        "type": "benefit",
+        "weight": 0.098
+      },
+      "C6": {
+        "max": 7,
+        "min": 1,
+        "type": "benefit",
+        "weight": 0.115
+      },
+      "C7": {
+        "max": 5,
+        "min": 1,
+        "type": "cost",
+        "weight": 0.087
+      },
+      "C8": {
+        "max": 4,
+        "min": 0,
+        "type": "benefit",
+        "weight": 0.122
+      },
+      "C9": {
+        "max": 1,
+        "min": 0,
+        "type": "benefit",
+        "weight": 0.032
+      }
+    },
+    "rawMatrix": [
+      {
+        "id": "std-bab3-1",
+        "nisn": "0071230001",
+        "nama_lengkap": "Alternatif A1 (Dimas Pratama)",
+        "kelas": "X-AKL",
+        "values": {
+          "C1": 4500000,
+          "C2": 1,
+          "C3": 1,
+          "C4": 3,
+          "C5": 2,
+          "C6": 2,
+          "C7": 2,
+          "C8": 0,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-2",
+        "nisn": "0071230002",
+        "nama_lengkap": "Alternatif A2 (Budi Santoso)",
+        "kelas": "X-TKJ",
+        "values": {
+          "C1": 4200000,
+          "C2": 4,
+          "C3": 1,
+          "C4": 1,
+          "C5": 1,
+          "C6": 2,
+          "C7": 2,
+          "C8": 4,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-3",
+        "nisn": "0071230003",
+        "nama_lengkap": "Alternatif A3 (Siti Dewi Nababan)",
+        "kelas": "XI-AKL",
+        "values": {
+          "C1": 4000000,
+          "C2": 2,
+          "C3": 5,
+          "C4": 4,
+          "C5": 2,
+          "C6": 4,
+          "C7": 5,
+          "C8": 2,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-4",
+        "nisn": "0071230004",
+        "nama_lengkap": "Alternatif A4 (Rizky Sihombing)",
+        "kelas": "X-TKJ",
+        "values": {
+          "C1": 1500000,
+          "C2": 4,
+          "C3": 3,
+          "C4": 3,
+          "C5": 2,
+          "C6": 2,
+          "C7": 3,
+          "C8": 0,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-5",
+        "nisn": "0071230005",
+        "nama_lengkap": "Alternatif A5 (Ahmad Fauzi Simanjuntak)",
+        "kelas": "XII-AKL",
+        "values": {
+          "C1": 2900000,
+          "C2": 1,
+          "C3": 3,
+          "C4": 3,
+          "C5": 5,
+          "C6": 3,
+          "C7": 1,
+          "C8": 3,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-6",
+        "nisn": "0071230006",
+        "nama_lengkap": "Alternatif A6 (Nur Wulandari Hutasoit)",
+        "kelas": "XI-TKJ",
+        "values": {
+          "C1": 2900000,
+          "C2": 1,
+          "C3": 5,
+          "C4": 3,
+          "C5": 5,
+          "C6": 7,
+          "C7": 3,
+          "C8": 4,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-7",
+        "nisn": "0071230007",
+        "nama_lengkap": "Alternatif A7 (Chandra Lumbantoruan)",
+        "kelas": "X-AKL",
+        "values": {
+          "C1": 900000,
+          "C2": 1,
+          "C3": 2,
+          "C4": 3,
+          "C5": 1,
+          "C6": 7,
+          "C7": 2,
+          "C8": 0,
+          "C9": 1
+        }
+      },
+      {
+        "id": "std-bab3-8",
+        "nisn": "0071230008",
+        "nama_lengkap": "Alternatif A8 (Eka Putri Silaban)",
+        "kelas": "XI-AKL",
+        "values": {
+          "C1": 2200000,
+          "C2": 4,
+          "C3": 3,
+          "C4": 2,
+          "C5": 3,
+          "C6": 3,
+          "C7": 2,
+          "C8": 2,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-9",
+        "nisn": "0071230009",
+        "nama_lengkap": "Alternatif A9 (Fajar Hidayat Tarihoran)",
+        "kelas": "XII-TKJ",
+        "values": {
+          "C1": 4300000,
+          "C2": 2,
+          "C3": 5,
+          "C4": 2,
+          "C5": 2,
+          "C6": 4,
+          "C7": 4,
+          "C8": 2,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-10",
+        "nisn": "0071230010",
+        "nama_lengkap": "Alternatif A10 (Gita Maharani Manalu)",
+        "kelas": "X-TKJ",
+        "values": {
+          "C1": 2500000,
+          "C2": 1,
+          "C3": 2,
+          "C4": 1,
+          "C5": 3,
+          "C6": 4,
+          "C7": 3,
+          "C8": 0,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-11",
+        "nisn": "0071230011",
+        "nama_lengkap": "Alternatif A11 (Hendra Wijaya Pasaribu)",
+        "kelas": "XI-TKJ",
+        "values": {
+          "C1": 4100000,
+          "C2": 3,
+          "C3": 2,
+          "C4": 4,
+          "C5": 4,
+          "C6": 6,
+          "C7": 4,
+          "C8": 1,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-12",
+        "nisn": "0071230012",
+        "nama_lengkap": "Alternatif A12 (Intan Permata Aritonang)",
+        "kelas": "X-AKL",
+        "values": {
+          "C1": 1300000,
+          "C2": 2,
+          "C3": 5,
+          "C4": 5,
+          "C5": 3,
+          "C6": 6,
+          "C7": 5,
+          "C8": 3,
+          "C9": 1
+        }
+      },
+      {
+        "id": "std-bab3-13",
+        "nisn": "0071230013",
+        "nama_lengkap": "Alternatif A13 (Joko Susilo Siregar)",
+        "kelas": "XII-AKL",
+        "values": {
+          "C1": 2800000,
+          "C2": 2,
+          "C3": 2,
+          "C4": 5,
+          "C5": 4,
+          "C6": 1,
+          "C7": 1,
+          "C8": 0,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-14",
+        "nisn": "0071230014",
+        "nama_lengkap": "Alternatif A14 (Kartika Sari Sinaga)",
+        "kelas": "XI-AKL",
+        "values": {
+          "C1": 4500000,
+          "C2": 2,
+          "C3": 4,
+          "C4": 5,
+          "C5": 1,
+          "C6": 4,
+          "C7": 4,
+          "C8": 4,
+          "C9": 1
+        }
+      },
+      {
+        "id": "std-bab3-15",
+        "nisn": "0071230015",
+        "nama_lengkap": "Alternatif A15 (Lukman Hakim Marbun)",
+        "kelas": "X-TKJ",
+        "values": {
+          "C1": 3800000,
+          "C2": 3,
+          "C3": 5,
+          "C4": 1,
+          "C5": 1,
+          "C6": 6,
+          "C7": 5,
+          "C8": 2,
+          "C9": 0
+        }
+      }
+    ],
+    "normalizedMatrix": [
+      {
+        "id": "std-bab3-1",
+        "nisn": "0071230001",
+        "nama_lengkap": "Alternatif A1 (Dimas Pratama)",
+        "kelas": "X-AKL",
+        "values": {
+          "C1": 0.2,
+          "C2": 0.25,
+          "C3": 1,
+          "C4": 0.333333,
+          "C5": 0.4,
+          "C6": 0.285714,
+          "C7": 0.5,
+          "C8": 0,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-2",
+        "nisn": "0071230002",
+        "nama_lengkap": "Alternatif A2 (Budi Santoso)",
+        "kelas": "X-TKJ",
+        "values": {
+          "C1": 0.214286,
+          "C2": 1,
+          "C3": 1,
+          "C4": 1,
+          "C5": 0.2,
+          "C6": 0.285714,
+          "C7": 0.5,
+          "C8": 1,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-3",
+        "nisn": "0071230003",
+        "nama_lengkap": "Alternatif A3 (Siti Dewi Nababan)",
+        "kelas": "XI-AKL",
+        "values": {
+          "C1": 0.225,
+          "C2": 0.5,
+          "C3": 0.2,
+          "C4": 0.25,
+          "C5": 0.4,
+          "C6": 0.571429,
+          "C7": 0.2,
+          "C8": 0.5,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-4",
+        "nisn": "0071230004",
+        "nama_lengkap": "Alternatif A4 (Rizky Sihombing)",
+        "kelas": "X-TKJ",
+        "values": {
+          "C1": 0.6,
+          "C2": 1,
+          "C3": 0.333333,
+          "C4": 0.333333,
+          "C5": 0.4,
+          "C6": 0.285714,
+          "C7": 0.333333,
+          "C8": 0,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-5",
+        "nisn": "0071230005",
+        "nama_lengkap": "Alternatif A5 (Ahmad Fauzi Simanjuntak)",
+        "kelas": "XII-AKL",
+        "values": {
+          "C1": 0.310345,
+          "C2": 0.25,
+          "C3": 0.333333,
+          "C4": 0.333333,
+          "C5": 1,
+          "C6": 0.428571,
+          "C7": 1,
+          "C8": 0.75,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-6",
+        "nisn": "0071230006",
+        "nama_lengkap": "Alternatif A6 (Nur Wulandari Hutasoit)",
+        "kelas": "XI-TKJ",
+        "values": {
+          "C1": 0.310345,
+          "C2": 0.25,
+          "C3": 0.2,
+          "C4": 0.333333,
+          "C5": 1,
+          "C6": 1,
+          "C7": 0.333333,
+          "C8": 1,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-7",
+        "nisn": "0071230007",
+        "nama_lengkap": "Alternatif A7 (Chandra Lumbantoruan)",
+        "kelas": "X-AKL",
+        "values": {
+          "C1": 1,
+          "C2": 0.25,
+          "C3": 0.5,
+          "C4": 0.333333,
+          "C5": 0.2,
+          "C6": 1,
+          "C7": 0.5,
+          "C8": 0,
+          "C9": 1
+        }
+      },
+      {
+        "id": "std-bab3-8",
+        "nisn": "0071230008",
+        "nama_lengkap": "Alternatif A8 (Eka Putri Silaban)",
+        "kelas": "XI-AKL",
+        "values": {
+          "C1": 0.409091,
+          "C2": 1,
+          "C3": 0.333333,
+          "C4": 0.5,
+          "C5": 0.6,
+          "C6": 0.428571,
+          "C7": 0.5,
+          "C8": 0.5,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-9",
+        "nisn": "0071230009",
+        "nama_lengkap": "Alternatif A9 (Fajar Hidayat Tarihoran)",
+        "kelas": "XII-TKJ",
+        "values": {
+          "C1": 0.209302,
+          "C2": 0.5,
+          "C3": 0.2,
+          "C4": 0.5,
+          "C5": 0.4,
+          "C6": 0.571429,
+          "C7": 0.25,
+          "C8": 0.5,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-10",
+        "nisn": "0071230010",
+        "nama_lengkap": "Alternatif A10 (Gita Maharani Manalu)",
+        "kelas": "X-TKJ",
+        "values": {
+          "C1": 0.36,
+          "C2": 0.25,
+          "C3": 0.5,
+          "C4": 1,
+          "C5": 0.6,
+          "C6": 0.571429,
+          "C7": 0.333333,
+          "C8": 0,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-11",
+        "nisn": "0071230011",
+        "nama_lengkap": "Alternatif A11 (Hendra Wijaya Pasaribu)",
+        "kelas": "XI-TKJ",
+        "values": {
+          "C1": 0.219512,
+          "C2": 0.75,
+          "C3": 0.5,
+          "C4": 0.25,
+          "C5": 0.8,
+          "C6": 0.857143,
+          "C7": 0.25,
+          "C8": 0.25,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-12",
+        "nisn": "0071230012",
+        "nama_lengkap": "Alternatif A12 (Intan Permata Aritonang)",
+        "kelas": "X-AKL",
+        "values": {
+          "C1": 0.692308,
+          "C2": 0.5,
+          "C3": 0.2,
+          "C4": 0.2,
+          "C5": 0.6,
+          "C6": 0.857143,
+          "C7": 0.2,
+          "C8": 0.75,
+          "C9": 1
+        }
+      },
+      {
+        "id": "std-bab3-13",
+        "nisn": "0071230013",
+        "nama_lengkap": "Alternatif A13 (Joko Susilo Siregar)",
+        "kelas": "XII-AKL",
+        "values": {
+          "C1": 0.321429,
+          "C2": 0.5,
+          "C3": 0.5,
+          "C4": 0.2,
+          "C5": 0.8,
+          "C6": 0.142857,
+          "C7": 1,
+          "C8": 0,
+          "C9": 0
+        }
+      },
+      {
+        "id": "std-bab3-14",
+        "nisn": "0071230014",
+        "nama_lengkap": "Alternatif A14 (Kartika Sari Sinaga)",
+        "kelas": "XI-AKL",
+        "values": {
+          "C1": 0.2,
+          "C2": 0.5,
+          "C3": 0.25,
+          "C4": 0.2,
+          "C5": 0.2,
+          "C6": 0.571429,
+          "C7": 0.25,
+          "C8": 1,
+          "C9": 1
+        }
+      },
+      {
+        "id": "std-bab3-15",
+        "nisn": "0071230015",
+        "nama_lengkap": "Alternatif A15 (Lukman Hakim Marbun)",
+        "kelas": "X-TKJ",
+        "values": {
+          "C1": 0.236842,
+          "C2": 0.75,
+          "C3": 0.2,
+          "C4": 1,
+          "C5": 0.2,
+          "C6": 0.857143,
+          "C7": 0.2,
+          "C8": 0.5,
+          "C9": 0
+        }
+      }
+    ],
+    "rankings": [
+      {
+        "id": "std-bab3-12",
+        "nisn": "0071230012",
+        "nama_lengkap": "Alternatif A12 (Intan Permata Aritonang)",
+        "kelas": "X-AKL",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Intan Permata Aritonang",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 1300000,
+          "C2": 2,
+          "C3": 5,
+          "C4": 5,
+          "C5": 3,
+          "C6": 6,
+          "C7": 5,
+          "C8": 3,
+          "C9": 1
+        },
+        "normalizedValues": {
+          "C1": 0.692308,
+          "C2": 0.5,
+          "C3": 0.2,
+          "C4": 0.2,
+          "C5": 0.6,
+          "C6": 0.857143,
+          "C7": 0.2,
+          "C8": 0.75,
+          "C9": 1
+        },
+        "wsmScore": 0.590256,
+        "wpmScore": 0.529716,
+        "waspasScore": 0.559986,
+        "tieBreakerValue": 1300000,
+        "rank": 1,
+        "quotaStatus": "passed_quota",
+        "statusLabel": "Lolos Kuota (Prioritas Utama)",
+        "priorityOrder": 1
+      },
+      {
+        "id": "std-bab3-8",
+        "nisn": "0071230008",
+        "nama_lengkap": "Alternatif A8 (Eka Putri Silaban)",
+        "kelas": "XI-AKL",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Eka Putri Silaban",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 2200000,
+          "C2": 4,
+          "C3": 3,
+          "C4": 2,
+          "C5": 3,
+          "C6": 3,
+          "C7": 2,
+          "C8": 2,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.409091,
+          "C2": 1,
+          "C3": 0.333333,
+          "C4": 0.5,
+          "C5": 0.6,
+          "C6": 0.428571,
+          "C7": 0.5,
+          "C8": 0.5,
+          "C9": 0
+        },
+        "wsmScore": 0.529919,
+        "wpmScore": 0.392687,
+        "waspasScore": 0.461303,
+        "tieBreakerValue": 2200000,
+        "rank": 2,
+        "quotaStatus": "passed_quota",
+        "statusLabel": "Lolos Kuota (Prioritas Utama)",
+        "priorityOrder": 2
+      },
+      {
+        "id": "std-bab3-2",
+        "nisn": "0071230002",
+        "nama_lengkap": "Alternatif A2 (Budi Santoso)",
+        "kelas": "X-TKJ",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Budi Santoso",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 4200000,
+          "C2": 4,
+          "C3": 1,
+          "C4": 1,
+          "C5": 1,
+          "C6": 2,
+          "C7": 2,
+          "C8": 4,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.214286,
+          "C2": 1,
+          "C3": 1,
+          "C4": 1,
+          "C5": 0.2,
+          "C6": 0.285714,
+          "C7": 0.5,
+          "C8": 1,
+          "C9": 0
+        },
+        "wsmScore": 0.547886,
+        "wpmScore": 0.339443,
+        "waspasScore": 0.443664,
+        "tieBreakerValue": 4200000,
+        "rank": 3,
+        "quotaStatus": "passed_quota",
+        "statusLabel": "Lolos Kuota (Prioritas Utama)",
+        "priorityOrder": 3
+      },
+      {
+        "id": "std-bab3-6",
+        "nisn": "0071230006",
+        "nama_lengkap": "Alternatif A6 (Nur Wulandari Hutasoit)",
+        "kelas": "XI-TKJ",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Nur Wulandari Hutasoit",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 2900000,
+          "C2": 1,
+          "C3": 5,
+          "C4": 3,
+          "C5": 5,
+          "C6": 7,
+          "C7": 3,
+          "C8": 4,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.310345,
+          "C2": 0.25,
+          "C3": 0.2,
+          "C4": 0.333333,
+          "C5": 1,
+          "C6": 1,
+          "C7": 0.333333,
+          "C8": 1,
+          "C9": 0
+        },
+        "wsmScore": 0.518778,
+        "wpmScore": 0.337941,
+        "waspasScore": 0.428359,
+        "tieBreakerValue": 2900000,
+        "rank": 4,
+        "quotaStatus": "passed_quota",
+        "statusLabel": "Lolos Kuota (Prioritas Utama)",
+        "priorityOrder": 4
+      },
+      {
+        "id": "std-bab3-5",
+        "nisn": "0071230005",
+        "nama_lengkap": "Alternatif A5 (Ahmad Fauzi Simanjuntak)",
+        "kelas": "XII-AKL",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Ahmad Fauzi Simanjuntak",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 2900000,
+          "C2": 1,
+          "C3": 3,
+          "C4": 3,
+          "C5": 5,
+          "C6": 3,
+          "C7": 1,
+          "C8": 3,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.310345,
+          "C2": 0.25,
+          "C3": 0.333333,
+          "C4": 0.333333,
+          "C5": 1,
+          "C6": 0.428571,
+          "C7": 1,
+          "C8": 0.75,
+          "C9": 0
+        },
+        "wsmScore": 0.488297,
+        "wpmScore": 0.335473,
+        "waspasScore": 0.411885,
+        "tieBreakerValue": 2900000,
+        "rank": 5,
+        "quotaStatus": "passed_quota",
+        "statusLabel": "Lolos Kuota (Prioritas Utama)",
+        "priorityOrder": 5
+      },
+      {
+        "id": "std-bab3-14",
+        "nisn": "0071230014",
+        "nama_lengkap": "Alternatif A14 (Kartika Sari Sinaga)",
+        "kelas": "XI-AKL",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Kartika Sari Sinaga",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 4500000,
+          "C2": 2,
+          "C3": 4,
+          "C4": 5,
+          "C5": 1,
+          "C6": 4,
+          "C7": 4,
+          "C8": 4,
+          "C9": 1
+        },
+        "normalizedValues": {
+          "C1": 0.2,
+          "C2": 0.5,
+          "C3": 0.25,
+          "C4": 0.2,
+          "C5": 0.2,
+          "C6": 0.571429,
+          "C7": 0.25,
+          "C8": 1,
+          "C9": 1
+        },
+        "wsmScore": 0.420564,
+        "wpmScore": 0.345168,
+        "waspasScore": 0.382866,
+        "tieBreakerValue": 4500000,
+        "rank": 6,
+        "quotaStatus": "passed_quota",
+        "statusLabel": "Lolos Kuota (Prioritas Utama)",
+        "priorityOrder": 6
+      },
+      {
+        "id": "std-bab3-7",
+        "nisn": "0071230007",
+        "nama_lengkap": "Alternatif A7 (Chandra Lumbantoruan)",
+        "kelas": "X-AKL",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Chandra Lumbantoruan",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 900000,
+          "C2": 1,
+          "C3": 2,
+          "C4": 3,
+          "C5": 1,
+          "C6": 7,
+          "C7": 2,
+          "C8": 0,
+          "C9": 1
+        },
+        "normalizedValues": {
+          "C1": 1,
+          "C2": 0.25,
+          "C3": 0.5,
+          "C4": 0.333333,
+          "C5": 0.2,
+          "C6": 1,
+          "C7": 0.5,
+          "C8": 0,
+          "C9": 1
+        },
+        "wsmScore": 0.571933,
+        "wpmScore": 0.189882,
+        "waspasScore": 0.380908,
+        "tieBreakerValue": 900000,
+        "rank": 7,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #1",
+        "priorityOrder": 1
+      },
+      {
+        "id": "std-bab3-11",
+        "nisn": "0071230011",
+        "nama_lengkap": "Alternatif A11 (Hendra Wijaya Pasaribu)",
+        "kelas": "XI-TKJ",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Hendra Wijaya Pasaribu",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 4100000,
+          "C2": 3,
+          "C3": 2,
+          "C4": 4,
+          "C5": 4,
+          "C6": 6,
+          "C7": 4,
+          "C8": 1,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.219512,
+          "C2": 0.75,
+          "C3": 0.5,
+          "C4": 0.25,
+          "C5": 0.8,
+          "C6": 0.857143,
+          "C7": 0.25,
+          "C8": 0.25,
+          "C9": 0
+        },
+        "wsmScore": 0.450837,
+        "wpmScore": 0.300304,
+        "waspasScore": 0.375571,
+        "tieBreakerValue": 4100000,
+        "rank": 8,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #2",
+        "priorityOrder": 2
+      },
+      {
+        "id": "std-bab3-15",
+        "nisn": "0071230015",
+        "nama_lengkap": "Alternatif A15 (Lukman Hakim Marbun)",
+        "kelas": "X-TKJ",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Lukman Hakim Marbun",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 3800000,
+          "C2": 3,
+          "C3": 5,
+          "C4": 1,
+          "C5": 1,
+          "C6": 6,
+          "C7": 5,
+          "C8": 2,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.236842,
+          "C2": 0.75,
+          "C3": 0.2,
+          "C4": 1,
+          "C5": 0.2,
+          "C6": 0.857143,
+          "C7": 0.2,
+          "C8": 0.5,
+          "C9": 0
+        },
+        "wsmScore": 0.446803,
+        "wpmScore": 0.292389,
+        "waspasScore": 0.369596,
+        "tieBreakerValue": 3800000,
+        "rank": 9,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #3",
+        "priorityOrder": 3
+      },
+      {
+        "id": "std-bab3-9",
+        "nisn": "0071230009",
+        "nama_lengkap": "Alternatif A9 (Fajar Hidayat Tarihoran)",
+        "kelas": "XII-TKJ",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Fajar Hidayat Tarihoran",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 4300000,
+          "C2": 2,
+          "C3": 5,
+          "C4": 2,
+          "C5": 2,
+          "C6": 4,
+          "C7": 4,
+          "C8": 2,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.209302,
+          "C2": 0.5,
+          "C3": 0.2,
+          "C4": 0.5,
+          "C5": 0.4,
+          "C6": 0.571429,
+          "C7": 0.25,
+          "C8": 0.5,
+          "C9": 0
+        },
+        "wsmScore": 0.363322,
+        "wpmScore": 0.265767,
+        "waspasScore": 0.314545,
+        "tieBreakerValue": 4300000,
+        "rank": 10,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #4",
+        "priorityOrder": 4
+      },
+      {
+        "id": "std-bab3-3",
+        "nisn": "0071230003",
+        "nama_lengkap": "Alternatif A3 (Siti Dewi Nababan)",
+        "kelas": "XI-AKL",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Siti Dewi Nababan",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 4000000,
+          "C2": 2,
+          "C3": 5,
+          "C4": 4,
+          "C5": 2,
+          "C6": 4,
+          "C7": 5,
+          "C8": 2,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.225,
+          "C2": 0.5,
+          "C3": 0.2,
+          "C4": 0.25,
+          "C5": 0.4,
+          "C6": 0.571429,
+          "C7": 0.2,
+          "C8": 0.5,
+          "C9": 0
+        },
+        "wsmScore": 0.349539,
+        "wpmScore": 0.255947,
+        "waspasScore": 0.302743,
+        "tieBreakerValue": 4000000,
+        "rank": 11,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #5",
+        "priorityOrder": 5
+      },
+      {
+        "id": "std-bab3-4",
+        "nisn": "0071230004",
+        "nama_lengkap": "Alternatif A4 (Rizky Sihombing)",
+        "kelas": "X-TKJ",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Rizky Sihombing",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 1500000,
+          "C2": 4,
+          "C3": 3,
+          "C4": 3,
+          "C5": 2,
+          "C6": 2,
+          "C7": 3,
+          "C8": 0,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.6,
+          "C2": 1,
+          "C3": 0.333333,
+          "C4": 0.333333,
+          "C5": 0.4,
+          "C6": 0.285714,
+          "C7": 0.333333,
+          "C8": 0,
+          "C9": 0
+        },
+        "wsmScore": 0.461724,
+        "wpmScore": 0.13366,
+        "waspasScore": 0.297692,
+        "tieBreakerValue": 1500000,
+        "rank": 12,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #6",
+        "priorityOrder": 6
+      },
+      {
+        "id": "std-bab3-13",
+        "nisn": "0071230013",
+        "nama_lengkap": "Alternatif A13 (Joko Susilo Siregar)",
+        "kelas": "XII-AKL",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Joko Susilo Siregar",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 2800000,
+          "C2": 2,
+          "C3": 2,
+          "C4": 5,
+          "C5": 4,
+          "C6": 1,
+          "C7": 1,
+          "C8": 0,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.321429,
+          "C2": 0.5,
+          "C3": 0.5,
+          "C4": 0.2,
+          "C5": 0.8,
+          "C6": 0.142857,
+          "C7": 1,
+          "C8": 0,
+          "C9": 0
+        },
+        "wsmScore": 0.389222,
+        "wpmScore": 0.109219,
+        "waspasScore": 0.24922,
+        "tieBreakerValue": 2800000,
+        "rank": 13,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #7",
+        "priorityOrder": 7
+      },
+      {
+        "id": "std-bab3-10",
+        "nisn": "0071230010",
+        "nama_lengkap": "Alternatif A10 (Gita Maharani Manalu)",
+        "kelas": "X-TKJ",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Gita Maharani Manalu",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 2500000,
+          "C2": 1,
+          "C3": 2,
+          "C4": 1,
+          "C5": 3,
+          "C6": 4,
+          "C7": 3,
+          "C8": 0,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.36,
+          "C2": 0.25,
+          "C3": 0.5,
+          "C4": 1,
+          "C5": 0.6,
+          "C6": 0.571429,
+          "C7": 0.333333,
+          "C8": 0,
+          "C9": 0
+        },
+        "wsmScore": 0.376014,
+        "wpmScore": 0.11434,
+        "waspasScore": 0.245177,
+        "tieBreakerValue": 2500000,
+        "rank": 14,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #8",
+        "priorityOrder": 8
+      },
+      {
+        "id": "std-bab3-1",
+        "nisn": "0071230001",
+        "nama_lengkap": "Alternatif A1 (Dimas Pratama)",
+        "kelas": "X-AKL",
+        "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
+        "nama_wali": "Orang Tua / Wali Dimas Pratama",
+        "alamat": "Siborongborong, Tapanuli Utara",
+        "rawValues": {
+          "C1": 4500000,
+          "C2": 1,
+          "C3": 1,
+          "C4": 3,
+          "C5": 2,
+          "C6": 2,
+          "C7": 2,
+          "C8": 0,
+          "C9": 0
+        },
+        "normalizedValues": {
+          "C1": 0.2,
+          "C2": 0.25,
+          "C3": 1,
+          "C4": 0.333333,
+          "C5": 0.4,
+          "C6": 0.285714,
+          "C7": 0.5,
+          "C8": 0,
+          "C9": 0
+        },
+        "wsmScore": 0.28639,
+        "wpmScore": 0.087632,
+        "waspasScore": 0.187011,
+        "tieBreakerValue": 4500000,
+        "rank": 15,
+        "quotaStatus": "backup_priority",
+        "statusLabel": "Cadangan Prioritas #9",
+        "priorityOrder": 9
+      }
+    ]
+  },
+  "demo_dataset_type": "bab3_9crit"
+}

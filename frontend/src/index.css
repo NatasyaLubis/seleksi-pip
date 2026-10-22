@@ -1,0 +1,844 @@
+:root {
+  --font-sans: 'Instrument Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --font-heading: 'Instrument Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadcn UI Color System - Light Mode (Soft Educational Theme) */
+  --background: 210 40% 98%;
+  --foreground: 222.2 84% 4.9%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+
+  /* Soft Educational Blue (Nyaman & Terbaca) */
+  --primary: 216 75% 49%;
+  --primary-foreground: 210 40% 98%;
+
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --accent: 210 40% 94%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 40% 98%;
+
+  --success: 142.1 70.6% 40%;
+  --success-foreground: 210 40% 98%;
+  --success-light: 142.1 76.2% 94.3%;
+
+  --warning: 38 92% 50%;
+  --warning-foreground: 48 96% 15%;
+  --warning-light: 48 96% 95%;
+
+  --border: 214.3 31.8% 90%;
+  --input: 214.3 31.8% 88%;
+  --ring: 216 75% 49%;
+
+  --sidebar-bg: 0 0% 100%;
+  --sidebar-border: 214.3 31.8% 90%;
+  --sidebar-foreground: 222.2 84% 4.9%;
+
+  --radius: 0.625rem;
+}
+
+/* Shadcn UI Color System - Dark Mode (Deep Midnight Slate: --background: 220 20% 5%) */
+.dark {
+  --background: 220 20% 5%;            /* #0a0d13 - Deep Midnight Slate sesuai permintaan */
+  --foreground: 215 25% 92%;           /* #e2e8f0 - Soft off-white tanpa silau */
+
+  --card: 220 18% 9.5%;                /* #13161f - Permukaan kartu terangkat dengan kontras lembut di atas bg 5% */
+  --card-foreground: 215 25% 92%;
+
+  --popover: 220 18% 10.5%;             /* #151923 */
+  --popover-foreground: 215 25% 92%;
+
+  --primary: 214 74% 63%;              /* #5a97f7 - Biru soft sky-slate, teduh dan menyatu alami */
+  --primary-foreground: 220 25% 10%;
+
+  --secondary: 220 16% 13%;            /* #1b202c */
+  --secondary-foreground: 215 25% 92%;
+
+  --muted: 220 16% 12%;                /* #191e29 */
+  --muted-foreground: 218 16% 68%;     /* #96a5bc - Teks sekunder dengan kontras WCAG AA yang tajam */
+
+  --accent: 220 18% 14%;               /* #1c2230 */
+  --accent-foreground: 215 25% 96%;
+
+  --destructive: 0 70% 56%;
+  --destructive-foreground: 210 40% 98%;
+
+  --success: 142.1 65% 45%;            /* Emerald nyaman */
+  --success-foreground: 210 40% 98%;
+  --success-light: 144.9 45% 14%;
+
+  --warning: 38 92% 52%;               /* Amber hangat */
+  --warning-foreground: 48 96% 12%;
+  --warning-light: 48 50% 14%;
+
+  --border: 220 16% 14%;               /* #1e2330 - Batas kartu & tabel tegas tanpa silau */
+  --input: 220 16% 13%;
+  --ring: 214 74% 63%;
+
+  --sidebar-bg: 220 20% 7%;            /* #0e1118 - Kedalaman sidebar selaras */
+  --sidebar-border: 220 16% 14%;       /* #1e2330 */
+  --sidebar-foreground: 215 25% 92%;
+}
+
+/* Penyesuaian Otomatis: System prefers-color-scheme saat belum ada override manual .light */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --background: 220 20% 5%;
+    --foreground: 215 25% 92%;
+    --card: 220 18% 9.5%;
+    --card-foreground: 215 25% 92%;
+    --popover: 220 18% 10.5%;
+    --popover-foreground: 215 25% 92%;
+    --primary: 214 74% 63%;
+    --primary-foreground: 220 25% 10%;
+    --secondary: 220 16% 13%;
+    --secondary-foreground: 215 25% 92%;
+    --muted: 220 16% 12%;
+    --muted-foreground: 218 16% 68%;
+    --accent: 220 18% 14%;
+    --accent-foreground: 215 25% 96%;
+    --destructive: 0 70% 56%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142.1 65% 45%;
+    --success-foreground: 210 40% 98%;
+    --success-light: 144.9 45% 14%;
+    --warning: 38 92% 52%;
+    --warning-foreground: 48 96% 12%;
+    --warning-light: 48 50% 14%;
+    --border: 220 16% 14%;
+    --input: 220 16% 13%;
+    --ring: 217 91% 62%;
+    --sidebar-bg: 220 20% 7%;
+    --sidebar-border: 220 16% 14%;
+    --sidebar-foreground: 215 25% 92%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+#beranda,
+#fitur,
+#manfaat,
+#metode,
+#simulasi,
+#tentang,
+#kontak {
+  scroll-margin-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
+
+/* Layout System: Left Sidebar + Main Content */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  background-color: hsl(var(--sidebar-bg));
+  border-right: 1px solid hsl(var(--sidebar-border));
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 40;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+.mobile-topbar {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background-color: hsl(var(--card));
+  border-bottom: 1px solid hsl(var(--border));
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 35;
+}
+
+.app-content-body {
+  flex: 1;
+  padding: 24px 28px;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (max-width: 960px) {
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .app-sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  .mobile-topbar {
+    display: flex;
+  }
+
+  .sidebar-overlay.active {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-content-body {
+    padding: 16px 12px !important;
+  }
+
+  .card-header,
+  .card-body {
+    padding: 14px 16px;
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .modal-content {
+    max-height: 94vh;
+  }
+
+  .modal-header {
+    padding: 12px 16px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+
+  .modal-footer {
+    padding: 12px 16px;
+  }
+}
+
+/* Shadcn Button System */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover:not(:disabled) {
+  filter: brightness(0.92);
+}
+
+.btn-secondary {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-color: hsl(var(--border));
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: hsl(var(--accent));
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+.btn-outline:hover:not(:disabled) {
+  background-color: hsl(var(--accent));
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: hsl(var(--muted-foreground));
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--foreground));
+}
+
+.btn-danger {
+  background-color: hsl(var(--destructive));
+  color: hsl(var(--destructive-foreground));
+}
+
+.btn-danger:hover:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 0.8125rem;
+}
+
+/* Shadcn Card System */
+.card {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.card-header {
+  padding: 18px 22px;
+  border-bottom: 1px solid hsl(var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: hsl(var(--foreground));
+}
+
+.card-body {
+  padding: 22px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.badge-benefit {
+  background-color: hsl(var(--primary) / 0.1);
+  color: hsl(var(--primary));
+  border-color: hsl(var(--primary) / 0.2);
+}
+
+.badge-cost {
+  background-color: hsl(var(--warning-light));
+  color: hsl(var(--warning-foreground));
+  border-color: hsl(var(--warning) / 0.3);
+}
+
+.badge-passed {
+  background-color: hsl(var(--success-light));
+  color: hsl(var(--success));
+  border-color: hsl(var(--success) / 0.3);
+}
+
+.badge-backup {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  border-color: hsl(var(--border));
+}
+
+.badge-neutral {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  border-color: hsl(var(--border));
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  margin-bottom: 6px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: hsl(var(--ring));
+  box-shadow: 0 0 0 2px hsl(var(--ring) / 0.18);
+}
+
+/* Table System */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border));
+  background-color: hsl(var(--card));
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.data-table th {
+  background-color: hsl(var(--muted) / 0.5);
+  color: hsl(var(--muted-foreground));
+  font-weight: 600;
+  padding: 8px 12px;
+  border-bottom: 1px solid hsl(var(--border));
+  white-space: nowrap;
+}
+
+.data-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid hsl(var(--border) / 0.6);
+  color: hsl(var(--foreground));
+  vertical-align: middle;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table tr:hover td {
+  background-color: hsl(var(--muted) / 0.4);
+}
+
+.data-table tr.row-passed td {
+  background-color: hsl(var(--success-light) / 0.35);
+}
+
+.data-table tr.row-passed:hover td {
+  background-color: hsl(var(--success-light) / 0.55);
+}
+
+.data-table tr.row-backup td {
+  background-color: hsl(var(--card));
+}
+
+.data-table tr.row-backup:hover td {
+  background-color: hsl(var(--muted) / 0.4);
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+/* Dark Mode Specific Contrast & Comfort Tuning */
+.dark .badge-benefit {
+  background-color: hsl(var(--primary) / 0.16);
+  color: #60a5fa;
+  border-color: hsl(var(--primary) / 0.35);
+}
+
+.dark .badge-cost {
+  background-color: hsl(var(--warning) / 0.16);
+  color: #fbbf24;
+  border-color: hsl(var(--warning) / 0.35);
+}
+
+.dark .badge-passed {
+  background-color: hsl(var(--success) / 0.16);
+  color: #34d399;
+  border-color: hsl(var(--success) / 0.35);
+}
+
+.dark .badge-backup,
+.dark .badge-neutral {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+  border-color: hsl(var(--border));
+}
+
+.dark .data-table th {
+  background-color: hsl(var(--muted) / 0.7);
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.dark .data-table td {
+  border-bottom: 1px solid hsl(var(--border) / 0.7);
+}
+
+.dark .data-table tr:hover td {
+  background-color: hsl(var(--accent) / 0.5);
+}
+
+.dark .data-table tr.row-passed td {
+  background-color: hsl(142 65% 45% / 0.08);
+}
+
+.dark .data-table tr.row-passed:hover td {
+  background-color: hsl(142 65% 45% / 0.16);
+}
+
+.dark .modal-overlay {
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+.modal-content {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: modalIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-content.modal-lg {
+  max-width: 880px;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes toastInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  padding: 16px 22px;
+  border-bottom: 1px solid hsl(var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-body {
+  padding: 22px;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  padding: 14px 22px;
+  border-top: 1px solid hsl(var(--border));
+  background-color: hsl(var(--muted) / 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.code-num {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: hsl(var(--primary));
+}
+
+/* Print Styling */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .app-sidebar,
+  .mobile-topbar,
+  .no-print {
+    display: none !important;
+  }
+
+  .app-main {
+    padding: 0 !important;
+  }
+
+  .card {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Landing Page Responsive Helpers */
+@media (max-width: 840px) {
+  .landing-nav-links {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   LANDING PAGE MICRO-INTERACTIONS & HOVER EFFECTS
+   ========================================================================== */
+
+/* Interactive feature & benefit cards */
+.interactive-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
+  will-change: transform, box-shadow;
+  position: relative;
+}
+
+.interactive-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 32px -8px rgba(37, 99, 235, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+  border-color: hsl(var(--primary) / 0.45) !important;
+}
+
+.interactive-card:hover .card-icon-bubble {
+  transform: scale(1.1) rotate(-3deg);
+  background-color: hsl(var(--primary) / 0.18) !important;
+  box-shadow: 0 6px 16px -2px rgba(37, 99, 235, 0.25);
+}
+
+.card-icon-bubble {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background-color 0.2s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Method Step Cards Hover */
+.method-step-card {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.25s ease;
+}
+
+.method-step-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px -10px hsl(var(--primary) / 0.18);
+  border-color: hsl(var(--primary)) !important;
+}
+
+.method-step-card:hover .step-badge {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 5px hsl(var(--primary) / 0.2);
+}
+
+.step-badge {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+/* Interactive Mockup Pills & Rows */
+.mockup-stat-pill {
+  transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.mockup-stat-pill:hover {
+  transform: translateY(-2px);
+  border-color: hsl(var(--primary) / 0.5) !important;
+  background-color: hsl(var(--card)) !important;
+}
+
+.mockup-rank-row {
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.mockup-rank-row:hover {
+  transform: translateX(4px);
+  border-color: hsl(var(--primary) / 0.4) !important;
+  background-color: hsl(var(--primary) / 0.05) !important;
+}
+
+/* Glow Pill & Button hover effects */
+.btn-hero-primary {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.dark .btn-hero-primary {
+  background: linear-gradient(135deg, hsl(214 74% 58%), hsl(214 66% 48%)) !important;
+  border: 1px solid hsl(214 80% 70% / 0.25) !important;
+  box-shadow: 0 4px 14px rgba(70, 135, 235, 0.22) !important;
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -4px hsl(var(--primary) / 0.3) !important;
+  filter: brightness(1.04);
+}
+
+.btn-hero-primary:active {
+  transform: translateY(0);
+}
+
+.btn-hero-outline {
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-hero-outline:hover {
+  transform: translateY(-2px);
+  border-color: hsl(var(--primary)) !important;
+  background-color: hsl(var(--primary) / 0.08) !important;
+}
+
+/* Benefit Column Hover */
+.benefit-col {
+  transition: transform 0.25s ease;
+}
+
+.benefit-col:hover {
+  transform: translateY(-6px);
+}
+
+.benefit-col:hover .benefit-icon-ring {
+  transform: scale(1.12);
+  box-shadow: 0 8px 20px -4px rgba(37, 99, 235, 0.25);
+}
+
+.benefit-icon-ring {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+/* Precise Scroll Landing for Landing Page Sections */
+section[id] {
+  scroll-margin-top: 86px;
+}
