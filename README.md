@@ -143,7 +143,8 @@ Sistem PIP/
 │   └── vite.config.js
 │
 ├── kriteria dan data siswa.md        # Dokumen acuan riset proposal Bab 3
-├── start_sistem_pip.bat             # Skrip otomatis untuk menjalankan sistem sekali klik
+├── run.py                           # Runner otomatis cross-platform (Mac, Windows, Linux)
+├── start_sistem_pip.bat             # Skrip batch peluncur sistem (Windows)
 └── README.md
 ```
 
@@ -151,16 +152,35 @@ Sistem PIP/
 
 ## 5. Cara Menjalankan Aplikasi
 
-### Opsi A: Jalankan Sekali Klik (Rekomendasi untuk Windows)
+### Opsi A: Satu Perintah Otomatis via Python (Sangat Direkomendasikan: Mac, Windows, Linux)
+Cukup jalankan satu perintah di root direktori proyek:
+```bash
+python run.py
+```
+*Atau di macOS / Linux:*
+```bash
+python3 run.py
+```
+
+**Kelebihan skrip `run.py`:**
+1. **Pemeriksaan Lingkungan Otomatis:** Mengecek ketersediaan `node` dan `npm`.
+2. **Auto-Install Dependencies:** Otomatis menjalankan `npm install` jika `node_modules` belum ada di backend maupun frontend.
+3. **Health-Check Terintegrasi:** Menunggu dan memverifikasi backend (`/api/health`) dan frontend sampai benar-benar siap menerima koneksi sebelum membuka browser.
+4. **Auto-Launch Browser:** Otomatis meluncurkan browser default ke alamat frontend yang aktif.
+5. **Penghentian Bersih (*Clean Process Termination*):** Tekan `Ctrl + C` di terminal, seluruh *process tree* (backend dan frontend) akan dimatikan secara bersih tanpa meninggalkan *orphan process* yang mengunci port di Windows maupun Mac.
+
+---
+
+### Opsi B: Jalankan Sekali Klik via Batch (Khusus Windows)
 Cukup klik dua kali file:
 ```cmd
 start_sistem_pip.bat
 ```
-Skrip ini akan secara otomatis membuka jendela server backend (Port 5000), antarmuka frontend (Port 5174/3000), dan meluncurkan browser.
+Skrip batch ini akan membuka jendela terminal untuk server backend (Port 5000) dan antarmuka frontend (Port 5174/3000) serta membuka browser secara otomatis.
 
 ---
 
-### Opsi B: Menjalankan Secara Manual lewat Terminal
+### Opsi C: Menjalankan Secara Manual lewat Terminal Terpisah
 
 #### 1. Menjalankan Backend
 Buka terminal baru di folder proyek:

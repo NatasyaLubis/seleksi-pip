@@ -30,4 +30,7 @@ Thumbs.db
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
