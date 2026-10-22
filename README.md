@@ -15,61 +15,66 @@ Sistem ini memadukan dua metode pengambilan keputusan multikriteria (*Multi-Crit
 
 ---
 
-## 2. Fitur-Fitur Utama Sistem
+## 2. Fitur Utama Sistem
 
-### A. Arsitektur Dual-Mode (Mode Live vs Mode Demo)
-- **Mode Live (Sistem Riil / Input Manual):**
-  - Diakses melalui tombol **Mulai Sekarang** atau **Login Sistem**.
-  - Menggunakan basis data terpisah ([`backend/data/database_live.json`](backend/data/database_live.json)) yang **bersih tanpa data bawaan** (0 kriteria, 0 siswa, 0 penilai).
-  - Seluruh data yang diinput pengguna **tersimpan permanen di hard disk** dan tidak dapat terhapus kecuali dihapus secara manual oleh pengguna.
-  - Tombol simulasi seperti *Reset Data Awal* dan *Isi Otomatis 120 Data Contoh* otomatis disembunyikan.
-- **Mode Demo (Lihat Demo Operator):**
-  - Diakses langsung dalam satu klik melalui tombol **Lihat Demo (Operator)**.
-  - Menggunakan basis data simulasi terpisah ([`backend/data/database_demo.json`](backend/data/database_demo.json)) untuk keperluan presentasi, demonstrasi sidang, dan evaluasi pengujian.
+*Dirancang khusus untuk mendukung operasional sekolah dalam menentukan penerima bantuan PIP secara cepat, transparan, dan dapat dipertanggungjawabkan.*
 
-### B. Fitur Ganti Dataset Demo (Dataset Proposal Bab 3 vs Dataset 120 Siswa)
-Pengguna dapat beralih dataset secara instan di dalam Mode Demo tanpa menghilangkan data lainnya:
-1. **Dataset Proposal Bab 3 (9 Kriteria, 15 Siswa):**
-   - **9 Kriteria Seleksi Lengkap:**
-     - `C1`: Penghasilan Orang Tua (Cost, Rp, Bobot: 0,2750)
-     - `C2`: Status Desil DTKS (Benefit, Skala 1–5, Bobot: 0,1580)
-     - `C3`: Pekerjaan Ayah (Cost, Skala 1–5, Bobot: 0,0580)
-     - `C4`: Pekerjaan Ibu (Cost, Skala 1–5, Bobot: 0,0550)
-     - `C5`: Status Siswa (Benefit, Skala 1–5, Bobot: 0,0980)
-     - `C6`: Jumlah Tanggungan Keluarga (Benefit, Orang, Bobot: 0,1150)
-     - `C7`: Status Tempat Tinggal (Cost, Skala 1–5, Bobot: 0,0870)
-     - `C8`: Kepemilikan KIP/KKS/PKH/SKTM (Benefit, Skor/Jumlah, Bobot: 0,1220)
-     - `C9`: Korban Bencana Alam (Benefit, Ya/Tidak, Bobot: 0,0320)
-   - **3 Penilai Resmi (Expert Decision Makers):**
-     - Sarmawaty Simanjuntak (Kepala Sekolah)
-     - Juan Peron Lumbantoruan (Wakil Kepala Sekolah)
-     - Lastri Sihombing (Bidang Kesiswaan)
-     - Rasio Konsistensi: $CR = 0,0118 \le 0,10$ (**Sangat Konsisten**)
-   - **15 Siswa Alternatif (A1–A15):** Hasil kalkulasi WASPAS identik 100% dengan dokumen proposal Bab 3, di mana Alternatif A12 menempati **Peringkat 1 ($Q = 0,5600$)**.
-2. **Dataset Riset Bawaan (6 Kriteria, 120 Siswa):**
-   - Berisi 120 sampel siswa dengan 6 kriteria untuk simulasi skala besar.
+### A. 7 Menu Navigasi Utama Sistem
 
-### C. Landing Page Edukatif & Interaktif
-- Beranda elegan bergaya modern (*clean educational typography* menggunakan Google Fonts **Instrument Sans** & **Instrument Serif**).
-- Dilengkapi **Simulator Kuota Interaktif** langsung di halaman depan.
-- Pratinjau jendela antarmuka (*Mockup Browser Window*) sistem riil.
-- Infografis panduan alur seleksi bantuan PIP tingkat sekolah.
-- Form konsultasi dan pemaparan metodologi BWM–WASPAS.
+1. **Dashboard Sistem (`DashboardView`)**
+   - Ringkasan metrik kuota beasiswa sekolah secara *real-time* (total kuota, siswa terpilih, persentase pemenuhan kuota, dan sisa kuota).
+   - Panduan alur kerja SPK interaktif 5 langkah terpadu (Kriteria $\rightarrow$ Pembobotan BWM $\rightarrow$ Input Siswa $\rightarrow$ Hitung WASPAS $\rightarrow$ Cetak Laporan).
+   - Grafik distribusi capaian nilai preferensi dan pemenuhan kuota.
 
-### D. Manajemen Data Siswa & Mesin Validasi Excel
-- Tabel data responsif dengan pagination dan pencarian multi-kolom instan.
-- **Import Excel / CSV:** Fitur unduh template dinamis sesuai kriteria aktif, pratinjau data sebelum disimpan, validasi tipe data otomatis, serta deteksi NISN ganda.
-- Ekspor seluruh laporan hasil seleksi ke format Microsoft Excel (`.xlsx`).
+2. **Kelola Kriteria & Subkriteria (`CriteriaView`)**
+   - Kelola kriteria, subkriteria, tipe orientasi (**Benefit** / **Cost**), dan skala penilaian ekonomi siswa sesuai regulasi terbaru.
+   - Penanganan nilai numerik riil (Rupiah, VA, Orang) maupun nilai kualitatif yang otomatis dikonversi ke skala angka terstandarisasi.
+   - Proteksi matematis pencegahan pembagian dengan nol (*division by zero safe*) pada kriteria *Cost*.
 
-### E. Cetak Berita Acara Resmi
-- Format cetak Berita Acara penetapan penerima PIP sesuai standar tata naskah dinas sekolah.
-- Dilengkapi kop surat resmi SMKS Dharma Bhakti Walter Manalu Siborongborong, tanggal sidang, daftar siswa lolos kuota, dan kolom tanda tangan 3 pejabat pengambil keputusan.
+3. **Pembobotan BWM Multi-Pakar (`BwmView`)**
+   - Tentukan bobot kriteria menggunakan metode **Best-Worst Method (BWM)** secara konsisten dengan perbandingan *pairwise* yang jauh lebih efisien (*Best-to-Others* dan *Others-to-Worst*).
+   - Penyelesaian model optimasi pemrograman linear (*minimax*) otomatis untuk mendapatkan bobot optimal ($w_j^*$) dan mengukur rasio konsistensi ($CR \le 0.10$).
+   - Agregasi konsensus multi-penilai kelompok (*Group Decision Making*) menggunakan **Rata-rata Geometrik (*Geometric Mean*)**.
 
-### F. Keamanan Tingkat Enterprise
-- **Autentikasi JWT Bearer:** Token sesi terenkripsi dengan batas waktu kedaluwarsa.
-- **Enkripsi Bcrypt:** Password di-hash menggunakan *salt rounds* (10 rounds).
-- **Proteksi Brute-Force Rate Limiting:** Pembatasan frekuensi percobaan login pada endpoint auth.
-- **HTTP Security Headers (Helmet):** Proteksi terhadap *Cross-Site Scripting (XSS)*, *MIME sniffing*, dan *clickjacking*.
+4. **Kelola Data Siswa (`StudentsView`)**
+   - Input, edit, dan kelola data calon penerima PIP secara mudah dan terstruktur dalam tabel interaktif dengan pencarian instan dan paginasi.
+   - **Mesin Impor & Ekspor Excel Massal:** Dilengkapi unduh template dinamis, validasi data otomatis (*pre-import validation*), serta proteksi deteksi NISN ganda sebelum data disimpan ke database.
+
+5. **Perhitungan WASPAS (`WaspasView`)**
+   - Lakukan perankingan secara otomatis mengombinasikan model penjumlahan terbobot (**WSM** / $Q_1$) dan model perkalian terbobot (**WPM** / $Q_2$).
+   - Dilengkapi aturan *Tie-breaker* objektif berdasarkan nilai kriteria berbobot tertinggi jika terjadi kesamaan nilai preferensi akhir.
+   - Tab transparansi komputasi lengkap: Matriks Data Awal ($X$), Matriks Ternormalisasi ($R$), serta Rincian Skor $Q_1$, $Q_2$, dan $Q$.
+
+6. **Analisis Sensitivitas & Simulasi Kuota (`WaspasView`)**
+   - Uji stabilitas dan ketahanan (*robustness*) hasil perankingan dengan berbagai skenario variasi parameter koefisien penyeimbang lambda ($\lambda \in [0, 1]$ dengan interval 0,1).
+   - Simulasi batas kuota penerima secara instan yang otomatis membagi siswa menjadi **Prioritas Utama (Lolos Kuota)** dan **Cadangan Prioritas**.
+
+7. **Laporan & Cetak Berita Acara Resmi (`ReportView`)**
+   - Cetak dokumen resmi Berita Acara penetapan usulan penerima PIP siap tanda tangan sesuai standar tata naskah dinas (Kop Sekolah, nomor surat, tanggal sidang, daftar siswa lolos, dan kolom pengesahan 3 pejabat).
+   - Ekspor tabel nominasi dan lembar kerja perankingan ke format file Excel (`.xlsx`) resmi dinas.
+
+---
+
+### B. Fitur Tambahan Sistem
+
+1. **Kelola Pengguna & Hak Akses (`UsersView`)**
+   - Pengaturan akun multi-peran dengan hak akses proporsional: **Operator PIP** (kelola data & teknis) dan **Kepala Sekolah / Tim Ahli** (pembobotan BWM & pengesahan Berita Acara).
+   - Keamanan kata sandi terenkripsi Bcrypt (10 *salt rounds*) dan autentikasi token JWT.
+
+2. **Arsitektur Dual-Mode (Mode Live vs Mode Demo)**
+   - **Mode Live (Input Manual Mandiri):** Basis data bersih permanen ([`database_live.json`](backend/data/database_live.json)) tanpa data simulasi awal, di mana setiap data yang diinput pengguna tersimpan aman di disk selamanya dan bebas dari tombol reset demo.
+   - **Mode Demo (Lihat Demo Operator):** Akses instan ke data simulasi lengkap untuk demonstrasi sidang, uji coba, dan evaluasi.
+
+3. **Pengalih Ganda Dataset Demo (*Dual-Dataset Switcher*)**
+   - Fitur sekali klik di Mode Demo untuk beralih antara:
+     - **Dataset Proposal Bab 3:** 9 Kriteria (C1–C9), 3 Penilai (Sarmawaty/Juan/Lastri), 15 Siswa Alternatif (A1–A15), $CR = 0,0118$, Juara 1 Alternatif A12 ($Q = 0,5600$).
+     - **Dataset Bawaan Riset:** 6 Kriteria dengan 120 sampel data siswa.
+
+4. **Landing Page Edukatif Interaktif (`LandingPage`)**
+   - Halaman depan beranda edukatif dengan mini-simulator kuota langsung, infografis alur PIP, pratinjau antarmuka sistem, dan formulir konsultasi.
+
+5. **Mode Tampilan Gelap & Terang (Dark / Light Theme)**
+   - Sakelar tema visual dinamis dengan palet warna HSL modern yang tersimpan otomatis di penyimpanan lokal browser.
 
 ---
 
