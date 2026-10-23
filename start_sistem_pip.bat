@@ -7,7 +7,7 @@ echo =====================================================================
 echo.
 
 echo [1/2] Menjalankan Server Backend (Node.js Express)...
-start "Backend Server (Port 5000)" cmd /k "cd /d "%~dp0backend" && node server.js"
+start "Backend Server (Port 5001)" cmd /k "cd /d "%~dp0backend" && node server.js"
 
 timeout /t 2 /nobreak >nul
 
@@ -23,6 +23,6 @@ start http://localhost:5174
 echo =====================================================================
 echo   Aplikasi berhasil dijalankan!
 echo   Frontend : http://localhost:5174
-echo   Backend  : http://localhost:5000/api
+echo   Backend  : http://localhost:5001/api
 echo =====================================================================
 pause

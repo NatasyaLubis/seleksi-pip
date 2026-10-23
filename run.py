@@ -8,7 +8,7 @@
   1. Memeriksa ketersediaan Node.js dan npm di sistem.
   2. Memeriksa dan menginstal node_modules (backend & frontend) bila belum ada
      atau jika opsi --install diberikan.
-  3. Menjalankan server Backend (Node.js Express - Port 5000).
+  3. Menjalankan server Backend (Node.js Express - Port 5001).
   4. Memeriksa ketersediaan koneksi API Backend (Health-Check).
   5. Menjalankan server Frontend (React + Vite - Port 5174).
   6. Memeriksa ketersediaan antarmuka Frontend (Health-Check).
@@ -44,7 +44,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.join(BASE_DIR, "backend")
 FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
 
-BACKEND_PORT = 5000
+BACKEND_PORT = 5001
 FRONTEND_PORT = 5174
 
 backend_proc = None
@@ -141,12 +141,16 @@ def start_backend():
     else:
         kwargs['preexec_fn'] = os.setsid
 
+    env = os.environ.copy()
+    env["PORT"] = str(BACKEND_PORT)
+
     # Avoid buffer deadlock: do not capture stderr into unconsumed pipe
     backend_proc = subprocess.Popen(
         [node_cmd, "server.js"],
         cwd=BACKEND_DIR,
         stdout=subprocess.DEVNULL,
         stderr=None,
+        env=env,
         **kwargs
     )
 

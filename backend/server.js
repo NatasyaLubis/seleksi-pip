@@ -15,7 +15,7 @@ const studentRoutes = require('./routes/studentRoutes');
 const calculationRoutes = require('./routes/calculationRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Security Middleware: Helmet headers (customized to allow cross-origin assets)
 app.use(helmet({
@@ -118,12 +118,22 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`====================================================`);
   console.log(`  SPK Bantuan PIP Server running on port ${PORT}`);
   console.log(`  Security: Helmet Enabled, JWT Auth Enforced`);
   console.log(`  API Base URL: http://localhost:${PORT}/api`);
   console.log(`====================================================`);
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n[FATAL ERROR] Port ${PORT} sudah digunakan oleh aplikasi lain.`);
+    console.error(`Silakan periksa aplikasi lain yang berjalan di port ${PORT}, atau gunakan port lain via environment variable PORT.\n`);
+  } else {
+    console.error('[FATAL SERVER ERROR]', err);
+  }
+  process.exit(1);
 });
 
 module.exports = app;

@@ -119,7 +119,7 @@ Sistem PIP/
 │   │   ├── studentRoutes.js         # CRUD Siswa, import template Excel & validasi
 │   │   └── calculationRoutes.js     # Eksekusi WASPAS, ekspor Excel & ganti dataset demo
 │   ├── package.json
-│   └── server.js                    # Entry point server Express (Port 5000)
+│   └── server.js                    # Entry point server Express (Port 5001)
 │
 ├── frontend/
 │   ├── src/
@@ -176,7 +176,7 @@ Cukup klik dua kali file:
 ```cmd
 start_sistem_pip.bat
 ```
-Skrip batch ini akan membuka jendela terminal untuk server backend (Port 5000) dan antarmuka frontend (Port 5174/3000) serta membuka browser secara otomatis.
+Skrip batch ini akan membuka jendela terminal untuk server backend (Port 5001) dan antarmuka frontend (Port 5174/3000) serta membuka browser secara otomatis.
 
 ---
 
@@ -189,7 +189,7 @@ cd backend
 npm install
 node server.js
 ```
-*Server backend akan aktif di `http://localhost:5000`.*
+*Server backend akan aktif di `http://localhost:5001`.*
 
 #### 2. Menjalankan Frontend
 Buka terminal kedua di folder proyek:

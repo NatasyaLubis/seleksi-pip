@@ -92,5 +92,5 @@ Hasil kompilasi file statis akan disimpan di folder `dist/`.
 ---
 
 ## 4. Konfigurasi Lingkungan
-- Endpoint default server backend diarahkan ke **`http://localhost:5000/api`**.
+- Endpoint default server backend diarahkan ke **`http://localhost:5001/api`**.
 - Konfigurasi alamat API dapat diubah di file [`src/services/api.js`](src/services/api.js).
