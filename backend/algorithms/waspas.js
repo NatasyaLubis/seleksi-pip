@@ -179,7 +179,6 @@ function calculateWASPAS(alternatives, criteria, lambda = 0.5, quota = 50) {
       nama_lengkap: rawAlt.nama_lengkap,
       kelas: rawAlt.kelas,
       asal_sekolah: rawAlt.asal_sekolah || 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-      nama_wali: rawAlt.nama_wali || '-',
       alamat: rawAlt.alamat || '-',
       rawValues: rawAlt.values,
       normalizedValues: normalizedMatrix[idx].values,

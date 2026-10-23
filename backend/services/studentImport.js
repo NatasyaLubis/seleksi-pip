@@ -10,13 +10,13 @@ function generateTemplate(criteria) {
   const wb = XLSX.utils.book_new();
 
   // 1. Data Sheet Header
-  const headers = ['NISN', 'Nama Siswa', 'Kelas', 'Asal Sekolah', 'Nama Wali', 'Alamat'];
+  const headers = ['NISN', 'Nama Siswa', 'Kelas', 'Asal Sekolah', 'Alamat'];
   criteria.forEach(c => {
     headers.push(`${c.code}_${c.name.replace(/[^a-zA-Z0-9]/g, '_')}`);
   });
 
   // Sample row
-  const sampleRow = ['3084120001', 'Ahmad Pratama', 'X-TKJ', 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG', 'Budi Pratama', 'Siborongborong'];
+  const sampleRow = ['3084120001', 'Ahmad Pratama', 'X-TKJ', 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG', 'Siborongborong'];
   criteria.forEach(c => {
     if (c.code === 'C1') sampleRow.push(750000);
     else if (c.code === 'C2') sampleRow.push(3);
@@ -101,7 +101,6 @@ function parseAndValidateExcel(fileBuffer, criteria, existingStudents = []) {
   const nameCol = firstRowKeys.find(k => k.toUpperCase().includes('NAMA')) || 'Nama Siswa';
   const classCol = firstRowKeys.find(k => k.toUpperCase().includes('KELAS')) || 'Kelas';
   const schoolCol = firstRowKeys.find(k => k.toUpperCase().includes('SEKOLAH'));
-  const parentCol = firstRowKeys.find(k => k.toUpperCase().includes('WALI') || k.toUpperCase().includes('ORANG TUA'));
   const addressCol = firstRowKeys.find(k => k.toUpperCase().includes('ALAMAT'));
 
   const validRows = [];
@@ -163,7 +162,6 @@ function parseAndValidateExcel(fileBuffer, criteria, existingStudents = []) {
         nama_lengkap: nameVal,
         kelas: classVal,
         asal_sekolah: schoolCol && row[schoolCol] ? String(row[schoolCol]).trim() : 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-        nama_wali: parentCol && row[parentCol] ? String(row[parentCol]).trim() : '-',
         alamat: addressCol && row[addressCol] ? String(row[addressCol]).trim() : '-',
         values: parsedValues,
         alreadyInDb: existingNisnMap.has(nisnVal)

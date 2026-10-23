@@ -37,7 +37,6 @@ export default function StudentsView({
   const [namaLengkap, setNamaLengkap] = useState('');
   const [kelas, setKelas] = useState('');
   const [asalSekolah, setAsalSekolah] = useState('SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG');
-  const [namaWali, setNamaWali] = useState('');
   const [alamat, setAlamat] = useState('');
   const [values, setValues] = useState({});
 
@@ -110,8 +109,7 @@ export default function StudentsView({
         s.nama_lengkap.toLowerCase().includes(term) ||
         s.nisn.toLowerCase().includes(term) ||
         s.kelas.toLowerCase().includes(term) ||
-        (s.asal_sekolah && s.asal_sekolah.toLowerCase().includes(term)) ||
-        (s.nama_wali && s.nama_wali.toLowerCase().includes(term))
+        (s.asal_sekolah && s.asal_sekolah.toLowerCase().includes(term))
       );
     }
     return result;
@@ -124,7 +122,6 @@ export default function StudentsView({
     setNamaLengkap('');
     setKelas('X-TKJ');
     setAsalSekolah('SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG');
-    setNamaWali('');
     setAlamat('');
     const initVals = {};
     criteria.forEach(c => {
@@ -141,7 +138,6 @@ export default function StudentsView({
     setNamaLengkap(std.nama_lengkap);
     setKelas(std.kelas);
     setAsalSekolah(std.asal_sekolah || 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG');
-    setNamaWali(std.nama_wali || '');
     setAlamat(std.alamat || '');
     setValues({ ...std.values });
     setIsStudentModalOpen(true);
@@ -154,7 +150,6 @@ export default function StudentsView({
       nama_lengkap: namaLengkap,
       kelas,
       asal_sekolah: asalSekolah || 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-      nama_wali: namaWali,
       alamat,
       values
     };
@@ -209,32 +204,32 @@ export default function StudentsView({
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {/* Header Bar */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px' }}>
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <h1 style={{ fontSize: '1.375rem', fontWeight: 800, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', margin: 0 }}>
+            <h1 style={{ fontSize: '1.25rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'hsl(var(--foreground))', margin: 0 }}>
               Data Calon Siswa Penerima PIP
             </h1>
-            <span className="badge badge-neutral" style={{ fontSize: '0.75rem' }}>
+            <span className="badge badge-neutral" style={{ fontSize: '0.71875rem', fontWeight: 600 }}>
               {students.length} Siswa Terdata
             </span>
           </div>
-          <p style={{ fontSize: '0.8125rem', color: 'hsl(var(--muted-foreground))', marginTop: '4px' }}>
-            Kelola data siswa yang akan diseleksi. Anda dapat menambah manual atau upload file Excel (bisa lebih dari 100 siswa).
+          <p style={{ fontSize: '0.8125rem', color: 'hsl(var(--muted-foreground))', marginTop: '3px', marginBottom: 0 }}>
+            Kelola data siswa yang akan diseleksi. Anda dapat menambah manual atau upload file Excel.
           </p>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-          <button onClick={onDownloadTemplate} className="btn btn-outline btn-sm" title="Unduh contoh format file Excel untuk pengisian data">
+          <button onClick={onDownloadTemplate} className="btn btn-outline btn-sm" style={{ height: '36px' }} title="Unduh contoh format file Excel untuk pengisian data">
             <Download size={14} />
             <span>Format Excel</span>
           </button>
-          <button onClick={() => { setImportPreview(null); setImportFile(null); setIsImportModalOpen(true); }} className="btn btn-outline btn-sm">
+          <button onClick={() => { setImportPreview(null); setImportFile(null); setIsImportModalOpen(true); }} className="btn btn-outline btn-sm" style={{ height: '36px' }}>
             <Upload size={14} />
             <span>Upload File Excel</span>
           </button>
-          <button onClick={openAddStudentModal} className="btn btn-primary btn-sm">
+          <button onClick={openAddStudentModal} className="btn btn-primary btn-sm" style={{ height: '36px', background: 'hsl(217 75% 52%)', borderColor: 'hsl(217 75% 52%)' }}>
             <Plus size={14} />
             <span>Tambah Siswa Manual</span>
           </button>
@@ -242,19 +237,19 @@ export default function StudentsView({
       </div>
 
       {/* Control & Quick Action Bar */}
-      <div className="card" style={{ padding: '16px 20px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '14px' }}>
+      <div className="card" style={{ padding: '12px 18px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
           {/* Search & Class Filter */}
           <div style={{ display: 'flex', gap: '10px', alignItems: 'center', flexWrap: 'wrap' }}>
-            <div style={{ position: 'relative', width: '260px' }}>
-              <Search size={16} color="var(--slate-400)" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
+            <div style={{ position: 'relative', width: '250px' }}>
+              <Search size={15} color="hsl(var(--muted-foreground))" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="text"
                 placeholder="Cari nama, NISN, kelas..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="form-input"
-                style={{ paddingLeft: '36px' }}
+                style={{ paddingLeft: '34px', height: '36px', fontSize: '0.8125rem' }}
               />
             </div>
 
@@ -262,7 +257,7 @@ export default function StudentsView({
               value={classFilter}
               onChange={(e) => setClassFilter(e.target.value)}
               className="form-select"
-              style={{ width: '190px', fontSize: '0.8125rem' }}
+              style={{ width: '185px', fontSize: '0.8125rem', height: '36px' }}
             >
               <option value="ALL">Semua Kelas ({students.length})</option>
               {(gradeCounts.X > 0 || gradeCounts.XI > 0 || gradeCounts.XII > 0) && (
@@ -283,23 +278,26 @@ export default function StudentsView({
           </div>
 
           {/* Quick Demo Generation & Clear Buttons */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
             {isDemoMode && (
               <button
                 onClick={() => onGenerateSamples(120)}
-                className="btn btn-secondary btn-sm"
+                className="btn btn-outline btn-sm"
+                style={{ height: '36px', fontSize: '0.78125rem', display: 'flex', alignItems: 'center', gap: '6px' }}
                 title="Isi otomatis 120 data siswa realistis untuk pengujian sistem"
               >
-                <Sparkles size={14} color="#6366f1" />
+                <Sparkles size={13} color="hsl(var(--primary))" />
                 <span>Isi Otomatis 120 Data Contoh</span>
               </button>
             )}
             <button
               onClick={onClearAll}
-              className="btn btn-danger btn-sm"
+              className="btn btn-outline btn-sm"
               disabled={students.length === 0}
+              style={{ height: '36px', fontSize: '0.78125rem', display: 'flex', alignItems: 'center', gap: '6px', color: 'hsl(var(--destructive))', borderColor: 'hsl(var(--destructive) / 0.35)' }}
+              title="Kosongkan seluruh data siswa"
             >
-              <Trash2 size={14} />
+              <Trash2 size={13} />
               <span>Kosongkan Semua Data</span>
             </button>
           </div>
@@ -324,7 +322,6 @@ export default function StudentsView({
                 <th style={{ width: '105px' }}>NISN</th>
                 <th style={{ minWidth: '150px' }}>Nama Lengkap Siswa</th>
                 <th style={{ width: '80px', textAlign: 'center' }}>Kelas</th>
-                <th style={{ minWidth: '120px' }}>Nama Wali</th>
                 {criteria.map(c => (
                   <th key={c.code} style={{ width: '85px', textAlign: 'right' }} title={`${c.code}: ${c.name} (${c.type.toUpperCase()})`}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
@@ -341,7 +338,7 @@ export default function StudentsView({
             <tbody>
               {filteredStudents.length === 0 ? (
                 <tr>
-                  <td colSpan={6 + criteria.length} style={{ textAlign: 'center', padding: '36px', color: 'hsl(var(--muted-foreground))' }}>
+                  <td colSpan={5 + criteria.length} style={{ textAlign: 'center', padding: '36px', color: 'hsl(var(--muted-foreground))' }}>
                     Tidak ada data siswa yang cocok dengan pencarian atau data masih kosong.
                   </td>
                 </tr>
@@ -354,7 +351,6 @@ export default function StudentsView({
                       <td className="code-num">{s.nisn}</td>
                       <td style={{ fontWeight: 600, color: 'hsl(var(--foreground))' }}>{s.nama_lengkap}</td>
                       <td style={{ textAlign: 'center' }}>{s.kelas}</td>
-                      <td style={{ color: 'hsl(var(--muted-foreground))' }}>{s.nama_wali || '-'}</td>
                       {criteria.map(c => {
                         const val = s.values ? s.values[c.code] : '-';
                         return (
@@ -366,12 +362,22 @@ export default function StudentsView({
                         );
                       })}
                       <td style={{ textAlign: 'center' }}>
-                        <div style={{ display: 'flex', justifyContent: 'center', gap: '6px' }}>
-                          <button onClick={() => openEditStudentModal(s)} className="btn btn-outline btn-sm" style={{ padding: '4px 6px' }}>
-                            <Edit size={12} />
+                        <div style={{ display: 'flex', justifyContent: 'center', gap: '4px' }}>
+                          <button 
+                            onClick={() => openEditStudentModal(s)} 
+                            className="btn btn-ghost btn-sm" 
+                            style={{ padding: '4px', borderRadius: '6px' }}
+                            title="Edit Data Siswa"
+                          >
+                            <Edit size={14} />
                           </button>
-                          <button onClick={() => onDeleteStudent(s.id, s.nama_lengkap)} className="btn btn-danger btn-sm" style={{ padding: '4px 6px' }}>
-                            <Trash2 size={12} />
+                          <button 
+                            onClick={() => onDeleteStudent(s.id, s.nama_lengkap)} 
+                            className="btn btn-ghost btn-sm" 
+                            style={{ padding: '4px', borderRadius: '6px', color: 'hsl(var(--destructive))' }}
+                            title="Hapus Siswa"
+                          >
+                            <Trash2 size={14} />
                           </button>
                         </div>
                       </td>
@@ -471,27 +477,15 @@ export default function StudentsView({
                   />
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
-                  <div className="form-group" style={{ marginBottom: 0 }}>
-                    <label className="form-label">Nama Orang Tua / Wali</label>
-                    <input
-                      type="text"
-                      value={namaWali}
-                      onChange={(e) => setNamaWali(e.target.value)}
-                      placeholder="Nama ayah/ibu/wali"
-                      className="form-input"
-                    />
-                  </div>
-                  <div className="form-group" style={{ marginBottom: 0 }}>
-                    <label className="form-label">Alamat Domisili</label>
-                    <input
-                      type="text"
-                      value={alamat}
-                      onChange={(e) => setAlamat(e.target.value)}
-                      placeholder="Jl. Melati No. 12"
-                      className="form-input"
-                    />
-                  </div>
+                <div className="form-group" style={{ marginBottom: 0 }}>
+                  <label className="form-label">Alamat Domisili</label>
+                  <input
+                    type="text"
+                    value={alamat}
+                    onChange={(e) => setAlamat(e.target.value)}
+                    placeholder="Jl. Melati No. 12, Siborongborong"
+                    className="form-input"
+                  />
                 </div>
 
                 <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '16px' }}>

@@ -168,7 +168,6 @@ function generateRealisticStudents(count = 120) {
   for (let i = 1; i <= count; i++) {
     const fn = firstNames[Math.floor(Math.random() * firstNames.length)];
     const ln = lastNames[Math.floor(Math.random() * lastNames.length)];
-    const pn = parentFirst[Math.floor(Math.random() * parentFirst.length)] + ' ' + ln;
     const cls = classes[Math.floor(Math.random() * classes.length)];
     const street = streets[Math.floor(Math.random() * streets.length)] + ' No. ' + (Math.floor(Math.random() * 80) + 1);
 
@@ -185,7 +184,6 @@ function generateRealisticStudents(count = 120) {
       nama_lengkap: `${fn} ${ln}`,
       kelas: cls,
       asal_sekolah: 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-      nama_wali: pn,
       alamat: street,
       values: {
         C1: income,

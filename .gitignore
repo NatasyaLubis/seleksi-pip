@@ -44,3 +44,8 @@ backend/data/*.corrupt*
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Documents / Drafts
+*.docx
+*.doc
+

@@ -263,7 +263,6 @@ export default function DashboardView({
                   <th style={{ width: '120px' }}>NISN</th>
                   <th>Nama Lengkap</th>
                   <th style={{ width: '90px' }}>Kelas</th>
-                  <th>Nama Wali</th>
                   <th style={{ width: '110px', textAlign: 'right' }}>Skor</th>
                   <th style={{ width: '150px' }}>Status</th>
                 </tr>
@@ -279,7 +278,6 @@ export default function DashboardView({
                     <td className="code-num">{r.nisn}</td>
                     <td style={{ fontWeight: 600 }}>{r.nama_lengkap}</td>
                     <td>{r.kelas}</td>
-                    <td style={{ color: 'hsl(var(--muted-foreground))' }}>{r.nama_wali || '-'}</td>
                     <td style={{ textAlign: 'right', fontWeight: 700, color: 'hsl(var(--primary))' }}>
                       {(r.waspasScore * 100).toFixed(1)}%
                     </td>

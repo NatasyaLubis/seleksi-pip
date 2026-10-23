@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 // POST create single student
 router.post('/', (req, res) => {
   try {
-    const { nisn, nama_lengkap, kelas, asal_sekolah, nama_wali, alamat, values } = req.body;
+    const { nisn, nama_lengkap, kelas, asal_sekolah, alamat, values } = req.body;
     if (!nisn || !nama_lengkap || !kelas || !values) {
       return res.status(400).json({ success: false, message: 'NISN, Nama Siswa, Kelas, dan Nilai Kriteria wajib diisi.' });
     }
@@ -62,7 +62,6 @@ router.post('/', (req, res) => {
       nama_lengkap: nama_lengkap.trim(),
       kelas: kelas.trim(),
       asal_sekolah: asal_sekolah ? asal_sekolah.trim() : 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-      nama_wali: nama_wali ? nama_wali.trim() : '-',
       alamat: alamat ? alamat.trim() : '-',
       values: {}
     };
@@ -89,7 +88,7 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
   try {
     const { id } = req.params;
-    const { nisn, nama_lengkap, kelas, asal_sekolah, nama_wali, alamat, values } = req.body;
+    const { nisn, nama_lengkap, kelas, asal_sekolah, alamat, values } = req.body;
 
     const db = readDatabase();
     const student = db.students.find(s => s.id === id);
@@ -109,7 +108,6 @@ router.put('/:id', (req, res) => {
     if (nama_lengkap) student.nama_lengkap = nama_lengkap.trim();
     if (kelas) student.kelas = kelas.trim();
     if (asal_sekolah) student.asal_sekolah = asal_sekolah.trim();
-    if (nama_wali) student.nama_wali = nama_wali.trim();
     if (alamat) student.alamat = alamat.trim();
 
     if (values) {
@@ -257,7 +255,6 @@ router.post('/import-commit', (req, res) => {
       nama_lengkap: s.nama_lengkap,
       kelas: s.kelas,
       asal_sekolah: s.asal_sekolah || 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-      nama_wali: s.nama_wali || '-',
       alamat: s.alamat || '-',
       values: s.values
     }));

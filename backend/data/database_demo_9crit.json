@@ -424,7 +424,6 @@
       "nama_lengkap": "Alternatif A1 (Dimas Pratama)",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Dimas Pratama",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 4500000,
@@ -444,7 +443,6 @@
       "nama_lengkap": "Alternatif A2 (Budi Santoso)",
       "kelas": "X-TKJ",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Budi Santoso",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 4200000,
@@ -464,7 +462,6 @@
       "nama_lengkap": "Alternatif A3 (Siti Dewi Nababan)",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Siti Dewi Nababan",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 4000000,
@@ -484,7 +481,6 @@
       "nama_lengkap": "Alternatif A4 (Rizky Sihombing)",
       "kelas": "X-TKJ",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Rizky Sihombing",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 1500000,
@@ -504,7 +500,6 @@
       "nama_lengkap": "Alternatif A5 (Ahmad Fauzi Simanjuntak)",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Ahmad Fauzi Simanjuntak",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 2900000,
@@ -524,7 +519,6 @@
       "nama_lengkap": "Alternatif A6 (Nur Wulandari Hutasoit)",
       "kelas": "XI-TKJ",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Nur Wulandari Hutasoit",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 2900000,
@@ -544,7 +538,6 @@
       "nama_lengkap": "Alternatif A7 (Chandra Lumbantoruan)",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Chandra Lumbantoruan",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 900000,
@@ -564,7 +557,6 @@
       "nama_lengkap": "Alternatif A8 (Eka Putri Silaban)",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Eka Putri Silaban",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 2200000,
@@ -584,7 +576,6 @@
       "nama_lengkap": "Alternatif A9 (Fajar Hidayat Tarihoran)",
       "kelas": "XII-TKJ",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Fajar Hidayat Tarihoran",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 4300000,
@@ -604,7 +595,6 @@
       "nama_lengkap": "Alternatif A10 (Gita Maharani Manalu)",
       "kelas": "X-TKJ",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Gita Maharani Manalu",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 2500000,
@@ -624,7 +614,6 @@
       "nama_lengkap": "Alternatif A11 (Hendra Wijaya Pasaribu)",
       "kelas": "XI-TKJ",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Hendra Wijaya Pasaribu",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 4100000,
@@ -644,7 +633,6 @@
       "nama_lengkap": "Alternatif A12 (Intan Permata Aritonang)",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Intan Permata Aritonang",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 1300000,
@@ -664,7 +652,6 @@
       "nama_lengkap": "Alternatif A13 (Joko Susilo Siregar)",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Joko Susilo Siregar",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 2800000,
@@ -684,7 +671,6 @@
       "nama_lengkap": "Alternatif A14 (Kartika Sari Sinaga)",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Kartika Sari Sinaga",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 4500000,
@@ -704,7 +690,6 @@
       "nama_lengkap": "Alternatif A15 (Lukman Hakim Marbun)",
       "kelas": "X-TKJ",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Orang Tua / Wali Lukman Hakim Marbun",
       "alamat": "Siborongborong, Tapanuli Utara",
       "values": {
         "C1": 3800000,
@@ -1310,7 +1295,6 @@
         "nama_lengkap": "Alternatif A12 (Intan Permata Aritonang)",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Intan Permata Aritonang",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 1300000,
@@ -1349,7 +1333,6 @@
         "nama_lengkap": "Alternatif A8 (Eka Putri Silaban)",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Eka Putri Silaban",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 2200000,
@@ -1388,7 +1371,6 @@
         "nama_lengkap": "Alternatif A2 (Budi Santoso)",
         "kelas": "X-TKJ",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Budi Santoso",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 4200000,
@@ -1427,7 +1409,6 @@
         "nama_lengkap": "Alternatif A6 (Nur Wulandari Hutasoit)",
         "kelas": "XI-TKJ",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Nur Wulandari Hutasoit",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 2900000,
@@ -1466,7 +1447,6 @@
         "nama_lengkap": "Alternatif A5 (Ahmad Fauzi Simanjuntak)",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Ahmad Fauzi Simanjuntak",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 2900000,
@@ -1505,7 +1485,6 @@
         "nama_lengkap": "Alternatif A14 (Kartika Sari Sinaga)",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Kartika Sari Sinaga",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 4500000,
@@ -1544,7 +1523,6 @@
         "nama_lengkap": "Alternatif A7 (Chandra Lumbantoruan)",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Chandra Lumbantoruan",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 900000,
@@ -1583,7 +1561,6 @@
         "nama_lengkap": "Alternatif A11 (Hendra Wijaya Pasaribu)",
         "kelas": "XI-TKJ",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Hendra Wijaya Pasaribu",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 4100000,
@@ -1622,7 +1599,6 @@
         "nama_lengkap": "Alternatif A15 (Lukman Hakim Marbun)",
         "kelas": "X-TKJ",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Lukman Hakim Marbun",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 3800000,
@@ -1661,7 +1637,6 @@
         "nama_lengkap": "Alternatif A9 (Fajar Hidayat Tarihoran)",
         "kelas": "XII-TKJ",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Fajar Hidayat Tarihoran",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 4300000,
@@ -1700,7 +1675,6 @@
         "nama_lengkap": "Alternatif A3 (Siti Dewi Nababan)",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Siti Dewi Nababan",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 4000000,
@@ -1739,7 +1713,6 @@
         "nama_lengkap": "Alternatif A4 (Rizky Sihombing)",
         "kelas": "X-TKJ",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Rizky Sihombing",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 1500000,
@@ -1778,7 +1751,6 @@
         "nama_lengkap": "Alternatif A13 (Joko Susilo Siregar)",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Joko Susilo Siregar",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 2800000,
@@ -1817,7 +1789,6 @@
         "nama_lengkap": "Alternatif A10 (Gita Maharani Manalu)",
         "kelas": "X-TKJ",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Gita Maharani Manalu",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 2500000,
@@ -1856,7 +1827,6 @@
         "nama_lengkap": "Alternatif A1 (Dimas Pratama)",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Orang Tua / Wali Dimas Pratama",
         "alamat": "Siborongborong, Tapanuli Utara",
         "rawValues": {
           "C1": 4500000,

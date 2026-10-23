@@ -10,9 +10,23 @@ import {
   X,
   Check,
   RotateCw,
-  Info
+  Info,
+  Star,
+  Target
 } from 'lucide-react';
 import { api } from '../services/api';
+
+const SCALE_LABELS = {
+  1: '1 - Sama penting',
+  2: '2 - Sedikit lebih penting',
+  3: '3 - Cukup lebih penting',
+  4: '4 - Antara cukup & jelas penting',
+  5: '5 - Jelas lebih penting',
+  6: '6 - Antara jelas & sangat penting',
+  7: '7 - Sangat lebih penting',
+  8: '8 - Mendekati mutlak',
+  9: '9 - Mutlak paling penting'
+};
 
 const SCALE_OPTIONS = [
   { value: 1, label: '1 - Sama penting' },
@@ -444,291 +458,333 @@ export default function BwmView({
       {/* Modal Input Penilaian BWM (Jelas, Rapi & Presisi sesuai Aturan Metode) */}
       {isWizardOpen && selectedDM && (
         <div className="modal-overlay">
-          <div className="modal-content" style={{ maxWidth: '780px', width: '95%' }}>
-            <div className="modal-header" style={{ padding: '14px 20px', borderBottom: '1px solid hsl(var(--border))' }}>
-              <div>
-                <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, margin: 0, color: 'hsl(var(--foreground))' }}>
-                  Penilaian Kriteria: {selectedDM.name}
-                </h3>
-                <span style={{ fontSize: '0.8125rem', color: 'hsl(var(--muted-foreground))' }}>
-                  {selectedDM.title} · Penentuan Bobot Preferensi Best-Worst Method (BWM)
-                </span>
+          <div className="modal-content" style={{ maxWidth: '840px', width: '96%', maxHeight: '90vh', display: 'flex', flexDirection: 'column' }}>
+            {/* Modal Header */}
+            <div className="modal-header" style={{ flexShrink: 0, padding: '16px 22px', borderBottom: '1px solid hsl(var(--border) / 0.7)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <div style={{ 
+                  width: '40px', 
+                  height: '40px', 
+                  borderRadius: '10px', 
+                  background: 'hsl(215 85% 92%)', 
+                  color: 'hsl(215 75% 40%)', 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'center',
+                  fontWeight: 800,
+                  fontSize: '1rem',
+                  flexShrink: 0
+                }}>
+                  {selectedDM.name.charAt(0)}
+                </div>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                    <h3 style={{ fontSize: '1.0625rem', fontWeight: 700, margin: 0, color: 'hsl(var(--foreground))' }}>
+                      Penilaian Kriteria: {selectedDM.name}
+                    </h3>
+                    <span className="badge badge-neutral" style={{ fontSize: '0.6875rem', fontWeight: 600 }}>
+                      {selectedDM.title}
+                    </span>
+                  </div>
+                  <span style={{ fontSize: '0.8125rem', color: 'hsl(var(--muted-foreground))' }}>
+                    Best-Worst Method (BWM) · Penentuan Bobot Preferensi Skala 1 s/d 9
+                  </span>
+                </div>
               </div>
-              <button onClick={() => setIsWizardOpen(false)} className="btn btn-ghost btn-sm" style={{ padding: '4px' }}>
+              <button onClick={() => setIsWizardOpen(false)} className="btn btn-ghost btn-sm" style={{ padding: '6px', borderRadius: '8px' }}>
                 <X size={18} />
               </button>
             </div>
 
-            <form onSubmit={submitBWM}>
-              <div className="modal-body" style={{ maxHeight: '78vh', overflowY: 'auto', padding: '18px 20px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
+            <form onSubmit={submitBWM} style={{ display: 'flex', flexDirection: 'column', flex: 1, minHeight: 0, overflow: 'hidden' }}>
+              <div className="modal-body" style={{ flex: 1, minHeight: 0, overflowY: 'auto', padding: '18px 22px', display: 'flex', flexDirection: 'column', gap: '18px' }}>
                 
-                {/* 1. Pilih Kriteria Terbaik & Terburuk */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
-                  <div className="form-group" style={{ marginBottom: 0, padding: '12px 14px', borderRadius: '8px', background: 'hsl(var(--primary) / 0.05)', border: '1px solid hsl(var(--primary) / 0.25)' }}>
-                    <label className="form-label" style={{ fontWeight: 700, color: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontSize: '0.8125rem' }}>
-                      <ShieldCheck size={15} />
-                      <span>Kriteria Terbaik (Paling Utama / Penting)</span>
-                    </label>
-                    <select 
-                      value={bestCode} 
-                      onChange={(e) => handleBestChange(e.target.value)}
-                      className="form-select"
-                      style={{ fontWeight: 600, fontSize: '0.875rem' }}
-                    >
-                      {criteria.map(c => (
-                        <option key={c.code} value={c.code} disabled={c.code === worstCode}>
-                          {c.code} - {c.name} {c.code === worstCode ? '(Kriteria Terburuk)' : ''}
-                        </option>
-                      ))}
-                    </select>
-                    <span style={{ fontSize: '0.71875rem', color: 'hsl(var(--muted-foreground))', marginTop: '4px', display: 'block' }}>
-                      Kriteria dengan derajat kepentingan paling tinggi
-                    </span>
-                  </div>
-
-                  <div className="form-group" style={{ marginBottom: 0, padding: '12px 14px', borderRadius: '8px', background: 'hsl(var(--warning) / 0.06)', border: '1px solid hsl(var(--warning) / 0.3)' }}>
-                    <label className="form-label" style={{ fontWeight: 700, color: 'hsl(var(--warning))', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px', fontSize: '0.8125rem' }}>
-                      <AlertTriangle size={15} />
-                      <span>Kriteria Terburuk (Paling Kurang Penting)</span>
-                    </label>
-                    <select 
-                      value={worstCode} 
-                      onChange={(e) => handleWorstChange(e.target.value)}
-                      className="form-select"
-                      style={{ fontWeight: 600, fontSize: '0.875rem' }}
-                    >
-                      {criteria.map(c => (
-                        <option key={c.code} value={c.code} disabled={c.code === bestCode}>
-                          {c.code} - {c.name} {c.code === bestCode ? '(Kriteria Terbaik)' : ''}
-                        </option>
-                      ))}
-                    </select>
-                    <span style={{ fontSize: '0.71875rem', color: 'hsl(var(--muted-foreground))', marginTop: '4px', display: 'block' }}>
-                      Kriteria dengan derajat kepentingan paling rendah
-                    </span>
+                {/* Banner Edukatif Cara Kerja BWM */}
+                <div className="bwm-guide-box">
+                  <Info size={17} style={{ color: 'hsl(var(--muted-foreground))', flexShrink: 0, marginTop: '2px' }} />
+                  <div style={{ fontSize: '0.8125rem', lineHeight: 1.5 }}>
+                    <strong style={{ color: 'hsl(var(--foreground))' }}>Panduan Alur Penilaian BWM (Jafar Rezaei):</strong>
+                    <div style={{ color: 'hsl(var(--muted-foreground))', marginTop: '3px' }}>
+                      <strong>1. Kriteria Acuan:</strong> Tentukan kriteria paling penting (Best — B) dan paling kurang penting (Worst — W).<br />
+                      <strong>2. Vektor A_B:</strong> Bandingkan seberapa jauh Kriteria Terbaik (B) lebih penting dibanding kriteria lainnya.<br />
+                      <strong>3. Vektor A_W:</strong> Bandingkan seberapa jauh kriteria lainnya lebih penting dibanding Kriteria Terburuk (W).
+                    </div>
                   </div>
                 </div>
 
-                {/* 2. Section Best-to-Others */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid hsl(var(--border))', paddingBottom: '6px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'hsl(var(--primary))', background: 'hsl(var(--primary) / 0.12)', padding: '2px 8px', borderRadius: '4px' }}>
-                        VEKTOR A_B
-                      </span>
-                      <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: 'hsl(var(--foreground))' }}>
-                        Bandingkan [{bestCode} - {bestCrit.name}] Terhadap Kriteria Lain:
+                {/* Langkah 1: Kriteria Acuan (Terbaik & Terburuk) */}
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
+                    <span className="bwm-step-circle circle-1">1</span>
+                    <h4 style={{ margin: 0, fontSize: '0.875rem', fontWeight: 700, color: 'hsl(var(--foreground))' }}>
+                      Tentukan Kriteria Acuan (Terbaik & Terburuk)
+                    </h4>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
+                    {/* Card Best */}
+                    <div className="bwm-card-selector best-card">
+                      <label className="form-label" style={{ fontWeight: 700, color: 'hsl(215 70% 45%)', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px', fontSize: '0.8125rem' }}>
+                        <Star size={15} fill="currentColor" style={{ color: 'hsl(215 75% 50%)' }} />
+                        <span>Kriteria Terbaik (Best — B)</span>
+                      </label>
+                      <select 
+                        value={bestCode} 
+                        onChange={(e) => handleBestChange(e.target.value)}
+                        className="form-select"
+                        style={{ fontWeight: 600, fontSize: '0.875rem', height: '38px' }}
+                      >
+                        {criteria.map(c => (
+                          <option key={c.code} value={c.code} disabled={c.code === worstCode}>
+                            {c.code} - {c.name} {c.code === worstCode ? '(Terpilih sebagai Terburuk)' : ''}
+                          </option>
+                        ))}
+                      </select>
+                      <span style={{ fontSize: '0.71875rem', color: 'hsl(var(--muted-foreground))', marginTop: '6px', display: 'block' }}>
+                        Kriteria dengan prioritas kepentingan paling tinggi
                       </span>
                     </div>
-                    <span style={{ fontSize: '0.6875rem', color: 'hsl(var(--muted-foreground))' }}>
+
+                    {/* Card Worst */}
+                    <div className="bwm-card-selector worst-card">
+                      <label className="form-label" style={{ fontWeight: 700, color: 'hsl(30 75% 42%)', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '8px', fontSize: '0.8125rem' }}>
+                        <Target size={15} style={{ color: 'hsl(30 75% 46%)' }} />
+                        <span>Kriteria Terburuk (Worst — W)</span>
+                      </label>
+                      <select 
+                        value={worstCode} 
+                        onChange={(e) => handleWorstChange(e.target.value)}
+                        className="form-select"
+                        style={{ fontWeight: 600, fontSize: '0.875rem', height: '38px' }}
+                      >
+                        {criteria.map(c => (
+                          <option key={c.code} value={c.code} disabled={c.code === bestCode}>
+                            {c.code} - {c.name} {c.code === bestCode ? '(Terpilih sebagai Terbaik)' : ''}
+                          </option>
+                        ))}
+                      </select>
+                      <span style={{ fontSize: '0.71875rem', color: 'hsl(var(--muted-foreground))', marginTop: '6px', display: 'block' }}>
+                        Kriteria dengan prioritas kepentingan paling rendah
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Langkah 2: Vektor A_B (Best-to-Others) */}
+                <div>
+                  <div className="bwm-section-header">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                      <span className="bwm-step-circle circle-2">2</span>
+                      <span className="bwm-vector-badge badge-ab">
+                        VEKTOR A_B (Best-to-Others)
+                      </span>
+                      <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'hsl(var(--foreground))' }}>
+                        Bandingkan [{bestCode} - {bestCrit.name}] Terhadap Kriteria Lainnya:
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.71875rem', color: 'hsl(var(--muted-foreground))' }}>
                       Skala 1 (Sama) s/d 9 (Mutlak)
                     </span>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(330px, 1fr))', gap: '8px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {criteria.filter(c => c.code !== bestCode).map(c => {
                       const isWorst = c.code === worstCode;
+                      const currentVal = bestToOthers[c.code] || 1;
+
                       return (
                         <div 
                           key={c.code} 
-                          style={{ 
-                            display: 'flex', 
-                            justifyContent: 'space-between', 
-                            alignItems: 'center', 
-                            background: isWorst ? 'hsl(var(--warning) / 0.08)' : 'hsl(var(--muted) / 0.35)', 
-                            padding: '8px 12px', 
-                            borderRadius: '8px', 
-                            border: isWorst ? '1.5px solid hsl(var(--warning) / 0.45)' : '1px solid hsl(var(--border))',
-                            gap: '10px',
-                            transition: 'all 0.15s ease'
-                          }}
+                          className={`bwm-row-card ${isWorst ? 'highlight-sync' : ''}`}
                         >
-                          <div style={{ display: 'flex', flexDirection: 'column', minWidth: 0, flex: 1 }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-                              <span className="code-num" style={{ fontWeight: 800, fontSize: '0.75rem', background: 'hsl(var(--background))', padding: '1px 6px', borderRadius: '4px', border: '1px solid hsl(var(--border))' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                              <span className="code-num" style={{ fontWeight: 700, fontSize: '0.75rem', background: 'hsl(var(--muted) / 0.6)', padding: '2px 8px', borderRadius: '4px', border: '1px solid hsl(var(--border) / 0.7)' }}>
                                 {bestCode} vs {c.code}
                               </span>
-                              <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'hsl(var(--foreground))', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={c.name}>
+                              <span style={{ fontSize: '0.84375rem', fontWeight: 600, color: 'hsl(var(--foreground))' }}>
                                 {c.name}
                               </span>
                               {isWorst && (
-                                <span style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'hsl(var(--warning))', background: 'hsl(var(--warning) / 0.15)', padding: '1px 5px', borderRadius: '4px' }}>
-                                  Terburuk (a_BW)
+                                <span style={{ fontSize: '0.6875rem', fontWeight: 600, color: 'hsl(215 70% 40%)', background: 'hsl(215 85% 94% / 0.8)', padding: '2px 8px', borderRadius: '4px', border: '1px solid hsl(215 70% 84% / 0.8)' }}>
+                                  Pasangan Acuan (Best vs Worst) · Otomatis Tersinkron
                                 </span>
                               )}
                             </div>
-                            <span style={{ fontSize: '0.6875rem', color: 'hsl(var(--muted-foreground))', marginTop: '2px' }}>
-                              {isWorst 
-                                ? `Nilai perbandingan utama a_BW (otomatis tersinkron)` 
-                                : `Preferensi ${bestCode} dibanding ${c.code}`}
+
+                            {/* Label Deskriptor Nilai Terpilih */}
+                            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'hsl(215 70% 45%)' }}>
+                              {SCALE_LABELS[currentVal]}
                             </span>
                           </div>
 
-                          <select 
-                            value={bestToOthers[c.code] || 1}
-                            onChange={(e) => handleBestToOthersChange(c.code, parseInt(e.target.value, 10))}
-                            className="form-select"
-                            style={{ 
-                              width: '165px', 
-                              padding: '3px 8px', 
-                              fontSize: '0.75rem', 
-                              height: '32px', 
-                              fontWeight: 600,
-                              borderColor: isWorst ? 'hsl(var(--warning))' : undefined,
-                              flexShrink: 0 
-                            }}
-                          >
-                            {SCALE_OPTIONS.map(opt => (
-                              <option key={opt.value} value={opt.value}>{opt.label}</option>
+                          {/* Segmented Interactive Rating Pills 1..9 */}
+                          <div className="bwm-scale-pills">
+                            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
+                              <button
+                                key={num}
+                                type="button"
+                                onClick={() => handleBestToOthersChange(c.code, num)}
+                                className={`bwm-scale-pill-btn ${currentVal === num ? 'active-ab' : ''}`}
+                                title={`${num} - ${SCALE_LABELS[num]}`}
+                              >
+                                {num}
+                              </button>
                             ))}
-                          </select>
+                          </div>
                         </div>
                       );
                     })}
                   </div>
                 </div>
 
-                {/* 3. Section Others-to-Worst */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid hsl(var(--border))', paddingBottom: '6px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontSize: '0.75rem', fontWeight: 800, color: 'hsl(var(--warning))', background: 'hsl(var(--warning) / 0.15)', padding: '2px 8px', borderRadius: '4px' }}>
-                        VEKTOR A_W
+                {/* Langkah 3: Vektor A_W (Others-to-Worst) */}
+                <div>
+                  <div className="bwm-section-header">
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                      <span className="bwm-step-circle circle-3">3</span>
+                      <span className="bwm-vector-badge badge-aw">
+                        VEKTOR A_W (Others-to-Worst)
                       </span>
-                      <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: 'hsl(var(--foreground))' }}>
-                        Bandingkan Kriteria Lain Terhadap [{worstCode} - {worstCrit.name}]:
+                      <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'hsl(var(--foreground))' }}>
+                        Bandingkan Kriteria Lainnya Terhadap [{worstCode} - {worstCrit.name}]:
                       </span>
                     </div>
-                    <span style={{ fontSize: '0.6875rem', color: 'hsl(var(--muted-foreground))' }}>
+                    <span style={{ fontSize: '0.71875rem', color: 'hsl(var(--muted-foreground))' }}>
                       Skala 1 (Sama) s/d 9 (Mutlak)
                     </span>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(330px, 1fr))', gap: '8px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {criteria.filter(c => c.code !== worstCode).map(c => {
                       const isBest = c.code === bestCode;
+                      const currentVal = othersToWorst[c.code] || 1;
+
                       return (
                         <div 
                           key={c.code} 
-                          style={{ 
-                            display: 'flex', 
-                            justifyContent: 'space-between', 
-                            alignItems: 'center', 
-                            background: isBest ? 'hsl(var(--primary) / 0.08)' : 'hsl(var(--muted) / 0.35)', 
-                            padding: '8px 12px', 
-                            borderRadius: '8px', 
-                            border: isBest ? '1.5px solid hsl(var(--primary) / 0.45)' : '1px solid hsl(var(--border))',
-                            gap: '10px',
-                            transition: 'all 0.15s ease'
-                          }}
+                          className={`bwm-row-card ${isBest ? 'highlight-sync' : ''}`}
                         >
-                          <div style={{ display: 'flex', flexDirection: 'column', minWidth: 0, flex: 1 }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexWrap: 'wrap' }}>
-                              <span className="code-num" style={{ fontWeight: 800, fontSize: '0.75rem', background: 'hsl(var(--background))', padding: '1px 6px', borderRadius: '4px', border: '1px solid hsl(var(--border))' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                              <span className="code-num" style={{ fontWeight: 700, fontSize: '0.75rem', background: 'hsl(var(--muted) / 0.6)', padding: '2px 8px', borderRadius: '4px', border: '1px solid hsl(var(--border) / 0.7)' }}>
                                 {c.code} vs {worstCode}
                               </span>
-                              <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'hsl(var(--foreground))', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} title={c.name}>
+                              <span style={{ fontSize: '0.84375rem', fontWeight: 600, color: 'hsl(var(--foreground))' }}>
                                 {c.name}
                               </span>
                               {isBest && (
-                                <span style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'hsl(var(--primary))', background: 'hsl(var(--primary) / 0.15)', padding: '1px 5px', borderRadius: '4px' }}>
-                                  Terbaik (a_BW)
+                                <span style={{ fontSize: '0.6875rem', fontWeight: 600, color: 'hsl(30 70% 38%)', background: 'hsl(35 85% 93% / 0.8)', padding: '2px 8px', borderRadius: '4px', border: '1px solid hsl(35 70% 82% / 0.8)' }}>
+                                  Pasangan Acuan (Best vs Worst) · Otomatis Tersinkron
                                 </span>
                               )}
                             </div>
-                            <span style={{ fontSize: '0.6875rem', color: 'hsl(var(--muted-foreground))', marginTop: '2px' }}>
-                              {isBest 
-                                ? `Nilai perbandingan utama a_BW (otomatis tersinkron)` 
-                                : `Preferensi ${c.code} dibanding ${worstCode}`}
+
+                            {/* Label Deskriptor Nilai Terpilih */}
+                            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'hsl(30 70% 42%)' }}>
+                              {SCALE_LABELS[currentVal]}
                             </span>
                           </div>
 
-                          <select 
-                            value={othersToWorst[c.code] || 1}
-                            onChange={(e) => handleOthersToWorstChange(c.code, parseInt(e.target.value, 10))}
-                            className="form-select"
-                            style={{ 
-                              width: '165px', 
-                              padding: '3px 8px', 
-                              fontSize: '0.75rem', 
-                              height: '32px', 
-                              fontWeight: 600,
-                              borderColor: isBest ? 'hsl(var(--primary))' : undefined,
-                              flexShrink: 0 
-                            }}
-                          >
-                            {SCALE_OPTIONS.map(opt => (
-                              <option key={opt.value} value={opt.value}>{opt.label}</option>
+                          {/* Segmented Interactive Rating Pills 1..9 */}
+                          <div className="bwm-scale-pills">
+                            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(num => (
+                              <button
+                                key={num}
+                                type="button"
+                                onClick={() => handleOthersToWorstChange(c.code, num)}
+                                className={`bwm-scale-pill-btn ${currentVal === num ? 'active-aw' : ''}`}
+                                title={`${num} - ${SCALE_LABELS[num]}`}
+                              >
+                                {num}
+                              </button>
                             ))}
-                          </select>
+                          </div>
                         </div>
                       );
                     })}
                   </div>
                 </div>
 
-                {/* 4. Real-time Status Logika Card Sesuai Aturan Metode BWM */}
+                {/* Card Status Konsistensi BWM */}
                 <div style={{
-                  padding: '12px 16px',
-                  borderRadius: '8px',
+                  padding: '13px 16px',
+                  borderRadius: '10px',
                   background: previewResult?.isConsistent 
-                    ? 'hsl(var(--success) / 0.08)' 
-                    : 'hsl(var(--warning) / 0.1)',
+                    ? 'hsl(145 45% 96% / 0.7)' 
+                    : 'hsl(38 70% 96% / 0.75)',
                   border: `1px solid ${previewResult?.isConsistent 
-                    ? 'hsl(var(--success) / 0.35)' 
-                    : 'hsl(var(--warning) / 0.45)'}`,
+                    ? 'hsl(145 40% 80% / 0.7)' 
+                    : 'hsl(38 55% 80% / 0.7)'}`,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '8px'
+                  gap: '10px'
                 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '10px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       {isPreviewLoading ? (
-                        <RotateCw size={16} className="animate-spin" color="hsl(var(--primary))" />
+                        <RotateCw size={17} className="animate-spin text-primary" />
                       ) : previewResult?.isConsistent ? (
-                        <CheckCircle2 size={18} color="hsl(var(--success))" />
+                        <CheckCircle2 size={19} style={{ color: 'hsl(145 55% 40%)' }} />
                       ) : (
-                        <AlertTriangle size={18} color="hsl(var(--warning))" />
+                        <AlertTriangle size={19} style={{ color: 'hsl(35 75% 45%)' }} />
                       )}
-                      <span style={{ 
-                        fontSize: '0.875rem', 
-                        fontWeight: 700, 
-                        color: previewResult?.isConsistent ? 'hsl(var(--success))' : 'hsl(var(--warning))' 
-                      }}>
-                        Status Logika BWM: {previewResult?.isConsistent ? 'KONSISTEN (Memenuhi Kaidah Metode)' : 'PERLU PENYESUAIAN (Rasio CR ≥ 0.10)'}
-                      </span>
+                      <div>
+                        <div style={{ 
+                          fontSize: '0.84375rem', 
+                          fontWeight: 700, 
+                          color: previewResult?.isConsistent ? 'hsl(145 55% 30%)' : 'hsl(32 75% 34%)' 
+                        }}>
+                          {previewResult?.isConsistent 
+                            ? 'Status BWM: KONSISTEN (Memenuhi Standar Ilmiah)' 
+                            : 'Status BWM: PERLU PENYESUAIAN NILAI (Rasio CR ≥ 0.10)'}
+                        </div>
+                        <span style={{ fontSize: '0.71875rem', color: 'hsl(var(--muted-foreground))' }}>
+                          {previewResult?.isConsistent 
+                            ? 'Nilai perbandingan konsisten secara matematis (CR ≤ 0.10) sesuai kaidah Jafar Rezaei.' 
+                            : 'Nilai perbandingan memiliki deviasi preferensi yang cukup tinggi. Disarankan disesuaikan.'}
+                        </span>
+                      </div>
                     </div>
 
                     {previewResult && (
-                      <div style={{ display: 'flex', gap: '6px', fontSize: '0.75rem', fontFamily: 'monospace' }}>
-                        <span style={{ padding: '2px 8px', borderRadius: '4px', background: 'hsl(var(--background))', border: '1px solid hsl(var(--border))', fontWeight: 700 }}>
-                          CR: {previewResult.consistencyRatio.toFixed(3)}
-                        </span>
-                        <span style={{ padding: '2px 8px', borderRadius: '4px', background: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}>
-                          ξ*: {previewResult.xi.toFixed(4)}
-                        </span>
-                        <span style={{ padding: '2px 8px', borderRadius: '4px', background: 'hsl(var(--background))', border: '1px solid hsl(var(--border))' }}>
-                          a_BW: {previewResult.aBW}
-                        </span>
+                      <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
+                        <div className="bwm-metric-pill">
+                          <span style={{ color: 'hsl(var(--muted-foreground))' }}>CR:</span>
+                          <strong style={{ color: previewResult.isConsistent ? 'hsl(145 60% 35%)' : 'hsl(32 80% 40%)' }}>
+                            {previewResult.consistencyRatio.toFixed(3)}
+                          </strong>
+                        </div>
+                        <div className="bwm-metric-pill">
+                          <span style={{ color: 'hsl(var(--muted-foreground))' }}>ξ*:</span>
+                          <strong>{previewResult.xi.toFixed(4)}</strong>
+                        </div>
+                        <div className="bwm-metric-pill">
+                          <span style={{ color: 'hsl(var(--muted-foreground))' }}>a_BW:</span>
+                          <strong>{previewResult.aBW}</strong>
+                        </div>
                       </div>
                     )}
                   </div>
 
-                  <p style={{ fontSize: '0.75rem', color: 'hsl(var(--muted-foreground))', margin: 0, lineHeight: 1.45 }}>
-                    {previewResult?.isConsistent 
-                      ? 'Rasio Konsistensi (CR < 0.10) sesuai teori Jafar Rezaei (2015/2016). Perbandingan preferensi logis dan siap disimpan.' 
-                      : 'Rasio Konsistensi (CR ≥ 0.10) menunjukkan adanya pertentangan preferensi. Berdasarkan kaidah BWM, hubungan nilai antar kriteria disarankan memenuhi a_Bj × a_jW ≈ a_BW.'}
-                  </p>
-
                   {previewResult?.warnings && previewResult.warnings.length > 0 && (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', marginTop: '2px', background: 'hsl(var(--background) / 0.7)', padding: '8px 10px', borderRadius: '6px' }}>
-                      <span style={{ fontSize: '0.6875rem', fontWeight: 700, color: 'hsl(var(--warning))' }}>
-                        Petunjuk Penyesuaian Logika:
-                      </span>
+                    <div style={{ 
+                      display: 'flex', 
+                      flexDirection: 'column', 
+                      gap: '6px', 
+                      background: 'hsl(var(--card))', 
+                      padding: '11px 14px', 
+                      borderRadius: '8px', 
+                      border: '1px solid hsl(38 50% 84% / 0.8)' 
+                    }}>
+                      <div style={{ fontSize: '0.71875rem', fontWeight: 700, color: 'hsl(32 75% 38%)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <Info size={14} />
+                        <span>Panduan Penyesuaian Nilai Agar Konsisten:</span>
+                      </div>
                       {previewResult.warnings.map((warn, wIdx) => (
-                        <span key={wIdx} style={{ fontSize: '0.6875rem', color: 'hsl(var(--foreground))', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <div key={wIdx} style={{ fontSize: '0.71875rem', color: 'hsl(var(--muted-foreground))', lineHeight: 1.5, paddingLeft: '4px' }}>
                           • {warn}
-                        </span>
+                        </div>
                       ))}
                     </div>
                   )}
@@ -736,11 +792,12 @@ export default function BwmView({
 
               </div>
 
-              <div className="modal-footer" style={{ padding: '14px 20px', borderTop: '1px solid hsl(var(--border))' }}>
+              {/* Modal Footer */}
+              <div className="modal-footer" style={{ flexShrink: 0, padding: '14px 22px', borderTop: '1px solid hsl(var(--border) / 0.7)', background: 'hsl(var(--card))', display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
                 <button type="button" onClick={() => setIsWizardOpen(false)} className="btn btn-outline btn-sm">
                   Batal
                 </button>
-                <button type="submit" disabled={isEvaluating} className="btn btn-primary btn-sm">
+                <button type="submit" disabled={isEvaluating} className="btn btn-primary btn-sm" style={{ background: 'hsl(217 75% 52%)', borderColor: 'hsl(217 75% 52%)' }}>
                   {isEvaluating ? <RotateCw size={14} className="animate-spin" /> : <Check size={14} />}
                   <span>{isEvaluating ? 'Menghitung Solver BWM...' : 'Hitung & Simpan Bobot'}</span>
                 </button>

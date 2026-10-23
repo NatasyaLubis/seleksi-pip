@@ -237,7 +237,6 @@ erDiagram
         string nisn UK
         string nama_lengkap
         string kelas
-        string nama_wali
         string alamat
         timestamp created_at
     }

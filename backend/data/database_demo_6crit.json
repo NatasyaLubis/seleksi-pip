@@ -286,7 +286,6 @@
       "nama_lengkap": "Fitri Saputri",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Herman Saputri",
       "alamat": "Jl. Kenanga No. 48",
       "values": {
         "C1": 500000,
@@ -303,7 +302,6 @@
       "nama_lengkap": "Maya Gunawan",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Gunawan",
       "alamat": "Jl. Diponegoro No. 11",
       "values": {
         "C1": 750000,
@@ -320,7 +318,6 @@
       "nama_lengkap": "Ahmad Simanjuntak",
       "kelas": "XI-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Simanjuntak",
       "alamat": "Jl. Melati No. 71",
       "values": {
         "C1": 2100000,
@@ -337,7 +334,6 @@
       "nama_lengkap": "Ilham Simanjuntak",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Slamet Simanjuntak",
       "alamat": "Desa Karanganyar No. 74",
       "values": {
         "C1": 850000,
@@ -354,7 +350,6 @@
       "nama_lengkap": "Nabila Setiawan",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Setiawan",
       "alamat": "Kampung Nelayan No. 12",
       "values": {
         "C1": 850000,
@@ -371,7 +366,6 @@
       "nama_lengkap": "Dewi Hakim",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Hakim",
       "alamat": "Jl. Sudirman No. 31",
       "values": {
         "C1": 2500000,
@@ -388,7 +382,6 @@
       "nama_lengkap": "Budi Handayani",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Handayani",
       "alamat": "Jl. Merpati No. 80",
       "values": {
         "C1": 950000,
@@ -405,7 +398,6 @@
       "nama_lengkap": "Ayu Saputra",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Saputra",
       "alamat": "Jl. Diponegoro No. 32",
       "values": {
         "C1": 2100000,
@@ -422,7 +414,6 @@
       "nama_lengkap": "Nadia Firmansyah",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Firmansyah",
       "alamat": "Desa Karanganyar No. 18",
       "values": {
         "C1": 950000,
@@ -439,7 +430,6 @@
       "nama_lengkap": "Mega Wijaya",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Wijaya",
       "alamat": "Kampung Nelayan No. 39",
       "values": {
         "C1": 1600000,
@@ -456,7 +446,6 @@
       "nama_lengkap": "Putri Hakim",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Hakim",
       "alamat": "Desa Karanganyar No. 53",
       "values": {
         "C1": 1600000,
@@ -473,7 +462,6 @@
       "nama_lengkap": "Budi Setiawan",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Setiawan",
       "alamat": "Desa Karanganyar No. 76",
       "values": {
         "C1": 950000,
@@ -490,7 +478,6 @@
       "nama_lengkap": "Maya Pratama",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Herman Pratama",
       "alamat": "Jl. Melati No. 75",
       "values": {
         "C1": 400000,
@@ -507,7 +494,6 @@
       "nama_lengkap": "Yoga Wardani",
       "kelas": "X-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Wardani",
       "alamat": "Dusun Sukamaju No. 15",
       "values": {
         "C1": 950000,
@@ -524,7 +510,6 @@
       "nama_lengkap": "Bayu Permana",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Herman Permana",
       "alamat": "Desa Karanganyar No. 55",
       "values": {
         "C1": 400000,
@@ -541,7 +526,6 @@
       "nama_lengkap": "Nur Setiawan",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Setiawan",
       "alamat": "Desa Karanganyar No. 40",
       "values": {
         "C1": 2100000,
@@ -558,7 +542,6 @@
       "nama_lengkap": "Muhammad Firmansyah",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Firmansyah",
       "alamat": "Jl. Melati No. 80",
       "values": {
         "C1": 2100000,
@@ -575,7 +558,6 @@
       "nama_lengkap": "Bayu Anggraini",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Anggraini",
       "alamat": "Dusun Sukamaju No. 41",
       "values": {
         "C1": 600000,
@@ -592,7 +574,6 @@
       "nama_lengkap": "Rini Puspitang",
       "kelas": "XI-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Puspitang",
       "alamat": "Jl. Kenanga No. 55",
       "values": {
         "C1": 1100000,
@@ -609,7 +590,6 @@
       "nama_lengkap": "Tia Utami",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Slamet Utami",
       "alamat": "Jl. Merpati No. 2",
       "values": {
         "C1": 2100000,
@@ -626,7 +606,6 @@
       "nama_lengkap": "Rian Wibowo",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Joko Wibowo",
       "alamat": "Jl. Melati No. 17",
       "values": {
         "C1": 1250000,
@@ -643,7 +622,6 @@
       "nama_lengkap": "Fajar Wulandari",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Wulandari",
       "alamat": "Jl. Sudirman No. 45",
       "values": {
         "C1": 1100000,
@@ -660,7 +638,6 @@
       "nama_lengkap": "Yoga Wijaya",
       "kelas": "X-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Wijaya",
       "alamat": "Dusun Krajan No. 8",
       "values": {
         "C1": 850000,
@@ -677,7 +654,6 @@
       "nama_lengkap": "Wahyu Santoso",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Santoso",
       "alamat": "Desa Karanganyar No. 48",
       "values": {
         "C1": 850000,
@@ -694,7 +670,6 @@
       "nama_lengkap": "Dewi Saputra",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Saputra",
       "alamat": "Jl. Sudirman No. 60",
       "values": {
         "C1": 3200000,
@@ -711,7 +686,6 @@
       "nama_lengkap": "Rini Anwar",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Anwar",
       "alamat": "Dusun Krajan No. 2",
       "values": {
         "C1": 950000,
@@ -728,7 +702,6 @@
       "nama_lengkap": "Nur Puspitang",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Puspitang",
       "alamat": "Jl. Melati No. 75",
       "values": {
         "C1": 1250000,
@@ -745,7 +718,6 @@
       "nama_lengkap": "Yoga Pangestu",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Pangestu",
       "alamat": "Dusun Krajan No. 3",
       "values": {
         "C1": 850000,
@@ -762,7 +734,6 @@
       "nama_lengkap": "Nur Nasution",
       "kelas": "XI-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Nasution",
       "alamat": "Jl. Merpati No. 7",
       "values": {
         "C1": 2100000,
@@ -779,7 +750,6 @@
       "nama_lengkap": "Anggi Utami",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Utami",
       "alamat": "Jl. Merpati No. 51",
       "values": {
         "C1": 1400000,
@@ -796,7 +766,6 @@
       "nama_lengkap": "Dewi Anwar",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Joko Anwar",
       "alamat": "Jl. Merpati No. 23",
       "values": {
         "C1": 1400000,
@@ -813,7 +782,6 @@
       "nama_lengkap": "Rini Sinaga",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Subur Sinaga",
       "alamat": "Dusun Sukamaju No. 69",
       "values": {
         "C1": 750000,
@@ -830,7 +798,6 @@
       "nama_lengkap": "Indra Nasution",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Nasution",
       "alamat": "Jl. Kenanga No. 13",
       "values": {
         "C1": 600000,
@@ -847,7 +814,6 @@
       "nama_lengkap": "Ilham Sinaga",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Joko Sinaga",
       "alamat": "Jl. Diponegoro No. 13",
       "values": {
         "C1": 850000,
@@ -864,7 +830,6 @@
       "nama_lengkap": "Budi Utami",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Slamet Utami",
       "alamat": "Jl. Mawar No. 33",
       "values": {
         "C1": 1100000,
@@ -881,7 +846,6 @@
       "nama_lengkap": "Aditya Pratama",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Herman Pratama",
       "alamat": "Jl. Melati No. 33",
       "values": {
         "C1": 1600000,
@@ -898,7 +862,6 @@
       "nama_lengkap": "Aditya Saputra",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Saputra",
       "alamat": "Kampung Nelayan No. 72",
       "values": {
         "C1": 3200000,
@@ -915,7 +878,6 @@
       "nama_lengkap": "Zahra Wijaya",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Wijaya",
       "alamat": "Dusun Krajan No. 20",
       "values": {
         "C1": 1250000,
@@ -932,7 +894,6 @@
       "nama_lengkap": "Maya Gunawan",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Slamet Gunawan",
       "alamat": "Jl. Melati No. 58",
       "values": {
         "C1": 1600000,
@@ -949,7 +910,6 @@
       "nama_lengkap": "Dimas Lubis",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Lubis",
       "alamat": "Jl. Melati No. 8",
       "values": {
         "C1": 400000,
@@ -966,7 +926,6 @@
       "nama_lengkap": "Ilham Pangestu",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Pangestu",
       "alamat": "Jl. Merpati No. 16",
       "values": {
         "C1": 1800000,
@@ -983,7 +942,6 @@
       "nama_lengkap": "Dedi Nasution",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Nasution",
       "alamat": "Dusun Krajan No. 41",
       "values": {
         "C1": 1400000,
@@ -1000,7 +958,6 @@
       "nama_lengkap": "Bayu Siregar",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Siregar",
       "alamat": "Jl. Sudirman No. 32",
       "values": {
         "C1": 1600000,
@@ -1017,7 +974,6 @@
       "nama_lengkap": "Muhammad Wibowo",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Subur Wibowo",
       "alamat": "Jl. Melati No. 4",
       "values": {
         "C1": 2500000,
@@ -1034,7 +990,6 @@
       "nama_lengkap": "Rini Gunawan",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Gunawan",
       "alamat": "Jl. Mawar No. 7",
       "values": {
         "C1": 750000,
@@ -1051,7 +1006,6 @@
       "nama_lengkap": "Tri Firmansyah",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Firmansyah",
       "alamat": "Desa Karanganyar No. 74",
       "values": {
         "C1": 1600000,
@@ -1068,7 +1022,6 @@
       "nama_lengkap": "Hendra Ramadhan",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Ramadhan",
       "alamat": "Kampung Nelayan No. 5",
       "values": {
         "C1": 400000,
@@ -1085,7 +1038,6 @@
       "nama_lengkap": "Dian Kurniawan",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Kurniawan",
       "alamat": "Jl. Kenanga No. 47",
       "values": {
         "C1": 1600000,
@@ -1102,7 +1054,6 @@
       "nama_lengkap": "Fajar Wardani",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Wardani",
       "alamat": "Jl. Merpati No. 58",
       "values": {
         "C1": 400000,
@@ -1119,7 +1070,6 @@
       "nama_lengkap": "Putri Gunawan",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Gunawan",
       "alamat": "Jl. Melati No. 56",
       "values": {
         "C1": 850000,
@@ -1136,7 +1086,6 @@
       "nama_lengkap": "Ilham Gunawan",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Gunawan",
       "alamat": "Jl. Merpati No. 2",
       "values": {
         "C1": 500000,
@@ -1153,7 +1102,6 @@
       "nama_lengkap": "Muhammad Wibowo",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Wibowo",
       "alamat": "Jl. Diponegoro No. 3",
       "values": {
         "C1": 600000,
@@ -1170,7 +1118,6 @@
       "nama_lengkap": "Budi Harahap",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Harahap",
       "alamat": "Jl. Diponegoro No. 29",
       "values": {
         "C1": 2500000,
@@ -1187,7 +1134,6 @@
       "nama_lengkap": "Muhammad Wijaya",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Wijaya",
       "alamat": "Jl. Mawar No. 75",
       "values": {
         "C1": 2500000,
@@ -1204,7 +1150,6 @@
       "nama_lengkap": "Dedi Santoso",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Santoso",
       "alamat": "Dusun Sukamaju No. 7",
       "values": {
         "C1": 400000,
@@ -1221,7 +1166,6 @@
       "nama_lengkap": "Siti Lubis",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Lubis",
       "alamat": "Dusun Sukamaju No. 21",
       "values": {
         "C1": 500000,
@@ -1238,7 +1182,6 @@
       "nama_lengkap": "Mega Sinaga",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Joko Sinaga",
       "alamat": "Kampung Nelayan No. 23",
       "values": {
         "C1": 1100000,
@@ -1255,7 +1198,6 @@
       "nama_lengkap": "Yoga Gunawan",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Gunawan",
       "alamat": "Kampung Nelayan No. 6",
       "values": {
         "C1": 1600000,
@@ -1272,7 +1214,6 @@
       "nama_lengkap": "Hendra Susanto",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Subur Susanto",
       "alamat": "Jl. Kenanga No. 61",
       "values": {
         "C1": 850000,
@@ -1289,7 +1230,6 @@
       "nama_lengkap": "Anggi Handayani",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Handayani",
       "alamat": "Jl. Sudirman No. 57",
       "values": {
         "C1": 950000,
@@ -1306,7 +1246,6 @@
       "nama_lengkap": "Rini Wibowo",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Subur Wibowo",
       "alamat": "Kampung Nelayan No. 63",
       "values": {
         "C1": 950000,
@@ -1323,7 +1262,6 @@
       "nama_lengkap": "Putri Kusuma",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Kusuma",
       "alamat": "Jl. Kenanga No. 49",
       "values": {
         "C1": 500000,
@@ -1340,7 +1278,6 @@
       "nama_lengkap": "Dimas Handayani",
       "kelas": "XI-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Handayani",
       "alamat": "Jl. Merpati No. 66",
       "values": {
         "C1": 1100000,
@@ -1357,7 +1294,6 @@
       "nama_lengkap": "Fitri Hidayat",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Hidayat",
       "alamat": "Kampung Nelayan No. 47",
       "values": {
         "C1": 1600000,
@@ -1374,7 +1310,6 @@
       "nama_lengkap": "Indra Nasution",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Nasution",
       "alamat": "Jl. Kenanga No. 23",
       "values": {
         "C1": 400000,
@@ -1391,7 +1326,6 @@
       "nama_lengkap": "Nabila Harahap",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Harahap",
       "alamat": "Jl. Kenanga No. 4",
       "values": {
         "C1": 500000,
@@ -1408,7 +1342,6 @@
       "nama_lengkap": "Yoga Firmansyah",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Slamet Firmansyah",
       "alamat": "Jl. Mawar No. 25",
       "values": {
         "C1": 950000,
@@ -1425,7 +1358,6 @@
       "nama_lengkap": "Maya Hidayat",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Hidayat",
       "alamat": "Jl. Merpati No. 27",
       "values": {
         "C1": 850000,
@@ -1442,7 +1374,6 @@
       "nama_lengkap": "Yoga Simanjuntak",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Simanjuntak",
       "alamat": "Jl. Sudirman No. 40",
       "values": {
         "C1": 500000,
@@ -1459,7 +1390,6 @@
       "nama_lengkap": "Nadia Wijaya",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Joko Wijaya",
       "alamat": "Kampung Nelayan No. 77",
       "values": {
         "C1": 750000,
@@ -1476,7 +1406,6 @@
       "nama_lengkap": "Nur Anwar",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Anwar",
       "alamat": "Jl. Mawar No. 15",
       "values": {
         "C1": 2100000,
@@ -1493,7 +1422,6 @@
       "nama_lengkap": "Siti Anggraini",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Anggraini",
       "alamat": "Dusun Sukamaju No. 64",
       "values": {
         "C1": 3200000,
@@ -1510,7 +1438,6 @@
       "nama_lengkap": "Fitri Saputra",
       "kelas": "X-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Saputra",
       "alamat": "Kampung Nelayan No. 16",
       "values": {
         "C1": 750000,
@@ -1527,7 +1454,6 @@
       "nama_lengkap": "Anggi Wibowo",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Wibowo",
       "alamat": "Desa Karanganyar No. 10",
       "values": {
         "C1": 1250000,
@@ -1544,7 +1470,6 @@
       "nama_lengkap": "Zahra Setiawan",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Setiawan",
       "alamat": "Dusun Sukamaju No. 32",
       "values": {
         "C1": 1400000,
@@ -1561,7 +1486,6 @@
       "nama_lengkap": "Fajar Wulandari",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Wulandari",
       "alamat": "Jl. Mawar No. 64",
       "values": {
         "C1": 1100000,
@@ -1578,7 +1502,6 @@
       "nama_lengkap": "Bagus Lubis",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Lubis",
       "alamat": "Jl. Melati No. 76",
       "values": {
         "C1": 3200000,
@@ -1595,7 +1518,6 @@
       "nama_lengkap": "Wahyu Santoso",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Santoso",
       "alamat": "Jl. Merpati No. 14",
       "values": {
         "C1": 850000,
@@ -1612,7 +1534,6 @@
       "nama_lengkap": "Nabila Saputri",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Saputri",
       "alamat": "Jl. Diponegoro No. 6",
       "values": {
         "C1": 1600000,
@@ -1629,7 +1550,6 @@
       "nama_lengkap": "Wahyu Ramadhan",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Ramadhan",
       "alamat": "Jl. Kenanga No. 70",
       "values": {
         "C1": 850000,
@@ -1646,7 +1566,6 @@
       "nama_lengkap": "Maya Firmansyah",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Firmansyah",
       "alamat": "Jl. Mawar No. 5",
       "values": {
         "C1": 1800000,
@@ -1663,7 +1582,6 @@
       "nama_lengkap": "Maya Siregar",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Joko Siregar",
       "alamat": "Jl. Kenanga No. 13",
       "values": {
         "C1": 1100000,
@@ -1680,7 +1598,6 @@
       "nama_lengkap": "Dedi Pangestu",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Slamet Pangestu",
       "alamat": "Desa Karanganyar No. 66",
       "values": {
         "C1": 3200000,
@@ -1697,7 +1614,6 @@
       "nama_lengkap": "Tri Puspitang",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Puspitang",
       "alamat": "Jl. Mawar No. 4",
       "values": {
         "C1": 600000,
@@ -1714,7 +1630,6 @@
       "nama_lengkap": "Indah Gunawan",
       "kelas": "X-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Gunawan",
       "alamat": "Jl. Mawar No. 59",
       "values": {
         "C1": 400000,
@@ -1731,7 +1646,6 @@
       "nama_lengkap": "Arif Simanjuntak",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Simanjuntak",
       "alamat": "Dusun Sukamaju No. 16",
       "values": {
         "C1": 400000,
@@ -1748,7 +1662,6 @@
       "nama_lengkap": "Hendra Permana",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Permana",
       "alamat": "Jl. Kenanga No. 43",
       "values": {
         "C1": 1400000,
@@ -1765,7 +1678,6 @@
       "nama_lengkap": "Ilham Saputra",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Saputra",
       "alamat": "Jl. Mawar No. 62",
       "values": {
         "C1": 850000,
@@ -1782,7 +1694,6 @@
       "nama_lengkap": "Fajar Lubis",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Lubis",
       "alamat": "Desa Karanganyar No. 40",
       "values": {
         "C1": 1800000,
@@ -1799,7 +1710,6 @@
       "nama_lengkap": "Nadia Harahap",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Subur Harahap",
       "alamat": "Jl. Mawar No. 77",
       "values": {
         "C1": 1600000,
@@ -1816,7 +1726,6 @@
       "nama_lengkap": "Hendra Puspitang",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Puspitang",
       "alamat": "Jl. Kenanga No. 70",
       "values": {
         "C1": 850000,
@@ -1833,7 +1742,6 @@
       "nama_lengkap": "Lestari Wibowo",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Wibowo",
       "alamat": "Jl. Mawar No. 57",
       "values": {
         "C1": 1400000,
@@ -1850,7 +1758,6 @@
       "nama_lengkap": "Nur Pratama",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Slamet Pratama",
       "alamat": "Jl. Kenanga No. 2",
       "values": {
         "C1": 2100000,
@@ -1867,7 +1774,6 @@
       "nama_lengkap": "Fajar Simanjuntak",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Simanjuntak",
       "alamat": "Dusun Krajan No. 66",
       "values": {
         "C1": 1800000,
@@ -1884,7 +1790,6 @@
       "nama_lengkap": "Bayu Anggraini",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Anggraini",
       "alamat": "Jl. Merpati No. 39",
       "values": {
         "C1": 3200000,
@@ -1901,7 +1806,6 @@
       "nama_lengkap": "Dewi Setiawan",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Setiawan",
       "alamat": "Jl. Melati No. 49",
       "values": {
         "C1": 1600000,
@@ -1918,7 +1822,6 @@
       "nama_lengkap": "Indah Hidayat",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Hidayat",
       "alamat": "Dusun Sukamaju No. 50",
       "values": {
         "C1": 1600000,
@@ -1935,7 +1838,6 @@
       "nama_lengkap": "Arif Susanto",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Herman Susanto",
       "alamat": "Dusun Sukamaju No. 66",
       "values": {
         "C1": 1600000,
@@ -1952,7 +1854,6 @@
       "nama_lengkap": "Aditya Saputra",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Saputra",
       "alamat": "Jl. Melati No. 65",
       "values": {
         "C1": 600000,
@@ -1969,7 +1870,6 @@
       "nama_lengkap": "Nabila Nasution",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Nasution",
       "alamat": "Kampung Nelayan No. 48",
       "values": {
         "C1": 1600000,
@@ -1986,7 +1886,6 @@
       "nama_lengkap": "Tri Hidayat",
       "kelas": "X-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Hidayat",
       "alamat": "Kampung Nelayan No. 32",
       "values": {
         "C1": 850000,
@@ -2003,7 +1902,6 @@
       "nama_lengkap": "Aulia Nugroho",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Nugroho",
       "alamat": "Jl. Diponegoro No. 11",
       "values": {
         "C1": 2100000,
@@ -2020,7 +1918,6 @@
       "nama_lengkap": "Aulia Simanjuntak",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Yanto Simanjuntak",
       "alamat": "Kampung Nelayan No. 16",
       "values": {
         "C1": 1250000,
@@ -2037,7 +1934,6 @@
       "nama_lengkap": "Wahyu Pangestu",
       "kelas": "X-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Pangestu",
       "alamat": "Jl. Sudirman No. 48",
       "values": {
         "C1": 850000,
@@ -2054,7 +1950,6 @@
       "nama_lengkap": "Fitri Saputri",
       "kelas": "XI-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Saputri",
       "alamat": "Kampung Nelayan No. 18",
       "values": {
         "C1": 1100000,
@@ -2071,7 +1966,6 @@
       "nama_lengkap": "Budi Safitri",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Safitri",
       "alamat": "Jl. Mawar No. 78",
       "values": {
         "C1": 500000,
@@ -2088,7 +1982,6 @@
       "nama_lengkap": "Fajar Anwar",
       "kelas": "XI-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Anwar",
       "alamat": "Jl. Diponegoro No. 15",
       "values": {
         "C1": 500000,
@@ -2105,7 +1998,6 @@
       "nama_lengkap": "Dian Wijaya",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Wijaya",
       "alamat": "Jl. Merpati No. 51",
       "values": {
         "C1": 500000,
@@ -2122,7 +2014,6 @@
       "nama_lengkap": "Zahra Lubis",
       "kelas": "XII-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Slamet Lubis",
       "alamat": "Desa Karanganyar No. 47",
       "values": {
         "C1": 2100000,
@@ -2139,7 +2030,6 @@
       "nama_lengkap": "Nur Setiawan",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Herman Setiawan",
       "alamat": "Dusun Krajan No. 32",
       "values": {
         "C1": 400000,
@@ -2156,7 +2046,6 @@
       "nama_lengkap": "Zahra Permana",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Hasan Permana",
       "alamat": "Kampung Nelayan No. 9",
       "values": {
         "C1": 2100000,
@@ -2173,7 +2062,6 @@
       "nama_lengkap": "Dian Gunawan",
       "kelas": "XII-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Agus Gunawan",
       "alamat": "Desa Karanganyar No. 35",
       "values": {
         "C1": 1250000,
@@ -2190,7 +2078,6 @@
       "nama_lengkap": "Maya Harahap",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Harahap",
       "alamat": "Jl. Diponegoro No. 63",
       "values": {
         "C1": 3200000,
@@ -2207,7 +2094,6 @@
       "nama_lengkap": "Fajar Sinaga",
       "kelas": "XI-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Sutrisno Sinaga",
       "alamat": "Jl. Mawar No. 21",
       "values": {
         "C1": 2100000,
@@ -2224,7 +2110,6 @@
       "nama_lengkap": "Rizky Lubis",
       "kelas": "XII-MM",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Lubis",
       "alamat": "Dusun Sukamaju No. 65",
       "values": {
         "C1": 500000,
@@ -2241,7 +2126,6 @@
       "nama_lengkap": "Aulia Firmansyah",
       "kelas": "XII-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Wagino Firmansyah",
       "alamat": "Jl. Mawar No. 38",
       "values": {
         "C1": 850000,
@@ -2258,7 +2142,6 @@
       "nama_lengkap": "Putri Pangestu",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Mulyono Pangestu",
       "alamat": "Jl. Melati No. 59",
       "values": {
         "C1": 1600000,
@@ -2275,7 +2158,6 @@
       "nama_lengkap": "Ilham Hakim",
       "kelas": "X-AKL",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Bambang Hakim",
       "alamat": "Kampung Nelayan No. 73",
       "values": {
         "C1": 750000,
@@ -2292,7 +2174,6 @@
       "nama_lengkap": "Tia Pratama",
       "kelas": "XI-BDP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Joko Pratama",
       "alamat": "Dusun Sukamaju No. 66",
       "values": {
         "C1": 2500000,
@@ -2309,7 +2190,6 @@
       "nama_lengkap": "Maya Setiawan",
       "kelas": "X-OTKP",
       "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-      "nama_wali": "Supriadi Setiawan",
       "alamat": "Dusun Krajan No. 20",
       "values": {
         "C1": 1400000,
@@ -5744,7 +5624,6 @@
         "nama_lengkap": "Bayu Permana",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Herman Permana",
         "alamat": "Desa Karanganyar No. 55",
         "rawValues": {
           "C1": 400000,
@@ -5777,7 +5656,6 @@
         "nama_lengkap": "Fajar Wardani",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Wardani",
         "alamat": "Jl. Merpati No. 58",
         "rawValues": {
           "C1": 400000,
@@ -5810,7 +5688,6 @@
         "nama_lengkap": "Putri Kusuma",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Kusuma",
         "alamat": "Jl. Kenanga No. 49",
         "rawValues": {
           "C1": 500000,
@@ -5843,7 +5720,6 @@
         "nama_lengkap": "Dian Wijaya",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Wijaya",
         "alamat": "Jl. Merpati No. 51",
         "rawValues": {
           "C1": 500000,
@@ -5876,7 +5752,6 @@
         "nama_lengkap": "Hendra Ramadhan",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Ramadhan",
         "alamat": "Kampung Nelayan No. 5",
         "rawValues": {
           "C1": 400000,
@@ -5909,7 +5784,6 @@
         "nama_lengkap": "Dedi Santoso",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Santoso",
         "alamat": "Dusun Sukamaju No. 7",
         "rawValues": {
           "C1": 400000,
@@ -5942,7 +5816,6 @@
         "nama_lengkap": "Arif Simanjuntak",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Simanjuntak",
         "alamat": "Dusun Sukamaju No. 16",
         "rawValues": {
           "C1": 400000,
@@ -5975,7 +5848,6 @@
         "nama_lengkap": "Aditya Saputra",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Saputra",
         "alamat": "Jl. Melati No. 65",
         "rawValues": {
           "C1": 600000,
@@ -6008,7 +5880,6 @@
         "nama_lengkap": "Yoga Simanjuntak",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Simanjuntak",
         "alamat": "Jl. Sudirman No. 40",
         "rawValues": {
           "C1": 500000,
@@ -6041,7 +5912,6 @@
         "nama_lengkap": "Hendra Susanto",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Subur Susanto",
         "alamat": "Jl. Kenanga No. 61",
         "rawValues": {
           "C1": 850000,
@@ -6074,7 +5944,6 @@
         "nama_lengkap": "Siti Lubis",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Lubis",
         "alamat": "Dusun Sukamaju No. 21",
         "rawValues": {
           "C1": 500000,
@@ -6107,7 +5976,6 @@
         "nama_lengkap": "Dimas Lubis",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Lubis",
         "alamat": "Jl. Melati No. 8",
         "rawValues": {
           "C1": 400000,
@@ -6140,7 +6008,6 @@
         "nama_lengkap": "Indra Nasution",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Nasution",
         "alamat": "Jl. Kenanga No. 13",
         "rawValues": {
           "C1": 600000,
@@ -6173,7 +6040,6 @@
         "nama_lengkap": "Maya Pratama",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Herman Pratama",
         "alamat": "Jl. Melati No. 75",
         "rawValues": {
           "C1": 400000,
@@ -6206,7 +6072,6 @@
         "nama_lengkap": "Tri Puspitang",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Puspitang",
         "alamat": "Jl. Mawar No. 4",
         "rawValues": {
           "C1": 600000,
@@ -6239,7 +6104,6 @@
         "nama_lengkap": "Indra Nasution",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Nasution",
         "alamat": "Jl. Kenanga No. 23",
         "rawValues": {
           "C1": 400000,
@@ -6272,7 +6136,6 @@
         "nama_lengkap": "Indah Gunawan",
         "kelas": "X-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Gunawan",
         "alamat": "Jl. Mawar No. 59",
         "rawValues": {
           "C1": 400000,
@@ -6305,7 +6168,6 @@
         "nama_lengkap": "Maya Hidayat",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Hidayat",
         "alamat": "Jl. Merpati No. 27",
         "rawValues": {
           "C1": 850000,
@@ -6338,7 +6200,6 @@
         "nama_lengkap": "Ilham Gunawan",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Gunawan",
         "alamat": "Jl. Merpati No. 2",
         "rawValues": {
           "C1": 500000,
@@ -6371,7 +6232,6 @@
         "nama_lengkap": "Yoga Firmansyah",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Slamet Firmansyah",
         "alamat": "Jl. Mawar No. 25",
         "rawValues": {
           "C1": 950000,
@@ -6404,7 +6264,6 @@
         "nama_lengkap": "Fitri Saputri",
         "kelas": "XI-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Saputri",
         "alamat": "Kampung Nelayan No. 18",
         "rawValues": {
           "C1": 1100000,
@@ -6437,7 +6296,6 @@
         "nama_lengkap": "Fajar Anwar",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Anwar",
         "alamat": "Jl. Diponegoro No. 15",
         "rawValues": {
           "C1": 500000,
@@ -6470,7 +6328,6 @@
         "nama_lengkap": "Dewi Anwar",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Joko Anwar",
         "alamat": "Jl. Merpati No. 23",
         "rawValues": {
           "C1": 1400000,
@@ -6503,7 +6360,6 @@
         "nama_lengkap": "Fitri Saputra",
         "kelas": "X-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Saputra",
         "alamat": "Kampung Nelayan No. 16",
         "rawValues": {
           "C1": 750000,
@@ -6536,7 +6392,6 @@
         "nama_lengkap": "Nur Pratama",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Slamet Pratama",
         "alamat": "Jl. Kenanga No. 2",
         "rawValues": {
           "C1": 2100000,
@@ -6569,7 +6424,6 @@
         "nama_lengkap": "Nabila Harahap",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Harahap",
         "alamat": "Jl. Kenanga No. 4",
         "rawValues": {
           "C1": 500000,
@@ -6602,7 +6456,6 @@
         "nama_lengkap": "Bayu Anggraini",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Anggraini",
         "alamat": "Dusun Sukamaju No. 41",
         "rawValues": {
           "C1": 600000,
@@ -6635,7 +6488,6 @@
         "nama_lengkap": "Maya Gunawan",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Gunawan",
         "alamat": "Jl. Diponegoro No. 11",
         "rawValues": {
           "C1": 750000,
@@ -6668,7 +6520,6 @@
         "nama_lengkap": "Yoga Pangestu",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Pangestu",
         "alamat": "Dusun Krajan No. 3",
         "rawValues": {
           "C1": 850000,
@@ -6701,7 +6552,6 @@
         "nama_lengkap": "Mega Sinaga",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Joko Sinaga",
         "alamat": "Kampung Nelayan No. 23",
         "rawValues": {
           "C1": 1100000,
@@ -6734,7 +6584,6 @@
         "nama_lengkap": "Nur Setiawan",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Herman Setiawan",
         "alamat": "Dusun Krajan No. 32",
         "rawValues": {
           "C1": 400000,
@@ -6767,7 +6616,6 @@
         "nama_lengkap": "Fitri Saputri",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Herman Saputri",
         "alamat": "Jl. Kenanga No. 48",
         "rawValues": {
           "C1": 500000,
@@ -6800,7 +6648,6 @@
         "nama_lengkap": "Rizky Lubis",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Lubis",
         "alamat": "Dusun Sukamaju No. 65",
         "rawValues": {
           "C1": 500000,
@@ -6833,7 +6680,6 @@
         "nama_lengkap": "Budi Safitri",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Safitri",
         "alamat": "Jl. Mawar No. 78",
         "rawValues": {
           "C1": 500000,
@@ -6866,7 +6712,6 @@
         "nama_lengkap": "Mega Wijaya",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Wijaya",
         "alamat": "Kampung Nelayan No. 39",
         "rawValues": {
           "C1": 1600000,
@@ -6899,7 +6744,6 @@
         "nama_lengkap": "Fajar Wulandari",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Wulandari",
         "alamat": "Jl. Mawar No. 64",
         "rawValues": {
           "C1": 1100000,
@@ -6932,7 +6776,6 @@
         "nama_lengkap": "Maya Siregar",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Joko Siregar",
         "alamat": "Jl. Kenanga No. 13",
         "rawValues": {
           "C1": 1100000,
@@ -6965,7 +6808,6 @@
         "nama_lengkap": "Putri Pangestu",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Pangestu",
         "alamat": "Jl. Melati No. 59",
         "rawValues": {
           "C1": 1600000,
@@ -6998,7 +6840,6 @@
         "nama_lengkap": "Bagus Lubis",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Lubis",
         "alamat": "Jl. Melati No. 76",
         "rawValues": {
           "C1": 3200000,
@@ -7031,7 +6872,6 @@
         "nama_lengkap": "Rian Wibowo",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Joko Wibowo",
         "alamat": "Jl. Melati No. 17",
         "rawValues": {
           "C1": 1250000,
@@ -7064,7 +6904,6 @@
         "nama_lengkap": "Yoga Wijaya",
         "kelas": "X-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Wijaya",
         "alamat": "Dusun Krajan No. 8",
         "rawValues": {
           "C1": 850000,
@@ -7097,7 +6936,6 @@
         "nama_lengkap": "Nadia Wijaya",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Joko Wijaya",
         "alamat": "Kampung Nelayan No. 77",
         "rawValues": {
           "C1": 750000,
@@ -7130,7 +6968,6 @@
         "nama_lengkap": "Budi Handayani",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Handayani",
         "alamat": "Jl. Merpati No. 80",
         "rawValues": {
           "C1": 950000,
@@ -7163,7 +7000,6 @@
         "nama_lengkap": "Yoga Gunawan",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Gunawan",
         "alamat": "Kampung Nelayan No. 6",
         "rawValues": {
           "C1": 1600000,
@@ -7196,7 +7032,6 @@
         "nama_lengkap": "Anggi Utami",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Utami",
         "alamat": "Jl. Merpati No. 51",
         "rawValues": {
           "C1": 1400000,
@@ -7229,7 +7064,6 @@
         "nama_lengkap": "Fajar Sinaga",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Sinaga",
         "alamat": "Jl. Mawar No. 21",
         "rawValues": {
           "C1": 2100000,
@@ -7262,7 +7096,6 @@
         "nama_lengkap": "Nadia Harahap",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Subur Harahap",
         "alamat": "Jl. Mawar No. 77",
         "rawValues": {
           "C1": 1600000,
@@ -7295,7 +7128,6 @@
         "nama_lengkap": "Putri Gunawan",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Gunawan",
         "alamat": "Jl. Melati No. 56",
         "rawValues": {
           "C1": 850000,
@@ -7328,7 +7160,6 @@
         "nama_lengkap": "Dian Kurniawan",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Kurniawan",
         "alamat": "Jl. Kenanga No. 47",
         "rawValues": {
           "C1": 1600000,
@@ -7361,7 +7192,6 @@
         "nama_lengkap": "Fajar Wulandari",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Wulandari",
         "alamat": "Jl. Sudirman No. 45",
         "rawValues": {
           "C1": 1100000,
@@ -7394,7 +7224,6 @@
         "nama_lengkap": "Aulia Firmansyah",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Firmansyah",
         "alamat": "Jl. Mawar No. 38",
         "rawValues": {
           "C1": 850000,
@@ -7427,7 +7256,6 @@
         "nama_lengkap": "Rini Puspitang",
         "kelas": "XI-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Puspitang",
         "alamat": "Jl. Kenanga No. 55",
         "rawValues": {
           "C1": 1100000,
@@ -7460,7 +7288,6 @@
         "nama_lengkap": "Nadia Firmansyah",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Firmansyah",
         "alamat": "Desa Karanganyar No. 18",
         "rawValues": {
           "C1": 950000,
@@ -7493,7 +7320,6 @@
         "nama_lengkap": "Nabila Saputri",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Saputri",
         "alamat": "Jl. Diponegoro No. 6",
         "rawValues": {
           "C1": 1600000,
@@ -7526,7 +7352,6 @@
         "nama_lengkap": "Indah Hidayat",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Hidayat",
         "alamat": "Dusun Sukamaju No. 50",
         "rawValues": {
           "C1": 1600000,
@@ -7559,7 +7384,6 @@
         "nama_lengkap": "Dian Gunawan",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Gunawan",
         "alamat": "Desa Karanganyar No. 35",
         "rawValues": {
           "C1": 1250000,
@@ -7592,7 +7416,6 @@
         "nama_lengkap": "Fitri Hidayat",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Hidayat",
         "alamat": "Kampung Nelayan No. 47",
         "rawValues": {
           "C1": 1600000,
@@ -7625,7 +7448,6 @@
         "nama_lengkap": "Nur Nasution",
         "kelas": "XI-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Nasution",
         "alamat": "Jl. Merpati No. 7",
         "rawValues": {
           "C1": 2100000,
@@ -7658,7 +7480,6 @@
         "nama_lengkap": "Anggi Handayani",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Handayani",
         "alamat": "Jl. Sudirman No. 57",
         "rawValues": {
           "C1": 950000,
@@ -7691,7 +7512,6 @@
         "nama_lengkap": "Hendra Permana",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Permana",
         "alamat": "Jl. Kenanga No. 43",
         "rawValues": {
           "C1": 1400000,
@@ -7724,7 +7544,6 @@
         "nama_lengkap": "Maya Setiawan",
         "kelas": "X-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Setiawan",
         "alamat": "Dusun Krajan No. 20",
         "rawValues": {
           "C1": 1400000,
@@ -7757,7 +7576,6 @@
         "nama_lengkap": "Budi Setiawan",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Setiawan",
         "alamat": "Desa Karanganyar No. 76",
         "rawValues": {
           "C1": 950000,
@@ -7790,7 +7608,6 @@
         "nama_lengkap": "Muhammad Wibowo",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Subur Wibowo",
         "alamat": "Jl. Melati No. 4",
         "rawValues": {
           "C1": 2500000,
@@ -7823,7 +7640,6 @@
         "nama_lengkap": "Rini Gunawan",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Gunawan",
         "alamat": "Jl. Mawar No. 7",
         "rawValues": {
           "C1": 750000,
@@ -7856,7 +7672,6 @@
         "nama_lengkap": "Maya Firmansyah",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Firmansyah",
         "alamat": "Jl. Mawar No. 5",
         "rawValues": {
           "C1": 1800000,
@@ -7889,7 +7704,6 @@
         "nama_lengkap": "Anggi Wibowo",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Wibowo",
         "alamat": "Desa Karanganyar No. 10",
         "rawValues": {
           "C1": 1250000,
@@ -7922,7 +7736,6 @@
         "nama_lengkap": "Ilham Hakim",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Hakim",
         "alamat": "Kampung Nelayan No. 73",
         "rawValues": {
           "C1": 750000,
@@ -7955,7 +7768,6 @@
         "nama_lengkap": "Wahyu Santoso",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Santoso",
         "alamat": "Jl. Merpati No. 14",
         "rawValues": {
           "C1": 850000,
@@ -7988,7 +7800,6 @@
         "nama_lengkap": "Wahyu Santoso",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Santoso",
         "alamat": "Desa Karanganyar No. 48",
         "rawValues": {
           "C1": 850000,
@@ -8021,7 +7832,6 @@
         "nama_lengkap": "Rini Anwar",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Anwar",
         "alamat": "Dusun Krajan No. 2",
         "rawValues": {
           "C1": 950000,
@@ -8054,7 +7864,6 @@
         "nama_lengkap": "Hendra Puspitang",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Puspitang",
         "alamat": "Jl. Kenanga No. 70",
         "rawValues": {
           "C1": 850000,
@@ -8087,7 +7896,6 @@
         "nama_lengkap": "Fajar Simanjuntak",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Simanjuntak",
         "alamat": "Dusun Krajan No. 66",
         "rawValues": {
           "C1": 1800000,
@@ -8120,7 +7928,6 @@
         "nama_lengkap": "Zahra Wijaya",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Wijaya",
         "alamat": "Dusun Krajan No. 20",
         "rawValues": {
           "C1": 1250000,
@@ -8153,7 +7960,6 @@
         "nama_lengkap": "Ilham Simanjuntak",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Slamet Simanjuntak",
         "alamat": "Desa Karanganyar No. 74",
         "rawValues": {
           "C1": 850000,
@@ -8186,7 +7992,6 @@
         "nama_lengkap": "Tri Firmansyah",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Firmansyah",
         "alamat": "Desa Karanganyar No. 74",
         "rawValues": {
           "C1": 1600000,
@@ -8219,7 +8024,6 @@
         "nama_lengkap": "Arif Susanto",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Herman Susanto",
         "alamat": "Dusun Sukamaju No. 66",
         "rawValues": {
           "C1": 1600000,
@@ -8252,7 +8056,6 @@
         "nama_lengkap": "Dimas Handayani",
         "kelas": "XI-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Handayani",
         "alamat": "Jl. Merpati No. 66",
         "rawValues": {
           "C1": 1100000,
@@ -8285,7 +8088,6 @@
         "nama_lengkap": "Nabila Nasution",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Nasution",
         "alamat": "Kampung Nelayan No. 48",
         "rawValues": {
           "C1": 1600000,
@@ -8318,7 +8120,6 @@
         "nama_lengkap": "Wahyu Pangestu",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Pangestu",
         "alamat": "Jl. Sudirman No. 48",
         "rawValues": {
           "C1": 850000,
@@ -8351,7 +8152,6 @@
         "nama_lengkap": "Aulia Simanjuntak",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Simanjuntak",
         "alamat": "Kampung Nelayan No. 16",
         "rawValues": {
           "C1": 1250000,
@@ -8384,7 +8184,6 @@
         "nama_lengkap": "Ilham Saputra",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Saputra",
         "alamat": "Jl. Mawar No. 62",
         "rawValues": {
           "C1": 850000,
@@ -8417,7 +8216,6 @@
         "nama_lengkap": "Siti Anggraini",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Anggraini",
         "alamat": "Dusun Sukamaju No. 64",
         "rawValues": {
           "C1": 3200000,
@@ -8450,7 +8248,6 @@
         "nama_lengkap": "Nur Puspitang",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Puspitang",
         "alamat": "Jl. Melati No. 75",
         "rawValues": {
           "C1": 1250000,
@@ -8483,7 +8280,6 @@
         "nama_lengkap": "Dewi Setiawan",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Setiawan",
         "alamat": "Jl. Melati No. 49",
         "rawValues": {
           "C1": 1600000,
@@ -8516,7 +8312,6 @@
         "nama_lengkap": "Wahyu Ramadhan",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Ramadhan",
         "alamat": "Jl. Kenanga No. 70",
         "rawValues": {
           "C1": 850000,
@@ -8549,7 +8344,6 @@
         "nama_lengkap": "Dedi Nasution",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Nasution",
         "alamat": "Dusun Krajan No. 41",
         "rawValues": {
           "C1": 1400000,
@@ -8582,7 +8376,6 @@
         "nama_lengkap": "Muhammad Wijaya",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Wijaya",
         "alamat": "Jl. Mawar No. 75",
         "rawValues": {
           "C1": 2500000,
@@ -8615,7 +8408,6 @@
         "nama_lengkap": "Nabila Setiawan",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Setiawan",
         "alamat": "Kampung Nelayan No. 12",
         "rawValues": {
           "C1": 850000,
@@ -8648,7 +8440,6 @@
         "nama_lengkap": "Aditya Saputra",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Saputra",
         "alamat": "Kampung Nelayan No. 72",
         "rawValues": {
           "C1": 3200000,
@@ -8681,7 +8472,6 @@
         "nama_lengkap": "Maya Gunawan",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Slamet Gunawan",
         "alamat": "Jl. Melati No. 58",
         "rawValues": {
           "C1": 1600000,
@@ -8714,7 +8504,6 @@
         "nama_lengkap": "Rini Sinaga",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Subur Sinaga",
         "alamat": "Dusun Sukamaju No. 69",
         "rawValues": {
           "C1": 750000,
@@ -8747,7 +8536,6 @@
         "nama_lengkap": "Muhammad Wibowo",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Wibowo",
         "alamat": "Jl. Diponegoro No. 3",
         "rawValues": {
           "C1": 600000,
@@ -8780,7 +8568,6 @@
         "nama_lengkap": "Rini Wibowo",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Subur Wibowo",
         "alamat": "Kampung Nelayan No. 63",
         "rawValues": {
           "C1": 950000,
@@ -8813,7 +8600,6 @@
         "nama_lengkap": "Bayu Siregar",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Bambang Siregar",
         "alamat": "Jl. Sudirman No. 32",
         "rawValues": {
           "C1": 1600000,
@@ -8846,7 +8632,6 @@
         "nama_lengkap": "Ilham Pangestu",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Pangestu",
         "alamat": "Jl. Merpati No. 16",
         "rawValues": {
           "C1": 1800000,
@@ -8879,7 +8664,6 @@
         "nama_lengkap": "Budi Utami",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Slamet Utami",
         "alamat": "Jl. Mawar No. 33",
         "rawValues": {
           "C1": 1100000,
@@ -8912,7 +8696,6 @@
         "nama_lengkap": "Zahra Permana",
         "kelas": "XII-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Permana",
         "alamat": "Kampung Nelayan No. 9",
         "rawValues": {
           "C1": 2100000,
@@ -8945,7 +8728,6 @@
         "nama_lengkap": "Aditya Pratama",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Herman Pratama",
         "alamat": "Jl. Melati No. 33",
         "rawValues": {
           "C1": 1600000,
@@ -8978,7 +8760,6 @@
         "nama_lengkap": "Bayu Anggraini",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Anggraini",
         "alamat": "Jl. Merpati No. 39",
         "rawValues": {
           "C1": 3200000,
@@ -9011,7 +8792,6 @@
         "nama_lengkap": "Aulia Nugroho",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Nugroho",
         "alamat": "Jl. Diponegoro No. 11",
         "rawValues": {
           "C1": 2100000,
@@ -9044,7 +8824,6 @@
         "nama_lengkap": "Ilham Sinaga",
         "kelas": "XI-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Joko Sinaga",
         "alamat": "Jl. Diponegoro No. 13",
         "rawValues": {
           "C1": 850000,
@@ -9077,7 +8856,6 @@
         "nama_lengkap": "Putri Hakim",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Hakim",
         "alamat": "Desa Karanganyar No. 53",
         "rawValues": {
           "C1": 1600000,
@@ -9110,7 +8888,6 @@
         "nama_lengkap": "Muhammad Firmansyah",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Firmansyah",
         "alamat": "Jl. Melati No. 80",
         "rawValues": {
           "C1": 2100000,
@@ -9143,7 +8920,6 @@
         "nama_lengkap": "Zahra Lubis",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Slamet Lubis",
         "alamat": "Desa Karanganyar No. 47",
         "rawValues": {
           "C1": 2100000,
@@ -9176,7 +8952,6 @@
         "nama_lengkap": "Fajar Lubis",
         "kelas": "XI-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Lubis",
         "alamat": "Desa Karanganyar No. 40",
         "rawValues": {
           "C1": 1800000,
@@ -9209,7 +8984,6 @@
         "nama_lengkap": "Budi Harahap",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Harahap",
         "alamat": "Jl. Diponegoro No. 29",
         "rawValues": {
           "C1": 2500000,
@@ -9242,7 +9016,6 @@
         "nama_lengkap": "Tri Hidayat",
         "kelas": "X-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Hidayat",
         "alamat": "Kampung Nelayan No. 32",
         "rawValues": {
           "C1": 850000,
@@ -9275,7 +9048,6 @@
         "nama_lengkap": "Zahra Setiawan",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Yanto Setiawan",
         "alamat": "Dusun Sukamaju No. 32",
         "rawValues": {
           "C1": 1400000,
@@ -9308,7 +9080,6 @@
         "nama_lengkap": "Ahmad Simanjuntak",
         "kelas": "XI-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Mulyono Simanjuntak",
         "alamat": "Jl. Melati No. 71",
         "rawValues": {
           "C1": 2100000,
@@ -9341,7 +9112,6 @@
         "nama_lengkap": "Yoga Wardani",
         "kelas": "X-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Wardani",
         "alamat": "Dusun Sukamaju No. 15",
         "rawValues": {
           "C1": 950000,
@@ -9374,7 +9144,6 @@
         "nama_lengkap": "Tia Pratama",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Joko Pratama",
         "alamat": "Dusun Sukamaju No. 66",
         "rawValues": {
           "C1": 2500000,
@@ -9407,7 +9176,6 @@
         "nama_lengkap": "Maya Harahap",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Harahap",
         "alamat": "Jl. Diponegoro No. 63",
         "rawValues": {
           "C1": 3200000,
@@ -9440,7 +9208,6 @@
         "nama_lengkap": "Ayu Saputra",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Wagino Saputra",
         "alamat": "Jl. Diponegoro No. 32",
         "rawValues": {
           "C1": 2100000,
@@ -9473,7 +9240,6 @@
         "nama_lengkap": "Dewi Hakim",
         "kelas": "XII-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Supriadi Hakim",
         "alamat": "Jl. Sudirman No. 31",
         "rawValues": {
           "C1": 2500000,
@@ -9506,7 +9272,6 @@
         "nama_lengkap": "Lestari Wibowo",
         "kelas": "X-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Wibowo",
         "alamat": "Jl. Mawar No. 57",
         "rawValues": {
           "C1": 1400000,
@@ -9539,7 +9304,6 @@
         "nama_lengkap": "Nur Anwar",
         "kelas": "XII-OTKP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Agus Anwar",
         "alamat": "Jl. Mawar No. 15",
         "rawValues": {
           "C1": 2100000,
@@ -9572,7 +9336,6 @@
         "nama_lengkap": "Nur Setiawan",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Hasan Setiawan",
         "alamat": "Desa Karanganyar No. 40",
         "rawValues": {
           "C1": 2100000,
@@ -9605,7 +9368,6 @@
         "nama_lengkap": "Dedi Pangestu",
         "kelas": "X-AKL",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Slamet Pangestu",
         "alamat": "Desa Karanganyar No. 66",
         "rawValues": {
           "C1": 3200000,
@@ -9638,7 +9400,6 @@
         "nama_lengkap": "Tia Utami",
         "kelas": "XII-MM",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Slamet Utami",
         "alamat": "Jl. Merpati No. 2",
         "rawValues": {
           "C1": 2100000,
@@ -9671,7 +9432,6 @@
         "nama_lengkap": "Dewi Saputra",
         "kelas": "XI-BDP",
         "asal_sekolah": "SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG",
-        "nama_wali": "Sutrisno Saputra",
         "alamat": "Jl. Sudirman No. 60",
         "rawValues": {
           "C1": 3200000,

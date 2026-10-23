@@ -249,7 +249,6 @@ export default function WaspasView({
                 <th style={{ width: '110px' }}>NISN</th>
                 <th style={{ minWidth: '160px' }}>Nama Lengkap</th>
                 <th style={{ width: '80px', textAlign: 'center', whiteSpace: 'nowrap' }}>Kelas</th>
-                <th style={{ minWidth: '130px' }}>Nama Wali</th>
                 <th style={{ textAlign: 'right', width: '110px', whiteSpace: 'nowrap' }}>Skor WASPAS</th>
                 <th style={{ width: '140px', textAlign: 'center', whiteSpace: 'nowrap' }}>Status</th>
               </tr>
@@ -257,7 +256,7 @@ export default function WaspasView({
             <tbody>
               {!calculation || filteredRankings.length === 0 ? (
                 <tr>
-                  <td colSpan={7} style={{ textAlign: 'center', padding: '32px', color: 'hsl(var(--muted-foreground))' }}>
+                  <td colSpan={6} style={{ textAlign: 'center', padding: '32px', color: 'hsl(var(--muted-foreground))' }}>
                     Belum ada data perhitungan atau data tidak ditemukan.
                   </td>
                 </tr>
@@ -277,7 +276,6 @@ export default function WaspasView({
                         <td className="code-num">{r.nisn}</td>
                         <td style={{ fontWeight: 600 }}>{r.nama_lengkap}</td>
                         <td style={{ textAlign: 'center', whiteSpace: 'nowrap' }}>{r.kelas}</td>
-                        <td style={{ color: 'hsl(var(--muted-foreground))' }}>{r.nama_wali || '-'}</td>
                         <td style={{ textAlign: 'right', fontWeight: 700, color: 'hsl(var(--primary))', whiteSpace: 'nowrap' }}>
                           {(r.waspasScore * 100).toFixed(1)}%
                         </td>
@@ -292,7 +290,7 @@ export default function WaspasView({
                       {/* Batas Visual Kuota */}
                       {isCutOffRow && statusFilter === 'all' && (
                         <tr>
-                          <td colSpan={7} style={{ background: 'hsl(var(--muted) / 0.5)', color: 'hsl(var(--muted-foreground))', textAlign: 'center', padding: '6px 12px', fontWeight: 600, fontSize: '0.75rem', borderTop: '2px dashed hsl(var(--border))', borderBottom: '2px dashed hsl(var(--border))' }}>
+                          <td colSpan={6} style={{ background: 'hsl(var(--muted) / 0.5)', color: 'hsl(var(--muted-foreground))', textAlign: 'center', padding: '6px 12px', fontWeight: 600, fontSize: '0.75rem', borderTop: '2px dashed hsl(var(--border))', borderBottom: '2px dashed hsl(var(--border))' }}>
                             --- BATAS KUOTA PENERIMA ({calculation.quota} SISWA) ---
                           </td>
                         </tr>

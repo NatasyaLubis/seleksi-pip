@@ -790,18 +790,17 @@ export default function LandingPage({ onLogin, darkMode, toggleDarkMode }) {
                               <th style={{ width: '100px' }}>NISN</th>
                               <th>Nama Lengkap</th>
                               <th style={{ width: '80px' }}>Kelas</th>
-                              <th>Nama Wali</th>
                               <th style={{ width: '90px', textAlign: 'right' }}>Skor</th>
                               <th style={{ width: '120px' }}>Status</th>
                             </tr>
                           </thead>
                           <tbody>
                             {[
-                              { rank: 1, nisn: '0061234567', name: 'Dimas Pratama', cls: 'X-AKL', wali: 'Sutrisno', score: '94.2%' },
-                              { rank: 2, nisn: '0067654321', name: 'Budi Santoso', cls: 'XI-MM', wali: 'Bambang', score: '92.5%' },
-                              { rank: 3, nisn: '0069876543', name: 'Siti Dewi', cls: 'X-OTKP', wali: 'Wahyudi', score: '91.1%' },
-                              { rank: 4, nisn: '0063456789', name: 'Rizky Nasution', cls: 'XII-BDP', wali: 'Syahrial', score: '89.7%' },
-                              { rank: 5, nisn: '0065432109', name: 'Anisa Rahma', cls: 'X-AKL', wali: 'Hendra', score: '88.3%' }
+                              { rank: 1, nisn: '0061234567', name: 'Dimas Pratama', cls: 'X-AKL', score: '94.2%' },
+                              { rank: 2, nisn: '0067654321', name: 'Budi Santoso', cls: 'XI-MM', score: '92.5%' },
+                              { rank: 3, nisn: '0069876543', name: 'Siti Dewi', cls: 'X-OTKP', score: '91.1%' },
+                              { rank: 4, nisn: '0063456789', name: 'Rizky Nasution', cls: 'XII-BDP', score: '89.7%' },
+                              { rank: 5, nisn: '0065432109', name: 'Anisa Rahma', cls: 'X-AKL', score: '88.3%' }
                             ].map((r) => (
                               <tr key={r.rank}>
                                 <td>
@@ -812,7 +811,6 @@ export default function LandingPage({ onLogin, darkMode, toggleDarkMode }) {
                                 <td className="code-num" style={{ fontSize: '0.71875rem' }}>{r.nisn}</td>
                                 <td style={{ fontWeight: 600 }}>{r.name}</td>
                                 <td style={{ color: 'hsl(var(--muted-foreground))' }}>{r.cls}</td>
-                                <td style={{ color: 'hsl(var(--muted-foreground))' }}>{r.wali}</td>
                                 <td style={{ textAlign: 'right', fontWeight: 700, color: 'hsl(var(--primary))' }}>
                                   {r.score}
                                 </td>

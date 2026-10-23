@@ -691,42 +691,40 @@ export default function App() {
               {/* Demo Mode Dataset Switcher Banner */}
               {isDemoMode && (
                 <div style={{
-                  marginBottom: '20px',
-                  padding: '12px 18px',
-                  borderRadius: '12px',
-                  background: activeDemoDataset === 'bab3_9crit' 
-                    ? 'linear-gradient(135deg, hsl(var(--primary) / 0.12), hsl(var(--card)))' 
-                    : 'hsl(var(--card))',
-                  border: '1px solid ' + (activeDemoDataset === 'bab3_9crit' ? 'hsl(var(--primary) / 0.4)' : 'hsl(var(--border))'),
+                  marginBottom: '16px',
+                  padding: '10px 16px',
+                  borderRadius: '10px',
+                  background: 'hsl(var(--card))',
+                  border: '1px solid ' + (activeDemoDataset === 'bab3_9crit' ? 'hsl(var(--primary) / 0.3)' : 'hsl(var(--border) / 0.8)'),
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   flexWrap: 'wrap',
-                  gap: '12px',
-                  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.04)'
+                  gap: '10px',
+                  boxShadow: '0 1px 3px rgba(0, 0, 0, 0.03)'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <div style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '9px',
-                      background: 'hsl(var(--primary) / 0.15)',
-                      color: 'hsl(var(--primary))',
+                      width: '32px',
+                      height: '32px',
+                      borderRadius: '8px',
+                      background: 'hsl(215 85% 92%)',
+                      color: 'hsl(215 75% 40%)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0
                     }}>
-                      <Database size={18} />
+                      <Database size={16} />
                     </div>
                     <div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <span style={{ fontSize: '0.875rem', fontWeight: 700, color: 'hsl(var(--foreground))' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                        <span style={{ fontSize: '0.84375rem', fontWeight: 700, color: 'hsl(var(--foreground))' }}>
                           {activeDemoDataset === 'bab3_9crit' 
                             ? 'Dataset Aktif: Proposal Bab 3 (9 Kriteria, 15 Siswa)' 
                             : 'Dataset Aktif: Bawaan Sistem (6 Kriteria, 120 Siswa)'}
                         </span>
-                        <span className="badge badge-primary" style={{ fontSize: '0.6875rem', padding: '2px 7px' }}>
+                        <span className="badge badge-neutral" style={{ fontSize: '0.6875rem', padding: '1px 7px', fontWeight: 600 }}>
                           Mode Demo
                         </span>
                       </div>
@@ -743,18 +741,18 @@ export default function App() {
                       <button
                         onClick={() => handleSwitchDemoDataset('default_6crit')}
                         className="btn btn-outline btn-sm"
-                        style={{ fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '6px' }}
+                        style={{ height: '32px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '6px', borderRadius: '6px' }}
                       >
-                        <RotateCcw size={13} />
+                        <RotateCcw size={12} />
                         <span>Kembali ke Data 120 Siswa (6 Kriteria)</span>
                       </button>
                     ) : (
                       <button
                         onClick={() => handleSwitchDemoDataset('bab3_9crit')}
-                        className="btn btn-primary btn-sm"
-                        style={{ fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '6px' }}
+                        className="btn btn-outline btn-sm"
+                        style={{ height: '32px', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '6px', borderRadius: '6px', borderColor: 'hsl(var(--primary) / 0.4)', color: 'hsl(var(--primary))' }}
                       >
-                        <Sparkles size={13} />
+                        <Sparkles size={12} />
                         <span>Gunakan Data Proposal Bab 3 (9 Kriteria)</span>
                       </button>
                     )}
