@@ -48,12 +48,17 @@ router.post('/login', loginLimiter, (req, res) => {
       });
     }
 
-    // Generate JWT Token
+    // Determine system mode from request body or fallback to live
+    const requestedMode = (req.body && req.body.mode) ? String(req.body.mode).toLowerCase() : 'live';
+    const targetMode = requestedMode === 'demo' ? 'demo' : 'live';
+
+    // Generate JWT Token with mode claim
     const payload = {
       id: user.id,
       username: user.username,
       role: user.role,
-      full_name: user.full_name
+      full_name: user.full_name,
+      mode: targetMode
     };
 
     const token = jwt.sign(payload, JWT_SECRET, { expiresIn: '24h' });
@@ -62,12 +67,14 @@ router.post('/login', loginLimiter, (req, res) => {
       success: true,
       message: 'Login berhasil.',
       token,
+      mode: targetMode,
       user: {
         id: user.id,
         username: user.username,
         full_name: user.full_name,
         role: user.role,
-        title: user.title
+        title: user.title,
+        mode: targetMode
       }
     });
   } catch (err) {

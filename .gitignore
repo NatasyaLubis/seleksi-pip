@@ -17,11 +17,19 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Environment & System
+# Environment & Sensitive System Data
 .env
 .env.*
+!.env.example
+!backend/.env.example
 .DS_Store
 Thumbs.db
+backend/data/database.json
+backend/data/database_live.json
+backend/data/database_demo.json
+backend/data/*.bak
+backend/data/*.tmp*
+backend/data/*.corrupt*
 
 # IDE & Editors
 .vscode/
@@ -30,6 +38,8 @@ Thumbs.db
 *.ntvs*
 *.njsproj
 *.sln
+*.sw?
+
 # Python cache
 __pycache__/
 *.py[cod]

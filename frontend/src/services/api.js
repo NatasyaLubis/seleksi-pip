@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
 const TOKEN_KEY = 'spk_pip_jwt_token';
 const SYSTEM_MODE_KEY = 'spk_pip_system_mode';
@@ -36,6 +36,42 @@ async function secureFetch(url, options = {}) {
   return res.json();
 }
 
+/**
+ * Downloads file securely via fetch + Blob with Authorization header
+ * @param {string} url 
+ * @param {string} defaultFilename 
+ */
+async function downloadBlob(url, defaultFilename) {
+  const token = authStorage.getToken();
+  const mode = modeStorage.getMode();
+  const headers = {
+    'X-System-Mode': mode
+  };
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+  }
+
+  const res = await fetch(url, { headers });
+  if (!res.ok) {
+    let msg = 'Gagal mengunduh file dari server.';
+    try {
+      const errJson = await res.json();
+      if (errJson && errJson.message) msg = errJson.message;
+    } catch (e) {}
+    throw new Error(msg);
+  }
+
+  const blob = await res.blob();
+  const blobUrl = window.URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = blobUrl;
+  a.download = defaultFilename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  window.URL.revokeObjectURL(blobUrl);
+}
+
 export const api = {
   // Auth & Security
   login: async (username, password, mode) => {
@@ -47,7 +83,7 @@ export const api = {
         'Content-Type': 'application/json',
         'X-System-Mode': targetMode
       },
-      body: JSON.stringify({ username, password })
+      body: JSON.stringify({ username, password, mode: targetMode })
     });
     const data = await res.json();
     if (data.success && data.token) {
@@ -192,7 +228,13 @@ export const api = {
       body: JSON.stringify({ count })
     });
   },
-  getTemplateUrl: () => `${API_BASE}/students/download-template?system_mode=${modeStorage.getMode()}`,
+  downloadTemplate: async () => {
+    return downloadBlob(`${API_BASE}/students/download-template`, 'Template_Import_Siswa_PIP.xlsx');
+  },
+  getTemplateUrl: () => {
+    const token = authStorage.getToken();
+    return `${API_BASE}/students/download-template?system_mode=${modeStorage.getMode()}${token ? `&token=${encodeURIComponent(token)}` : ''}`;
+  },
   previewImport: async (file) => {
     const formData = new FormData();
     formData.append('file', file);
@@ -224,7 +266,13 @@ export const api = {
       body: JSON.stringify(data)
     });
   },
-  getExportExcelUrl: () => `${API_BASE}/calculation/export-excel?system_mode=${modeStorage.getMode()}`,
+  downloadExportExcel: async () => {
+    return downloadBlob(`${API_BASE}/calculation/export-excel`, 'Hasil_Perankingan_WASPAS_PIP.xlsx');
+  },
+  getExportExcelUrl: () => {
+    const token = authStorage.getToken();
+    return `${API_BASE}/calculation/export-excel?system_mode=${modeStorage.getMode()}${token ? `&token=${encodeURIComponent(token)}` : ''}`;
+  },
   resetToDefault: async () => {
     return secureFetch(`${API_BASE}/calculation/reset-default`, {
       method: 'POST'

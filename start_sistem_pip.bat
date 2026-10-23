@@ -12,17 +12,17 @@ start "Backend Server (Port 5000)" cmd /k "cd /d "%~dp0backend" && node server.j
 timeout /t 2 /nobreak >nul
 
 echo [2/2] Menjalankan Antarmuka Frontend (React + Vite)...
-start "Frontend UI (Port 3000)" cmd /k "cd /d "%~dp0frontend" && npx vite --host 127.0.0.1 --port 3000"
+start "Frontend UI (Port 5174)" cmd /k "cd /d "%~dp0frontend" && npm run dev"
 
 timeout /t 3 /nobreak >nul
 
 echo.
-echo Membuka aplikasi di browser (http://localhost:3000)...
-start http://localhost:3000
+echo Membuka aplikasi di browser (http://localhost:5174)...
+start http://localhost:5174
 
 echo =====================================================================
 echo   Aplikasi berhasil dijalankan!
-echo   Frontend : http://localhost:3000
+echo   Frontend : http://localhost:5174
 echo   Backend  : http://localhost:5000/api
 echo =====================================================================
 pause

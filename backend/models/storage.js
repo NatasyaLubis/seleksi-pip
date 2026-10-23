@@ -1,258 +1,26 @@
 const fs = require('fs');
 const path = require('path');
-const { v4: uuidv4 } = require('uuid');
+const { AsyncLocalStorage } = require('async_hooks');
+const {
+  DEFAULT_CRITERIA,
+  DEFAULT_DECISION_MAKERS,
+  DEFAULT_USERS,
+  generateRealisticStudents
+} = require('../data/seed');
 
 const DATA_DIR = path.join(__dirname, '..', 'data');
 const DB_FILE = path.join(DATA_DIR, 'database.json');
+const DEMO_DB_FILE = path.join(DATA_DIR, 'database_demo.json');
+const DEMO_6CRIT_FILE = path.join(DATA_DIR, 'database_demo_6crit.json');
+const DEMO_9CRIT_FILE = path.join(DATA_DIR, 'database_demo_9crit.json');
+const LIVE_DB_FILE = path.join(DATA_DIR, 'database_live.json');
 
 // Ensure data directory exists
 if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
-// Initial Criteria configuration for PIP
-const DEFAULT_CRITERIA = [
-  {
-    id: 'crit-1',
-    code: 'C1',
-    name: 'Penghasilan Orang Tua',
-    type: 'cost',
-    value_type: 'real_numeric',
-    unit: 'Rupiah',
-    description: 'Rata-rata pendapatan kotor bulanan gabungan orang tua (Semakin kecil semakin diprioritaskan).',
-    final_weight: 0.2845
-  },
-  {
-    id: 'crit-2',
-    code: 'C2',
-    name: 'Jumlah Tanggungan Anak',
-    type: 'benefit',
-    value_type: 'real_numeric',
-    unit: 'Anak',
-    description: 'Jumlah anak yang masih menjadi tanggungan nafkah keluarga.',
-    final_weight: 0.1782
-  },
-  {
-    id: 'crit-3',
-    code: 'C3',
-    name: 'Kondisi Tempat Tinggal',
-    type: 'benefit',
-    value_type: 'discrete_scale',
-    unit: 'Skala 1-5',
-    description: 'Kondisi fisik kelayakan rumah (Nilai 5: Sangat Memprihatinkan/Menumpang, Nilai 1: Rumah Mewah).',
-    final_weight: 0.1420,
-    options: [
-      { point: 1, label: 'Rumah Permanen Mewah / Sangat Layak' },
-      { point: 2, label: 'Rumah Permanen Standar / Cukup Layak' },
-      { point: 3, label: 'Rumah Semi Permanen / Rusak Sedang' },
-      { point: 4, label: 'Rumah Papan / Rusak Berat' },
-      { point: 5, label: 'Menumpang / Bilik Bambu / Sangat Tidak Layak' }
-    ]
-  },
-  {
-    id: 'crit-4',
-    code: 'C4',
-    name: 'Daya Listrik Rumah',
-    type: 'cost',
-    value_type: 'real_numeric',
-    unit: 'Volt Ampere (VA)',
-    description: 'Besaran daya listrik terpasang PLN (450 VA, 900 VA, 1300 VA, dst). Semakin kecil daya, semakin prioritas.',
-    final_weight: 0.0890
-  },
-  {
-    id: 'crit-5',
-    code: 'C5',
-    name: 'Kepemilikan Kartu Bansos (KIP/KKS/PKH)',
-    type: 'benefit',
-    value_type: 'discrete_scale',
-    unit: 'Skala 1-5',
-    description: 'Kelengkapan kepemilikan jaminan sosial (Nilai 5: KIP & PKH, Nilai 1: Tidak Memiliki).',
-    final_weight: 0.2155,
-    options: [
-      { point: 1, label: 'Tidak Memiliki Kartu Bansos / SKTM' },
-      { point: 2, label: 'Memiliki Surat Keterangan Tidak Mampu (SKTM) Kelurahan' },
-      { point: 3, label: 'Memiliki Kartu Keluarga Sejahtera (KKS)' },
-      { point: 4, label: 'Memiliki Program Keluarga Harapan (PKH)' },
-      { point: 5, label: 'Memiliki Kartu Indonesia Pintar (KIP) & PKH Terdaftar' }
-    ]
-  },
-  {
-    id: 'crit-6',
-    code: 'C6',
-    name: 'Rata-rata Nilai Akademik / Rapor',
-    type: 'benefit',
-    value_type: 'real_numeric',
-    unit: 'Nilai (0-100)',
-    description: 'Rata-rata nilai rapor semester terakhir sebagai pertimbangan prestasi akademik siswa.',
-    final_weight: 0.0908
-  }
-];
-
-// 3 Default Decision Makers
-const DEFAULT_DECISION_MAKERS = [
-  {
-    id: 'dm-1',
-    name: 'Drs. H. Mulyadi, M.Pd',
-    title: 'Kepala Sekolah',
-    institution: 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-    evaluation: {
-      bestCode: 'C1',
-      worstCode: 'C4',
-      bestToOthers: { C1: 1, C2: 2, C3: 3, C4: 4, C5: 2, C6: 4 },
-      othersToWorst: { C1: 4, C2: 3, C3: 2, C4: 1, C5: 3, C6: 2 },
-      weights: { C1: 0.2982, C2: 0.1852, C3: 0.1418, C4: 0.0864, C5: 0.2010, C6: 0.0874 },
-      xi: 0.048,
-      consistencyRatio: 0.029,
-      isConsistent: true,
-      submittedAt: '2026-10-18T08:30:00.000Z'
-    }
-  },
-  {
-    id: 'dm-2',
-    name: 'Siti Rahmawati, S.Pd',
-    title: 'Wakil Kepala Sekolah Bidang Kesiswaan',
-    institution: 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-    evaluation: {
-      bestCode: 'C1',
-      worstCode: 'C6',
-      bestToOthers: { C1: 1, C2: 2, C3: 2, C4: 4, C5: 2, C6: 5 },
-      othersToWorst: { C1: 5, C2: 3, C3: 3, C4: 2, C5: 3, C6: 1 },
-      weights: { C1: 0.2814, C2: 0.1790, C3: 0.1550, C4: 0.0920, C5: 0.2186, C6: 0.0740 },
-      xi: 0.052,
-      consistencyRatio: 0.023,
-      isConsistent: true,
-      submittedAt: '2026-10-18T09:15:00.000Z'
-    }
-  },
-  {
-    id: 'dm-3',
-    name: 'Ahmad Fauzi, S.Kom',
-    title: 'Operator & Verifikator PIP Sekolah',
-    institution: 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-    evaluation: {
-      bestCode: 'C5',
-      worstCode: 'C4',
-      bestToOthers: { C1: 2, C2: 2, C3: 3, C4: 5, C5: 1, C6: 3 },
-      othersToWorst: { C1: 4, C2: 3, C3: 2, C4: 1, C5: 5, C6: 2 },
-      weights: { C1: 0.2740, C2: 0.1704, C3: 0.1292, C4: 0.0886, C5: 0.2268, C6: 0.1110 },
-      xi: 0.045,
-      consistencyRatio: 0.020,
-      isConsistent: true,
-      submittedAt: '2026-10-18T10:00:00.000Z'
-    }
-  }
-];
-
-// Helper to generate 120 realistic Indonesian student records
-function generateRealisticStudents(count = 120) {
-  const firstNames = [
-    'Ahmad', 'Muhammad', 'Rizky', 'Dimas', 'Bagus', 'Aditya', 'Fajar', 'Bayu', 'Ilham', 'Arif',
-    'Budi', 'Gilang', 'Rian', 'Fauzan', 'Indra', 'Reza', 'Hendra', 'Wahyu', 'Yoga', 'Dedi',
-    'Siti', 'Nur', 'Dewi', 'Putri', 'Ayu', 'Rini', 'Dian', 'Tri', 'Indah', 'Lestari',
-    'Mega', 'Nadia', 'Nabila', 'Annisa', 'Fitri', 'Aulia', 'Zahra', 'Maya', 'Tia', 'Anggi'
-  ];
-
-  const lastNames = [
-    'Pratama', 'Saputra', 'Hidayat', 'Kurniawan', 'Santoso', 'Wijaya', 'Setiawan', 'Ramadhan',
-    'Nugroho', 'Wibowo', 'Siregar', 'Lubis', 'Nasution', 'Harahap', 'Sinaga', 'Simanjuntak',
-    'Utami', 'Wulandari', 'Kusuma', 'Handayani', 'Puspitang', 'Wardani', 'Anggraini', 'Safitri',
-    'Pangestu', 'Firmansyah', 'Hakim', 'Anwar', 'Gunawan', 'Susanto', 'Permana', 'Saputri'
-  ];
-
-  const parentFirst = ['Joko', 'Bambang', 'Slamet', 'Agus', 'Herman', 'Yanto', 'Supriadi', 'Mulyono', 'Subur', 'Wagino', 'Sutrisno', 'Hasan'];
-  const classes = [
-    'X-MM', 'X-AKL', 'X-OTKP', 'X-BDP',
-    'XI-MM', 'XI-AKL', 'XI-OTKP', 'XI-BDP',
-    'XII-MM', 'XII-AKL', 'XII-OTKP', 'XII-BDP'
-  ];
-  const streets = ['Jl. Melati', 'Jl. Mawar', 'Jl. Merpati', 'Jl. Kenanga', 'Jl. Diponegoro', 'Jl. Sudirman', 'Dusun Krajan', 'Dusun Sukamaju', 'Desa Karanganyar', 'Kampung Nelayan'];
-
-  const incomeLevels = [
-    400000, 500000, 600000, 750000, 850000, 950000, 1100000, 1250000, 1400000, 1600000, 1800000, 2100000, 2500000, 3200000
-  ];
-  const electricPowers = [450, 450, 450, 900, 900, 900, 1300, 1300, 2200];
-
-  const students = [];
-  const baseNisn = 3084120000;
-
-  for (let i = 1; i <= count; i++) {
-    const fn = firstNames[Math.floor(Math.random() * firstNames.length)];
-    const ln = lastNames[Math.floor(Math.random() * lastNames.length)];
-    const pn = parentFirst[Math.floor(Math.random() * parentFirst.length)] + ' ' + ln;
-    const cls = classes[Math.floor(Math.random() * classes.length)];
-    const street = streets[Math.floor(Math.random() * streets.length)] + ' No. ' + (Math.floor(Math.random() * 80) + 1);
-
-    // Kriteria values with realistic distributions
-    // Bias towards lower income for some to demonstrate high PIP priority
-    const income = incomeLevels[Math.floor(Math.random() * incomeLevels.length)];
-    const dependents = Math.floor(Math.random() * 5) + 1; // 1 to 5 children
-    const houseCondition = Math.floor(Math.random() * 5) + 1; // 1 to 5
-    const electricity = electricPowers[Math.floor(Math.random() * electricPowers.length)];
-    const welfareCard = Math.floor(Math.random() * 5) + 1; // 1 to 5
-    const academicScore = Math.floor(Math.random() * 26) + 70; // 70 to 95
-
-    students.push({
-      id: `std-${i.toString().padStart(4, '0')}`,
-      nisn: (baseNisn + i).toString(),
-      nama_lengkap: `${fn} ${ln}`,
-      kelas: cls,
-      asal_sekolah: 'SMKS DHARMA BHAKTI WALTER MANALU SIBORONGBORONG',
-      nama_wali: pn,
-      alamat: street,
-      values: {
-        C1: income,
-        C2: dependents,
-        C3: houseCondition,
-        C4: electricity,
-        C5: welfareCard,
-        C6: academicScore
-      }
-    });
-  }
-
-  return students;
-}
-
-const bcrypt = require('bcryptjs');
-
-// Default Users for Security / RBAC
-const DEFAULT_USERS = [
-  {
-    id: 'user-operator-1',
-    username: 'operator',
-    password_hash: bcrypt.hashSync('pip2026', 10),
-    full_name: 'Ahmad Fauzi, S.Kom',
-    role: 'operator',
-    title: 'Operator & Verifikator PIP Sekolah',
-    created_at: '2026-10-18T00:00:00.000Z'
-  },
-  {
-    id: 'user-kepsek-1',
-    username: 'kepsek',
-    password_hash: bcrypt.hashSync('kepsek2026', 10),
-    full_name: 'Drs. H. Mulyadi, M.Pd',
-    role: 'pengambil_keputusan',
-    title: 'Kepala Sekolah (Pengambil Keputusan)',
-    created_at: '2026-10-18T00:00:00.000Z'
-  },
-  {
-    id: 'user-admin-compat',
-    username: 'admin',
-    password_hash: bcrypt.hashSync('adminpip2026', 10),
-    full_name: 'Drs. H. Mulyadi, M.Pd',
-    role: 'pengambil_keputusan',
-    title: 'Kepala Sekolah (Pengambil Keputusan)',
-    created_at: '2026-10-18T00:00:00.000Z'
-  }
-];
-
-const { AsyncLocalStorage } = require('async_hooks');
 const asyncLocalStorage = new AsyncLocalStorage();
-
-const DEMO_DB_FILE = path.join(DATA_DIR, 'database_demo.json');
-const DEMO_6CRIT_FILE = path.join(DATA_DIR, 'database_demo_6crit.json');
-const DEMO_9CRIT_FILE = path.join(DATA_DIR, 'database_demo_9crit.json');
-const LIVE_DB_FILE = path.join(DATA_DIR, 'database_live.json');
 
 function getCurrentMode() {
   const store = asyncLocalStorage.getStore();
@@ -265,7 +33,6 @@ function getDbFile(explicitMode) {
 }
 
 function getExistingUsers() {
-  // Try to preserve existing users so operator/kepsek/admin/luppy accounts work across both modes
   try {
     for (const f of [LIVE_DB_FILE, DEMO_DB_FILE, DB_FILE]) {
       if (fs.existsSync(f)) {
@@ -298,17 +65,17 @@ function initializeLiveDatabase() {
     students: [],
     last_calculation: null
   };
-  fs.writeFileSync(LIVE_DB_FILE, JSON.stringify(liveData, null, 2), 'utf-8');
+  writeDatabase(liveData, 'live');
   return liveData;
 }
 
 function initializeDemoDatabase() {
-  // If original rich database.json exists with 120 students, seed demo from it!
+  // If original rich database.json exists with students, seed demo from it
   if (fs.existsSync(DB_FILE)) {
     try {
       const existing = JSON.parse(fs.readFileSync(DB_FILE, 'utf-8'));
       if (existing.students && existing.students.length > 0 && existing.criteria && existing.criteria.length > 0) {
-        fs.writeFileSync(DEMO_DB_FILE, JSON.stringify(existing, null, 2), 'utf-8');
+        writeDatabase(existing, 'demo');
         return existing;
       }
     } catch (e) {}
@@ -340,24 +107,38 @@ function initializeDemoDatabase() {
     students: generateRealisticStudents(120),
     last_calculation: null
   };
-  fs.writeFileSync(DEMO_DB_FILE, JSON.stringify(demoData, null, 2), 'utf-8');
+  writeDatabase(demoData, 'demo');
   return demoData;
 }
 
 function initializeDatabase(explicitMode) {
   const mode = explicitMode || getCurrentMode();
-  if (mode === 'demo') {
-    return initializeDemoDatabase();
-  } else {
-    return initializeLiveDatabase();
-  }
+  return mode === 'demo' ? initializeDemoDatabase() : initializeLiveDatabase();
 }
 
+/**
+ * Safe Database Reader with Disaster Recovery & Backup Restoration
+ */
 function readDatabase(explicitMode) {
   const file = getDbFile(explicitMode);
+  const backupFile = `${file}.bak`;
+
   if (!fs.existsSync(file)) {
+    // If main file is missing but backup exists, restore from backup
+    if (fs.existsSync(backupFile)) {
+      try {
+        const backupRaw = fs.readFileSync(backupFile, 'utf-8');
+        const backupData = JSON.parse(backupRaw);
+        console.warn(`[STORAGE RESTORE] File utama ${path.basename(file)} tidak ditemukan, berhasil memulihkan dari backup.`);
+        writeDatabase(backupData, explicitMode);
+        return backupData;
+      } catch (e) {
+        console.error('[STORAGE ERROR] File backup rusak:', e.message);
+      }
+    }
     return initializeDatabase(explicitMode);
   }
+
   try {
     const raw = fs.readFileSync(file, 'utf-8');
     const data = JSON.parse(raw);
@@ -367,14 +148,69 @@ function readDatabase(explicitMode) {
     }
     return data;
   } catch (err) {
-    console.error('Error reading database file, recreating:', err);
+    console.error(`[CRITICAL STORAGE ERROR] Database file ${path.basename(file)} corrupt:`, err.message);
+
+    // 1. Quarantining corrupted file so data is NEVER permanently lost
+    const corruptFile = `${file}.corrupt-${Date.now()}.json`;
+    try {
+      fs.copyFileSync(file, corruptFile);
+      console.warn(`[QUARANTINE] File rusak telah diamankan ke: ${path.basename(corruptFile)}`);
+    } catch (e) {
+      console.error('[QUARANTINE FAILED]', e.message);
+    }
+
+    // 2. Attempt restoration from .bak
+    if (fs.existsSync(backupFile)) {
+      try {
+        const backupRaw = fs.readFileSync(backupFile, 'utf-8');
+        const backupData = JSON.parse(backupRaw);
+        console.warn(`[RECOVERY SUCCESS] Berhasil memulihkan database dari ${path.basename(backupFile)}`);
+        writeDatabase(backupData, explicitMode);
+        return backupData;
+      } catch (restoreErr) {
+        console.error('[RECOVERY FAILED] Backup juga rusak:', restoreErr.message);
+      }
+    }
+
+    // 3. Fallback: initialize fresh and report
+    console.warn('[STORAGE] Menginisialisasi ulang database aman karena tidak ada backup yang valid.');
     return initializeDatabase(explicitMode);
   }
 }
 
+/**
+ * Atomic Safe Database Writer with Automatic Backup Rotation
+ */
 function writeDatabase(data, explicitMode) {
   const file = getDbFile(explicitMode);
-  fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8');
+  const tempFile = `${file}.tmp.${Date.now()}`;
+  const backupFile = `${file}.bak`;
+  const content = JSON.stringify(data, null, 2);
+
+  try {
+    // 1. Write to temporary file first
+    fs.writeFileSync(tempFile, content, 'utf-8');
+
+    // 2. Maintain backup of the existing file if it exists and is valid
+    if (fs.existsSync(file)) {
+      try {
+        fs.copyFileSync(file, backupFile);
+      } catch (backupErr) {
+        // Non-blocking warning if backup copy fails
+        console.warn('[STORAGE] Gagal memperbarui backup:', backupErr.message);
+      }
+    }
+
+    // 3. Atomic rename (replaces target file instantly)
+    fs.renameSync(tempFile, file);
+  } catch (err) {
+    // Clean up temporary file if write or rename failed
+    if (fs.existsSync(tempFile)) {
+      try { fs.unlinkSync(tempFile); } catch (e) {}
+    }
+    throw new Error(`Gagal menyimpan database atomik ke disk: ${err.message}`);
+  }
+
   return data;
 }
 
@@ -383,14 +219,14 @@ function switchDemoDataset(datasetType) {
     if (fs.existsSync(DEMO_9CRIT_FILE)) {
       const data = JSON.parse(fs.readFileSync(DEMO_9CRIT_FILE, 'utf-8'));
       data.active_demo_dataset = 'bab3_9crit';
-      fs.writeFileSync(DEMO_DB_FILE, JSON.stringify(data, null, 2), 'utf-8');
+      writeDatabase(data, 'demo');
       return data;
     }
   } else {
     if (fs.existsSync(DEMO_6CRIT_FILE)) {
       const data = JSON.parse(fs.readFileSync(DEMO_6CRIT_FILE, 'utf-8'));
       data.active_demo_dataset = 'default_6crit';
-      fs.writeFileSync(DEMO_DB_FILE, JSON.stringify(data, null, 2), 'utf-8');
+      writeDatabase(data, 'demo');
       return data;
     }
   }
@@ -418,6 +254,8 @@ module.exports = {
   getActiveDemoDataset,
   generateRealisticStudents,
   DEFAULT_CRITERIA,
+  DEFAULT_DECISION_MAKERS,
+  DEFAULT_USERS,
   asyncLocalStorage,
   getCurrentMode
 };

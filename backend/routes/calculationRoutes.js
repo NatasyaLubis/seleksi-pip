@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const XLSX = require('xlsx');
 const { readDatabase, writeDatabase, initializeDatabase, initializeDemoDatabase, switchDemoDataset, getActiveDemoDataset } = require('../models/storage');
-const { calculateWASPAS } = require('../algorithms/waspas');
+const { calculateWASPAS, applyQuota } = require('../algorithms/waspas');
 
 // GET calculation status and period settings
 router.get('/status', (req, res) => {
@@ -66,12 +66,19 @@ router.post('/run', (req, res) => {
       return res.status(400).json({ success: false, message: 'Minimal harus ada 2 kriteria aktif untuk proses perhitungan SPK.' });
     }
 
-    // Check if criteria have weights
+    // Check if criteria have weights with strict tolerance 0.001
     const totalWeight = db.criteria.reduce((sum, c) => sum + (parseFloat(c.final_weight) || 0), 0);
-    if (Math.abs(totalWeight - 1) > 0.05) {
+    if (Math.abs(totalWeight - 1) > 0.001) {
       return res.status(400).json({
         success: false,
-        message: 'Total bobot kriteria BWM belum dinormalisasi atau belum lengkap. Silakan lakukan proses Agregasi Bobot BWM terlebih dahulu.'
+        message: `Total bobot kriteria BWM (${totalWeight.toFixed(4)}) belum dinormalisasi atau tidak sama dengan 1.000. Silakan lakukan proses Agregasi Bobot BWM terlebih dahulu.`
+      });
+    }
+
+    // Exact normalization safeguard
+    if (totalWeight > 0 && totalWeight !== 1) {
+      db.criteria.forEach(c => {
+        c.final_weight = parseFloat(((parseFloat(c.final_weight) || 0) / totalWeight).toFixed(6));
       });
     }
 
@@ -222,22 +229,11 @@ router.put('/period', (req, res) => {
     }
     db.period.updated_at = new Date().toISOString();
 
-    // If calculation exists, recalculate quota status dynamically without re-running full matrix
+    // If calculation exists, recalculate quota status dynamically using shared applyQuota
     if (db.last_calculation && db.last_calculation.rankings) {
       const targetQuota = db.period.target_quota;
       db.last_calculation.quota = targetQuota;
-      db.last_calculation.rankings.forEach(alt => {
-        if (alt.rank <= targetQuota) {
-          alt.quotaStatus = 'passed_quota';
-          alt.statusLabel = 'Lolos Kuota (Prioritas Utama)';
-          alt.priorityOrder = alt.rank;
-        } else {
-          const backupNum = alt.rank - targetQuota;
-          alt.quotaStatus = 'backup_priority';
-          alt.statusLabel = `Cadangan Prioritas #${backupNum}`;
-          alt.priorityOrder = backupNum;
-        }
-      });
+      applyQuota(db.last_calculation.rankings, targetQuota);
       db.last_calculation.passedCount = Math.min(db.last_calculation.totalStudents, targetQuota);
       db.last_calculation.backupCount = Math.max(0, db.last_calculation.totalStudents - targetQuota);
       db.last_calculation.quotaFulfillmentPercentage = parseFloat(((db.last_calculation.passedCount / targetQuota) * 100).toFixed(1));
@@ -254,7 +250,7 @@ router.put('/period', (req, res) => {
 // POST reset to factory default data (Khusus Mode Demo)
 router.post('/reset-default', (req, res) => {
   try {
-    const mode = req.systemMode || 'live';
+    const mode = req.systemMode || (req.user && req.user.mode) || 'live';
     if (mode !== 'demo') {
       return res.status(403).json({ success: false, message: 'Fitur Reset Data Awal hanya berlaku di Mode Demo.' });
     }

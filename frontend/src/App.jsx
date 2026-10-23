@@ -422,8 +422,13 @@ export default function App() {
     }
   };
 
-  const handleDownloadTemplate = () => {
-    window.open(api.getTemplateUrl(), '_blank');
+  const handleDownloadTemplate = async () => {
+    try {
+      await api.downloadTemplate();
+      showToast('Template Excel berhasil diunduh.');
+    } catch (err) {
+      showToast(err.message || 'Gagal mengunduh template.', 'error');
+    }
   };
 
   const handlePreviewImport = async (file) => {
@@ -518,8 +523,13 @@ export default function App() {
     }
   };
 
-  const handleExportExcel = () => {
-    window.open(api.getExportExcelUrl(), '_blank');
+  const handleExportExcel = async () => {
+    try {
+      await api.downloadExportExcel();
+      showToast('Hasil perankingan berhasil diekspor ke Excel.');
+    } catch (err) {
+      showToast(err.message || 'Gagal mengekspor file Excel.', 'error');
+    }
   };
 
   const handleResetDefault = async () => {

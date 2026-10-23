@@ -1,8 +1,12 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
+const jwt = require('jsonwebtoken');
 const path = require('path');
-const { readDatabase, asyncLocalStorage, initializeDemoDatabase, initializeLiveDatabase } = require('./models/storage');
+const { asyncLocalStorage, initializeDemoDatabase, initializeLiveDatabase } = require('./models/storage');
+const { JWT_SECRET, extractToken, authenticateToken } = require('./middleware/auth');
+const { ValidationError } = require('./utils/errors');
 
 const authRoutes = require('./routes/authRoutes');
 const criteriaRoutes = require('./routes/criteriaRoutes');
@@ -13,7 +17,7 @@ const calculationRoutes = require('./routes/calculationRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Security Middleware: Helmet headers (customized to allow cross-origin images like Kemdikbud logo)
+// Security Middleware: Helmet headers (customized to allow cross-origin assets)
 app.use(helmet({
   crossOriginResourcePolicy: { policy: 'cross-origin' },
   crossOriginOpenerPolicy: false
@@ -29,27 +33,38 @@ app.use(cors({
 app.use(express.json({ limit: '20mb' }));
 app.use(express.urlencoded({ extended: true, limit: '20mb' }));
 
-// Initialize both databases (Demo and Live) on startup
+// Initialize both databases (Demo and Live) safely on startup
 initializeDemoDatabase();
 initializeLiveDatabase();
 
 // Mode router middleware: demo vs live
+// Priority: 1. Verified JWT Claim (cannot be spoofed) -> 2. Client header/query (for unauthenticated auth/login/health)
 app.use((req, res, next) => {
-  const rawMode = req.headers['x-system-mode'] || (req.query && req.query.system_mode) || 'live';
-  const mode = rawMode.toLowerCase() === 'demo' ? 'demo' : 'live';
+  let tokenMode = null;
+  const token = extractToken(req);
+
+  if (token) {
+    try {
+      const decoded = jwt.verify(token, JWT_SECRET);
+      if (decoded && decoded.mode) {
+        tokenMode = decoded.mode;
+      }
+    } catch (e) {
+      // Invalid/expired tokens handled downstream in authenticateToken
+    }
+  }
+
+  const rawMode = tokenMode || req.headers['x-system-mode'] || (req.query && req.query.system_mode) || 'live';
+  const mode = String(rawMode).toLowerCase() === 'demo' ? 'demo' : 'live';
+
+  req.systemMode = mode;
+
   asyncLocalStorage.run({ mode }, () => {
     next();
   });
 });
 
-// Mount Routes
-app.use('/api/auth', authRoutes);
-app.use('/api/criteria', criteriaRoutes);
-app.use('/api/decision-makers', decisionMakerRoutes);
-app.use('/api/students', studentRoutes);
-app.use('/api/calculation', calculationRoutes);
-
-// Root & API status endpoint
+// Root & API status endpoint (Public)
 app.get(['/', '/api'], (req, res) => {
   res.json({
     status: 'online',
@@ -68,7 +83,7 @@ app.get(['/', '/api'], (req, res) => {
   });
 });
 
-// Health check endpoint
+// Health check endpoint (Public)
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'online',
@@ -78,19 +93,37 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Error handling middleware
+// Mount Routes: Public vs Authenticated
+app.use('/api/auth', authRoutes);
+app.use('/api/criteria', authenticateToken, criteriaRoutes);
+app.use('/api/decision-makers', authenticateToken, decisionMakerRoutes);
+app.use('/api/students', authenticateToken, studentRoutes);
+app.use('/api/calculation', authenticateToken, calculationRoutes);
+
+// Centralized error handling middleware
 app.use((err, req, res, next) => {
-  console.error('Server error:', err);
+  if (err instanceof ValidationError || err.statusCode === 400 || err.name === 'ValidationError') {
+    return res.status(400).json({
+      success: false,
+      message: err.message || 'Data yang dikirimkan tidak valid.'
+    });
+  }
+
+  console.error('[UNHANDLED SERVER ERROR]', err);
   res.status(500).json({
     success: false,
-    message: err.message || 'Terjadi kesalahan internal pada server.'
+    message: process.env.NODE_ENV === 'development' 
+      ? (err.message || 'Terjadi kesalahan internal pada server.')
+      : 'Terjadi kesalahan internal pada server. Silakan hubungi administrator.'
   });
 });
 
 app.listen(PORT, () => {
   console.log(`====================================================`);
   console.log(`  SPK Bantuan PIP Server running on port ${PORT}`);
-  console.log(`  Security: Helmet Enabled, JWT Auth Ready`);
+  console.log(`  Security: Helmet Enabled, JWT Auth Enforced`);
   console.log(`  API Base URL: http://localhost:${PORT}/api`);
   console.log(`====================================================`);
 });
+
+module.exports = app;
